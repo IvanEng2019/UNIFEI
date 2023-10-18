@@ -1,0 +1,9 @@
+pytest --cov-report term --cov=strategies/functions/api/update strategies/functions/api/update
+
+
+[20:51, 19/06/2022] Lucas Blazzi Unifei: pytest --cov-report term --cov=strategies strategies
+[21:03, 19/06/2022] Lucas Blazzi Unifei: region_name="us-east-1"
+[21:09, 19/06/2022] Lucas Blazzi Unifei: : str = Field(None, min_length=3, max_length=40)
+[21:09, 19/06/2022] Lucas Blazzi Unifei: from pydantic import BaseModel, validator, Field
+
+Git pull origin develop

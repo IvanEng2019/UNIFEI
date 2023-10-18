@@ -1,0 +1,5 @@
+Objetivo:
+Estudo das tarefas de agrupamento e classificação de dados empregando o software WEKA 
+com modelo K-médias e rede neural MLP.
+
+Equipe: Ivan e Leonardo

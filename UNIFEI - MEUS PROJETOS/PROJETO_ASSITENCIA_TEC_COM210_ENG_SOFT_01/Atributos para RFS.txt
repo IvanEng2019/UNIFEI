@@ -1,0 +1,70 @@
+CRIAR RC - MANTER HISTORICO DO CLIENTE
+
+Clientes:	Nome
+		CPF
+		Endereco
+		Tel
+		Email
+		Data de nascimento
+		Numero do cliente (agiliza processo de consulta)
+		Equipamentos do Cliente - Campo de escolha fechado referente ao modelo
+	
+Tipo de Funcionario:	Seguir exemplo da clinica
+			funcoes: ADM
+				 Financeiro
+				 Atendimento
+				 Estoque
+				 Tecnico
+
+Funcionario:	Seguir exemplo da clinica
+	   	Utilizar classes listadas acima para o "tipo"... mudar o nome tipo p/ funcao
+
+
+Problemas:	Nome do problema
+		Descricao do problema
+		Possiveis solucoes
+
+Solucoes:	Modelo do produto
+		Solucao
+		Valor da mao de obra
+		Possiveis pecas necessarias
+		Nivel de dificuldade da solucao
+		
+
+Tipo de Servico:	modelo do equipamento
+			problema - campo de escolha fechado
+			nivel de dificuldade - setado automaticamente apos a carecterizacao do problema
+					     - simples/intermediario/complexo
+			solucao---- descartar esse atributo
+			supostas pecas para o servico
+			necessidade de tecnico especifico ---------- descartar esse atributo
+			cidade -------- descartar esse atributo
+
+Estoque:	modelo
+		marca
+		quantidade
+		valor comercial
+
+Rotas:		Cidade (pode ser mais de uma)
+		Nome do Tecnico
+		Numero das ordens de servico 
+		Data do dia
+		
+Ordens de Servico:	Numero da O.S  			PODE ELABORAR UM MODELO DE OS
+			Cliente
+			N do cliente
+			Problema do produto
+			Pecas necessarias - acompanhada do valor
+			Solucao para o problema - acompanhado do valor da mao de obra
+			Taxa de km (caso necessario) - acompanhada do valor
+			Valor da O.S
+			Estado da O.S -         Paga
+            					Nao Paga
+           					Sem defeito
+          					Nao quis
+           					retornar (nao tinha peca)
+          					nao resolveu
+          					CVR
+
+
+

@@ -1,0 +1,2271 @@
+
+
+
+
+
+
+<html>
+<head>
+    <title>Relatório de Controle de Tempo</title>
+    <meta name="decorator" content="none" />
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8" />
+</head>
+<body>
+
+<table id="time_tracking_report_table" border="1">
+<tr>
+    <td bgcolor="#205081" colspan="15" height=30>
+        <img src="/images/icon-jira-software-logo.png" width="57" height="30" border="0" alt="Jira">
+    </td>
+</tr>
+<tr>
+    <td bgcolor=#ffffff colspan="15">
+        <a href=""><span class="bluetext">Jira</span></a>
+    </td>
+</tr>
+<tr>
+    <th bgcolor="#dddddd">Tipo de item</th>
+    <th bgcolor="#dddddd"><b>Chave</b></th>
+    <th bgcolor="#dddddd"><b>Status</b></th>
+    <th bgcolor="#dddddd"><b>Prioridade</b></th>
+    <th bgcolor="#dddddd"><b>Resumo</b></th>
+    <th bgcolor="#dddddd"><b>Tempo Estimado Original (min)</b></th>
+            <th bgcolor="#dddddd">Σ</th>
+        <th bgcolor="#dddddd"><b>Tempo Estimado Restante (min)</b></th>
+            <th bgcolor="#dddddd">Σ</th>
+        <th bgcolor="#dddddd"><b>Tempo Gasto Total (min)</b></th>
+            <th bgcolor="#dddddd">Σ</th>
+        <th bgcolor="#dddddd"><b>Precisão</b></th>
+            <th bgcolor="#dddddd">Σ</th>
+        <th bgcolor="#dddddd"><b>Precisão (%)</b></th>
+            <th bgcolor="#dddddd">Σ</th>
+    </tr>
+
+    <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-1">UN-1</a></td>
+    <td>Em andamento</td>
+    <td>Highest</td>
+    <td>
+                Crawler de registro de opções
+    </td>
+    <td>4800</td>
+            <td>
+                            4800
+                    </td>
+        <td>4800</td>
+            <td>
+                            4800
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-37">UN-37</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Trigger S3 para coleta de informação de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-38">UN-38</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Parse da série dos dados em dados de registro
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-39">UN-39</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Registro dos dados normalizados no S3
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-40">UN-40</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Cloudformation para deploy dos recursos
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-41">UN-41</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Testes unitários
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-42">UN-42</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Script download txt de dados de registro B3
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-2">UN-2</a></td>
+    <td>Em andamento</td>
+    <td>Highest</td>
+    <td>
+                Crawler de preços de opções
+    </td>
+    <td>4800</td>
+            <td>
+                            4800
+                    </td>
+        <td>4800</td>
+            <td>
+                            4800
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-31">UN-31</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Script download txt de dados históricos de preços B3
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-32">UN-32</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Normalização do txt e conversão em dataframes
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-33">UN-33</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Schedule para operação
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-34">UN-34</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Registro dos dados normalizados no S3
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-35">UN-35</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Cloudformation para deploy dos recursos
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-36">UN-36</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Testes unitários
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-3">UN-3</a></td>
+    <td>Em andamento</td>
+    <td>High</td>
+    <td>
+                Cálculo de greeks de opções
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-43">UN-43</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Função de cálculo de greeks unificada
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-44">UN-44</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Cálculo de Delta, Theta, Rho, Gamma, Vega
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-45">UN-45</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Atualização do dado no S3
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-46">UN-46</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Cloudformation para deploy dos recursos
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-47">UN-47</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Testes unitários
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-4">UN-4</a></td>
+    <td>Em andamento</td>
+    <td>Low</td>
+    <td>
+                Cálculo de métricas de desempenho de opções
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-67">UN-67</a></td>
+    <td>Concluído</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Cálculo de valor intrínseco, valor no tempo, valor da opção e hedge ratio
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-68">UN-68</a></td>
+    <td>Concluído</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Atualização do dado no S3
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-69">UN-69</a></td>
+    <td>Concluído</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Cloudformation para deploy dos recursos
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-70">UN-70</a></td>
+    <td>Concluído</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Endpoint para acesso a métricas de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-71">UN-71</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Testes unitários
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-5">UN-5</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                Cálculo de payoff de opções
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-6">UN-6</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Gráfico de payoff
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-59">UN-59</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Componente de gráfico de linhas 
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-60">UN-60</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Integração com API
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-61">UN-61</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Testes de implementação
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-62">UN-62</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Integração com registro de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-7">UN-7</a></td>
+    <td>Em andamento</td>
+    <td>High</td>
+    <td>
+                Página de visualização de opção
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-48">UN-48</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Componente de gráfico de preços
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-49">UN-49</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Tabela de dados de registro
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-50">UN-50</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Testes de implementação
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-51">UN-51</a></td>
+    <td>Concluído</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Integração com API
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-8">UN-8</a></td>
+    <td>Em andamento</td>
+    <td>Low</td>
+    <td>
+                Tabela de métricas
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-72">UN-72</a></td>
+    <td>Em andamento</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Componente de tabela de métricas
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-73">UN-73</a></td>
+    <td>Em andamento</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Integração com API
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-74">UN-74</a></td>
+    <td>Em andamento</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Integração com registro de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-75">UN-75</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                                -&gt;
+                Testes de implementação
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-9">UN-9</a></td>
+    <td>Em andamento</td>
+    <td>Medium</td>
+    <td>
+                Tabela de greeks
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-63">UN-63</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Componente de tabela de greeks
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-64">UN-64</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Integração com API
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-65">UN-65</a></td>
+    <td>Concluído</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Integração com registro de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-66">UN-66</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                                -&gt;
+                Testes de implementação
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-10">UN-10</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Autenticação de usuário
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-11">UN-11</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Registro de usuário
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-12">UN-12</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Tela de autenticação
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-13">UN-13</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Tela de registro de usuário
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-14">UN-14</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                Tela de perfil de usuário
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-15">UN-15</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                Busca avançada de opções por filtros
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-16">UN-16</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                Formulário de filtros para busca
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-17">UN-17</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Tela de estrutura de operação
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-18">UN-18</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Manter estrutura de operação
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-19">UN-19</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Payoff de estrutura de operação
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-20">UN-20</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                Criação de opção fictícia
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-21">UN-21</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Geração de grade de opções por ticker
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-22">UN-22</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Tela de grade de opções
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-23">UN-23</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                Tabela de métricas de mercado e greeks
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-24">UN-24</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                Compartilhamento de estruturas de operações
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-25">UN-25</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                Listagem de estruturas de operações compartilhadas
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-26">UN-26</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                Tela de estrutura de operações compartilhadas
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-27">UN-27</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Low</td>
+    <td>
+                Formulário para criação de opção fictícia
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-28">UN-28</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Busca de ação por ticker
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-29">UN-29</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Exibição de dados de ações
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-30">UN-30</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Highest</td>
+    <td>
+                Crawler de registro de ações
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-52">UN-52</a></td>
+    <td>Em andamento</td>
+    <td>Highest</td>
+    <td>
+                API de registro de opções
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-53">UN-53</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Estrutura de API - API Gateway
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-54">UN-54</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Autenticação via header JWT
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-55">UN-55</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Endpoint de consulta de dados de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-56">UN-56</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Endpoint de consulta de preço de opções
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-57">UN-57</a></td>
+    <td>Concluído</td>
+    <td>Highest</td>
+    <td>
+                                -&gt;
+                Cloudformation para deploy dos recursos
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>            <tr valign="top">
+    <td>
+                    -&gt;
+                Subtarefa</td>
+    <td><a href="/browse/UN-58">UN-58</a></td>
+    <td>Tarefas pendentes</td>
+    <td>High</td>
+    <td>
+                                -&gt;
+                Testes unitários
+    </td>
+    <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td></td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-76">UN-76</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Página de gloassário
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                História</td>
+    <td><a href="/browse/UN-77">UN-77</a></td>
+    <td>Tarefas pendentes</td>
+    <td>Medium</td>
+    <td>
+                Calculadora de greeks ondemand
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>    
+<tr>
+    <td colspan="4" align="right">
+        &nbsp;
+    </td>
+    <td><b>Total</b></td>
+    <td>9600</td>
+            <td>9600</td>
+        <td>9600</td>
+            <td>9600</td>
+        <td>0</td>
+            <td>0</td>
+        <td>0</td>
+            <td>0</td>
+        <td>0</td>
+            <td>0</td>
+    </tr>
+
+<tr>
+    <td bgcolor="#ffffff" colspan="15">&nbsp;</td>
+</tr>
+<tr>
+    <td bgcolor="#dddddd" colspan="15"><font size=1>
+                    Gerado em 02/06/22 02:47 por IVAN LEONI VILAS BOAS usando JIRA 1001.0.0-SNAPSHOT#100199-sha1:0fcc6649a8519af56ebe7437c1f63a707d23e54c.
+            </font></td>
+</tr>
+</table>
+
+
+</body>
+</html>

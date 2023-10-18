@@ -1,0 +1,16 @@
+
+git branch 
+git pull origin develop
+git push origin HEAD
+git pull origin develop
+
+git add .
+git commit -m "add teste"
+git push origin HEAD
+
+git pull origin feature/strategy-tests
+
+
+git add .
+git pull origin feature/strategy-tests
+pytest --cov-report html --cov=strategies strategies/functions/api/read
