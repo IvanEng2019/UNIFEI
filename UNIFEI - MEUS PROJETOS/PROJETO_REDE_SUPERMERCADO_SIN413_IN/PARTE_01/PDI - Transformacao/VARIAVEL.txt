@@ -1,0 +1,9 @@
+([measures] [quantidade] * [measures] [valor_venda_item]) - (([measures] [tributo_estadual] + [measures] [tributo_federal])*[measures] [quantidade] )
+
+([measures] [tributo_estadual_fatura] + [measures] [tributo_federal_fatura] ) * [measures] [quantidade_item]
+
+([measures] [quantidade_item] * [measures] [valor_unitario_venda_item]) - (([measures] [tributo_estadual_fatura] + [measures] [tributo_federal_fatura] ) * [measures] [quantidade_item])
+
+
+
+certo

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="get_all_supermercado" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+      <Connection id="get_imposto" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+      <Connection id="get_liquido" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+      <Connection id="get_bruto" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+      <Connection id="get_vendas" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+      <Connection id="get_gerente" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+      <Connection id="get_top_clientes" type="sql.jndi">
+         <Jndi>supermercado</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="get_all_supermercado" id="get_all_supermercado"
+               type="sql">
+      <Name>get_all_supermercado</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT DISTINCT nome_supermercado
+FROM dim_supermercado
+ORDER BY nome_supermercado
+LIMIT 11]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="get_imposto" id="get_imposto" type="sql">
+      <Name>get_imposto</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select nome_supermercado, SUM(COALESCE(tributo_federal_fatura,0) + COALESCE(tributo_estadual_fatura,0))
+from dim_supermercado,fato_vendas
+where 
+      dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk
+group by nome_supermercado]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="get_liquido" id="get_liquido" type="sql">
+      <Name>get_liquido</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select nome_supermercado, SUM(COALESCE(valor_total_fatura,0) - COALESCE(tributo_federal_fatura,0) - COALESCE(tributo_estadual_fatura,0))
+from dim_supermercado,fato_vendas
+where 
+      dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk
+group by nome_supermercado
+having (SUM(COALESCE(valor_total_fatura,0) - COALESCE(tributo_federal_fatura,0) - COALESCE(tributo_estadual_fatura,0)) >= 1000000)]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="get_bruto" id="get_bruto" type="sql">
+      <Name>get_bruto</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select nome_supermercado, round(sum(valor_total_fatura)::numeric,2)
+from dim_supermercado,fato_vendas
+where 
+      dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk
+group by nome_supermercado]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="get_vendas" id="get_vendas" type="sql">
+      <Name>get_vendas</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select nome_empregado, count(numero_fiscal_fatura)
+from dim_empregado,fato_vendas
+where 
+      dim_empregado.id_empregado_sk = fato_vendas.id_empregado_sk
+group by nome_empregado
+having (count(numero_fiscal_fatura) >= 1000)
+order by nome_empregado]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="get_gerente" id="get_gerente" type="sql">
+      <Name>get_gerente</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select gerente_supermercado,sum(valor_total_fatura)
+from dim_supermercado,fato_vendas
+where 
+      dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk
+group by gerente_supermercado
+having (sum(valor_total_fatura) >= 500000)
+order by gerente_supermercado]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="get_top_clientes" id="get_top_clientes" type="sql">
+      <Name>get_top_clientes</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="Alvorecer" name="supermercado" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select nome_supermercado,nome_cliente,estado_cliente,cidade_cliente,
+ round(sum(valor_total_fatura)::numeric,2) as total
+from dim_supermercado,fato_vendas,dim_cliente
+where dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk and
+      dim_cliente.id_cliente_sk = fato_vendas.id_cliente_sk
+      and nome_supermercado = ${supermercado}
+group by nome_supermercado,nome_cliente,estado_cliente,cidade_cliente
+having (sum(valor_total_fatura) >= 50000)
+order by nome_supermercado
+LIMIT 10]]></Query>
+   </DataAccess>
+</CDADescriptor>

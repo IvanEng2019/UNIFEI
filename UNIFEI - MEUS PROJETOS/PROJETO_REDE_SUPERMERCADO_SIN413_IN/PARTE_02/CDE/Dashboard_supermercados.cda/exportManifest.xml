@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
+    <ExportManifestInformation exportDate="10-08-2021 08:47:33 BRT" exportBy="suzy" rootFolder="/home/suzy/" manifestVersion="2"/>
+    <ExportManifestEntity path="Dashboard_supermercados2.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="Dashboard_supermercados2.cda" createdDate="2021-08-10T13:57:50.508-03:00" isFolder="false" path="Dashboard_supermercados2.cda" isHidden="false" isSchedulable="true" locale="pt_BR" title="Dashboard_supermercados2.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityExtraMetaData/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>suzy</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+</ns2:ExportManifest>

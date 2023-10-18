@@ -1,0 +1,144 @@
+<Schema name="Schema_Final">
+  <Cube name="Supermercado" visible="true" cache="true" enabled="true">
+    <Table name="fato_vendas" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_cliente_sk" highCardinality="false" name="cliente">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_cliente_sk">
+        <Table name="dim_cliente" schema="public">
+        </Table>
+        <Level name="cidade" visible="true" column="cidade_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estado_civil" visible="true" column="estado_civil_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="renda" visible="true" column="renda_cliente" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estado" visible="true" column="estado_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="sexo" visible="true" column="sexo_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="nome" visible="true" column="nome_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="endereco" visible="true" column="endereco_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_produto_sk" highCardinality="false" name="produtos">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_produto_sk">
+        <Table name="dim_produto" schema="public">
+        </Table>
+        <Level name="tipo_armazemento" visible="true" column="armazenamento_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="categoria_produto" visible="true" column="descricao_categoria_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="tipo_embalagem" visible="true" column="embalagem_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="fornecedor" visible="true" column="nome_fornecedor" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="lote" visible="true" column="lote_produto" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="nome" visible="true" column="nome_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="descricao" visible="true" column="descricao_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="marca" visible="true" column="marca_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estoque" visible="true" column="quantidade_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="fabricacao" visible="true" column="fabrica&#231;&#227;o_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="valor_compra" visible="true" column="valor_unitario_compra_produto" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="cnpj_fornecedor" visible="true" column="cnpj_fornecedor" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="cidade_fornecedor" visible="true" column="cidade_fornecedor" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estado_fornecedor" visible="true" column="estado_fornecedor" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="vencimento" visible="true" column="validade_produto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_data_sk" highCardinality="false" name="data_venda">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_data_sk">
+        <Table name="dim_data" schema="public">
+        </Table>
+        <Level name="dia" visible="true" column="dia" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="mes" visible="true" column="mes" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="ano" visible="true" column="ano" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_supermercado_sk" highCardinality="false" name="supermercado">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_supermercado_sk">
+        <Table name="dim_supermercado" schema="public">
+        </Table>
+        <Level name="gerente" visible="true" column="gerente_supermercado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="cidade" visible="true" column="cidade_supermercado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estado" visible="true" column="estado_supermercado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="nome" visible="true" column="nome_supermercado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_empregado_sk" highCardinality="false" name="colaborador">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_empregado_sk">
+        <Table name="dim_empregado" schema="public">
+        </Table>
+        <Level name="cargo" visible="true" column="cargo_empregado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="nome" visible="true" column="nome_empregado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="sexo" visible="true" column="sexo_empregado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="cidade" visible="true" column="cidade_empregado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estado_civil" visible="true" column="estado_civil_empregado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="estado" visible="true" column="estado_empregado" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="comissao" visible="true" column="comissao_empregado" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="salario" visible="true" column="salario_empregado" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="numero_fatura">
+      <Hierarchy visible="true" hasAll="true" primaryKey="numero_fiscal_fatura">
+        <Level name="numero_fatura" visible="true" column="numero_fiscal_fatura" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="forma_pagamento">
+      <Hierarchy visible="true" hasAll="true" primaryKey="forma_pg_fatura">
+        <Level name="forma_pagamento" visible="true" column="forma_pg_fatura" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="data_fatura">
+      <Hierarchy visible="true" hasAll="true" primaryKey="data_fatura">
+        <Level name="data_fatura" visible="true" column="data_fatura" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="quantidade" column="quantidade_item" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="valor_venda_item" column="valor_unitario_venda_item" datatype="Numeric" formatString="#.###,00" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="tributo_estadual" column="tributo_estadual_fatura" datatype="Numeric" formatString="#.###,00" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="tributo_federal" column="tributo_federal_fatura" datatype="Numeric" formatString="#.###,00" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="valor_fatura" column="valor_total_fatura" datatype="Numeric" formatString="#.###,00" aggregator="avg" visible="true">
+    </Measure>
+    <CalculatedMember name="total_item" formatString="#.###,00" formula="[measures][quantidade_item] * [measures][valor_unitario_venda_item]" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="tributos" formatString="#.###,00" formula="[measures][tributo_estadual_fatura] + [measures][tributo_federal_fatura" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="liquido" formatString="#.###,00" formula="[measures][quantidade_item] * [measures][valor_unitario_venda_item] -  ([measures][tributo_estadual_fatura] + [measures][tributo_federal_fatura]) " dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>

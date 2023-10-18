@@ -1,0 +1,48 @@
+https://www.inf.pucrs.br/~cnunes/redes_si/Sockets.htm
+http://www2.ic.uff.br/~debora/praticas/aplicacao/
+https://www.exploit-db.com/papers/13634
+https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-setsockopt
+https://docs.microsoft.com/en-us/windows/win32/api/winsock/ns-winsock-timeval
+https://docs.microsoft.com/pt-br/windows/win32/api/winsock2/nf-winsock2-select
+https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-setsockopt
+https://www.gta.ufrj.br/ensino/eel878/sockets/sockaddr_inman.html
+http://br-c.org/doku.php?id=bind
+http://www.br-c.org/doku.php?id=listen
+http://www.cplusplus.com/reference/cstring/memset/
+https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-recvfrom
+
+http://www.professordiovani.com.br/sd/Sockets_cplus.htm
+http://wiki.inf.ufpr.br/maziero/doku.php?id=pua:comunicacao_em_rede
+http://www.dainf.ct.utfpr.edu.br/~jeansimao/Fundamentos2/APITCPIP/Tutorial%20-%20Programacao%20C++%20TCP-IP%20-%20Marcelo%20Hiroshi%20SugitaTexto.pdf
+
+https://www.winsocketdotnetworkprogramming.com/winsock2programming/winsock2advancedcode1f.html
+https://www.ppgia.pucpr.br/~jamhour/Pessoal/Graduacao/Ciencia/SocketsC/UDPSockets.html
+
+
+    /*habilita o programa servidor receber conexões de um programa cliente.O servidor chama listen() que converte o socket em um socket de escuta.
+      Assim Winsock poderá aceitar pedidos de conexão a este socket feito pelos clientes. Vários clientes podem se conectar a este socket. O segundo
+      parâmetro de listen diz quantas conexões pendentes podem ficar enfileiradas simultaneamente. udp nao precisa http://wiki.inf.ufpr.br/maziero/doku.php?id=pua:comunicacao_em_rede
+      if((listen(socket_serv,1))== SOCKET_ERROR){
+       printf( "Não posso escutar o cliente. Erro: %s\n",WSAGetLastError());
+    }*/
+    // Algumas informações no lado do receptor ...
+https://www.dcc.fc.up.pt/~ines/aulas/0910/SO/sockets.pdf
+
+
+https://edisciplinas.usp.br/pluginfile.php/4676287/mod_resource/content/1/80-ServidorUDP-v8.pdf
+https://www.gta.ufrj.br/ensino/eel878/sockets/htonsman.html
+https://books.google.com.br/books?id=TWrjDwAAQBAJ&pg=PT278&dq=numero+da+porta+em+c+do+socket+do+servidor&hl=pt-BR&sa=X&ved=0ahUKEwjS-uihxenpAhVOGLkGHYxvDu8Q6AEIKDAA#v=onepage&q=numero%20da%20porta%20em%20c%20do%20socket%20do%20servidor&f=false
+
+
+
+    //A função bind associa o socket criado a porta local do sistema operacional. 
+    //Nesta associação é verificado se a porta já não está sendo utilizada por algum outro processo. 
+    //Será através desta associação (porta) que o programa irá receber dados (bytes) de outros programas.
+    //É passada para a função a estrutura criada anteriormente assim como o socket criado. 
+    //A função bind retorna 0 (zero) em caso de sucesso e –1 em caso de erro. 
+    if(bind(socket_cli,(struct sockaddr *)&end_cli_local, sizeof(end_cli_local))<0){
+        printf("Erro bind() : %i\n", WSAGetLastError());
+        return -1;
+    }
+    ///aguardando conexões
+    listen(socket_cli,1);

@@ -1,0 +1,906 @@
+
+UPDATE dim_produto SET embalagem_produto = 'Pacote' WHERE embalagem_produto = 'P';
+
+select nome_supermercado,cidade_supermercado,gerente_supermercado,
+ round(sum(valor_total_fatura)::numeric,2) as total
+from dim_supermercado,fato_vendas
+where dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk
+group by nome_supermercado,cidade_supermercado,gerente_supermercado
+having (sum(valor_total_fatura) >= 1000000)
+order by gerente_supermercado
+
+
+select nome_supermercado,nome_cliente,estado_cliente,cidade_cliente,
+ round(sum(valor_total_fatura)::numeric,2) as total
+from dim_supermercado,fato_vendas,dim_cliente
+where dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk and
+      dim_cliente.id_cliente_sk = fato_vendas.id_cliente_sk
+group by nome_supermercado,nome_cliente,estado_cliente,cidade_cliente
+having (sum(valor_total_fatura) >= 100000)
+order by nome_supermercado
+
+SELECT nome_cliente,SUM(valor_total_fatura) AS Comsumo
+ FROM fato_vendas,dim_cliente,dim_supermercado
+ WHERE dim_cliente.id_cliente_sk = fato_vendas.id_cliente_sk
+ and dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk
+ and nome_supermercado = ${supermercado}
+ GROUP BY nome_cliente
+ having (sum(valor_total_fatura) >= 100000)
+ LIMIT 5
+
+lefth JOIN fato_vendas on
+    dim_empregado.id_cliente_sk = fato_vendas.id_empregado_sk
+
+group by nome_empregado
+having (sum(valor_total_fatura) >= 100000)
+
+sum( tributo_federal_fatura), sum(tributo_estadual_fatura),
+
+select nome_empregado,nome_supermercado,count(distinct numero_fiscal_fatura)
+where 
+      dim_supermercado.id_supermercado_sk = fato_vendas.id_supermercado_sk and
+      dim_empregado.id_empregado_sk = fato_vendas.id_empregado_sk
+group by nome_empregado,nome_supermercado
+having (count(distinct numero_fiscal_fatura) >= 100)
+order by nome_empregado
+
+
+INSERT INTO categoria_produto
+VALUES
+(6, 'Bebida'),
+(7, 'Utilitarios em geral'),
+(8, 'hortifruti'),
+(9, 'Utencilios'),
+(10, 'Vinhos'),
+(11, 'Cervejas'),
+(12, 'Massas'),
+(21, 'Farinhas'),
+(17, 'Alimentos em Geral'),
+(13, 'Refrigerantes'),
+(14, 'Frios'),
+(27, 'Congelados'),
+(15, 'Açougue e Carnes'),
+(16, 'Enlatados e Conservas'),
+(20, 'Doces e chocolates'),
+(22, 'Petshop'),
+(23, 'Churrascaria'),
+(24, 'Padaria'),
+(25, 'Perfumaria'),
+(26, 'Cereais'),
+(28, 'Molhos');
+
+select * from fornecedor;
+
+INSERT INTO fornecedor
+VALUES
+(6, '11883431000111','Nestle','Rua Dona Benta','Casa Verde', 'Zona Sul','São Paulo','São Paulo'), 
+(7, '18232315000113','Casa Nova','Rua Pedro Monte','Centro', 'Centro','São Paulo','São Paulo'), 
+(8, '23432313000141','Panela Boa','Rua Dr. Gonzales','Centro', 'Centro','São Paulo','São Paulo'), 
+(9, '15452781000177','Cervejaria Petropolis','Rua Vila Nova','Limão', 'Zona Sul','São Paulo','São Paulo'),
+(10, '53436317000142','Mantiqueira','Rua Viana Salles', 'Centro','Centro','Ipiuna','Minas Gerais'),
+(11, '18223656000137','Beba Mais','Rua Esperança','Centro', 'Centro','São Paulo','São Paulo'),
+(12, '21233221000172','Ovos da vida','Rua Euzebio','Alecrim', 'Suldeste','Pouso Alto','Minas Gerais'),
+(13, '28226523000127','Casa da Fruta','Rua Bom Senhor ','Jardim', 'Nordeste','Pouso Alegre','Minas Gerais'),
+(14, '34264534000117','Verde Feliz','Rua Madalena ','campos Elisios', 'Suldeste','Pouso Alegre','Minas Gerais'),
+(17, '45246254000146','Vinicula Rosa','Rua Almir','Fatima', 'Sul','Rio Grande do sul','Rio Grande do sul'),
+(18, '32464545000132','São Bento','Rua Almar','N. Sra. Guardalupe', 'Cento-Sul','Rio Grande do sul','Rio Grande do sul'),
+(25, '63798253000162','Nestlé','Rua Lago Azul','Laranja', 'Zona Leste','São Paulo','São Paulo'), 
+(26, '48982127000157','Garoto','Rua Lago Azul','Laranja', 'Zona Leste','São Paulo','São Paulo'), 
+(15, '35256215000176','Ferro e Brasa','Rua Major costa e silva ','Alemão', 'Nordeste','Rio De janeiro','Rio De janeiro'),
+(16, '56782858000154','Café no Bule','Rua Dr. Luiz ','Emilia', 'Zona Sul','Rio De janeiro','Rio De janeiro'),
+(19, '23635112000142','Galo','Rua Samira Lamin','N. Sra.', 'Noroeste','Rio Grande do sul','Rio Grande do sul'),
+(20, '52455488000195','Amelia','Rua Gustavo Freitas','N. Sra. da guarda', 'Cento-Sul','Curitiba','Parana'),
+(32, '45323643000115','Soja do Rei ','Rua Sol','Grande Jandim', 'Centro Leste','Campo Grande','Mato Grosso'),
+(21, '21454478000173','Sadia','Rua Malfim de Souza','Cubatão', 'Cento-Sul','Belo Horizonte','Minas Gerais'),
+(22, '41455282000165','Aurora','Rua Pedro Viana','Fundão', 'Sul','São Paulo','São Paulo'),
+(23, '33895823000154','CBR','Rua Falcão Marrom','Fernandão', 'Zona oeste','São Paulo','São Paulo'),
+(33, '12164219000142','hellmann','Rua Vigario','Graviola', 'Zona norte','São Paulo','São Paulo'),
+(34, '56643393000135','Meu molho','Rua Tangerina','Violetas', 'Leste','Campo Grande','Mato Grosso');
+(24, '63798253000143','JBS','Rua Ganço Azul','Fernandão', 'Zona oeste','São Paulo','São Paulo'),
+(29, '79454432000143','Churascaria Bom Prato','Vila Rio Vermelho','Capivari', 'Suldeste','Campinas','São Paulo'),
+(30, '33564356000133','Carvão do Zé','Rua Grande','Tio Barnabé', 'Sul','Taubaté','São Paulo'),
+(27, '18922123000103','Mundo Cão','Rua Felicidade','Colinas', 'Suldeste','São Paulo','São Paulo'),
+(28, '13947721000154','Animals','Rua Saudade','Jardim Novo', 'Suldeste','Campinas','São Paulo'),
+(31, '73563689000121','Cereal Aveia Ltda','Rua Pé grande','Fantasia', 'Sul','Cuiabá','Mato Grosso'),
+
+
+
+
+select * from supermercado;
+
+INSERT INTO supermercado
+VALUES
+(6, '41884431000111','Supermercado Rede Nova','Rua Cravo','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Adriano Costa','20140520'),
+(7, '41884431000112','Supermercado Ganhe Mais','Rua Violeta','Jardins', 'Zona Norte','São Paulo','São Paulo','Maria Augusta','20150103'),
+(8, '41884431000113','Supermercado Barateiro','Rua Oliver','Penha', 'Zona Leste','São Paulo','São Paulo', 'Pedro Henrique','20160210'),
+(9, '41884431000114','Supermercado Economico','Rua Dr. Lima','Cafofo', 'Zona Oeste','São Paulo','São Paulo','João Damaceno', '20100617'),
+(10, '41884431000115','Supermercado Especial','Rua 5 de Maio','Centro', 'Centro','São Paulo','São Paulo','Adrian Pinto','20180914'),
+(11, '345224545000121','Supermercado Novo Rei','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Fabiula Albuquerque','20191007')
+
+select * from empregado;
+select * from supermercado;
+
+INSERT INTO empregado
+VALUES
+(12, '12484424611',' Mario','Costa','Caixa','Rua Cesar Alvim','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Masculino','Soletrio',1200,60,'19880210',6),
+(13, '12484424622','Julio','Lobos','Empacotador','Rua Paulo Freire','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Masculino','Casado',1200,60,'19870912',6),
+(14, '12484424633','Adrian','Junior','Repositor','Rua Casemiro','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Masculino','soleiro',1200,60,'198900310',6),
+(15, '12484424644','Ana','Vilas Boas','Caixa','Rua Alberto','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Feminino','Casado',1200,60,'19900603',6),
+(16, '12484424655','Cesar','Martins','Estoquista','Rua Canário','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Masculino','Casado',1200,60,'19910904',6),
+(17, '12484424666','José','Mariano','Padeiro','Rua Canário','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Masculino','soleiro',1200,60,'19880505',6),
+(18, '12484424677','Elio','Neto','açougueiro','Rua Casemiro','Casa Verde', 'Zona Sul','São Paulo','São Paulo','Masculino','Casado',1200,60,'19870406',6),
+(19, '24836746611','Mariana','Lamin','Caixa','Rua narizinho','Jardins', 'Zona Norte','São Paulo','São Paulo','Feminino','Casado',1500,50,'19870109',7),
+(20, '24836746622','Mariangela','Fernades','Caixa','Rua  Fada azul','Jardins', 'Zona Norte','São Paulo','São Paulo','Feminino','solteiro',1500,50,'19880108',7),
+(21, '24836746633','Fabio','Junior','empacotador','Rua benrnabé','Jardins', 'Zona Norte','São Paulo','São Paulo','Masculino','Casado',1500,50,'19890107',7),
+(22, '24836746644','Lucas','Damaceno','repositor','Rua saci','Jardins', 'Zona Norte','São Paulo','São Paulo','Masculino','soleiro',1500,50,'19900106',7),
+(23, '24836746655','Alfredo','Lisboa','estoquista','Rua Emilia','Jardins', 'Zona Norte','São Paulo','São Paulo','Masculino','Casado',1500,50,'19860105',7),
+(24, '24836746688','Luan','Bernardino','Padeiro','Rua Pedrinho','Jardins', 'Zona Norte','São Paulo','São Paulo','Masculino','soleiro',1500,50,'19880104',7),
+(25, '24836746699','Luberval','Castilho','açougueiro','Rua nastacia','Jardins', 'Zona Norte','São Paulo','São Paulo','Masculino','Casado',1500,50,'19870704',7),
+(26, '38387456411','Paulo','Vilas Boas','Caixa','Rua Oliveira','Penha', 'Zona Leste','São Paulo','São Paulo','Masculino','Solteiro',1500,30,'19910803',8),
+(27, '38387456422','Jermias','Martins','empacotador','Rua Ype','Penha', 'Zona Leste','São Paulo','São Paulo','Masculino','casado',1500,30,'19870503',8),
+(28, '38387456433','Roberto','Junior','repositor','Rua Flor de lotos','Penha', 'Zona Leste','São Paulo','São Paulo','Masculino','Casado',1500,30,'19880311',8),
+(29, '38387456444','Ronaldo','Vilas Lobos','estoquista','Rua margarida','Penha', 'Zona Leste','São Paulo','São Paulo','Masculino','Solteiro',1500,30,'19950310',8),
+(30, '38387456455','Augusta','Pinto','caixa','Rua Girassol','Penha', 'Zona Leste','São Paulo','São Paulo','Feminino','Solteiro',1500,330,'19930403',8),
+(31, '24836746666','Leoni','Figueira','Padeiro','Rua Magnolia','Penha', 'Zona Leste','São Paulo','São Paulo','Masculino','Solteiro',1500,30,'19920203',8),
+(32, '24836746677','Dorival','Pinheiro','açougueiro','Rua Girassol','Penha', 'Zona Leste','São Paulo','São Paulo','Masculino','casado',1500,30,'19920103',8),  
+(33, '48384456411','Robervado','Silva','empacotador','Rua Dr. José','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Masculino','Solteiro',1600,20,'19910712',9),
+(34, '48384456422','Juliano','Cristovão','estoquista','Rua Dr. Lucas','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Masculino','Casado',1600,20,'19910103',9),
+(35, '48384456433','João','Caneiro','repositor','Rua Dr. Pedro','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Masculino','Solteiro',1600,20,'19920205',9),
+(36, '48384456444','Camila','Paiva','Caixa','Rua Dr. Galeão','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Feminino','Solteiro',1600,20,'19920306',9),
+(37, '48384456455','Julia','Gama','Caixa','Rua Dr. Freitas','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Feminino','Casado',1600,20,'19880611',9),
+(38, '48384456466','BernadinoCamila','Braga','açougueiro','Rua Dr. Santos','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Masculino','Casado',1600,20,'19890809',9),
+(39, '48384456477','Viana','Pinto','Padeiro','Rua Dr. silva','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Masculino','Solteiro',1600,20,'19890718',9),  
+(40,'58457453411','Fabricio','Paiva','empacotador','Rua 01 de Maio','Centro', 'Centro','São Paulo','São Paulo','Masculino','Casado',1500,100,'19870701',10),
+(41,'58457453422','Silas','Reis','estoquista','Rua 01 de Abril','Centro', 'Centro','São Paulo','São Paulo','Masculino','Solteiro',1500,100,'19870502',10),
+(42,'58457453433','Otavio','Costa','repositor','Rua 07 de Setembro','Centro', 'Centro','São Paulo','São Paulo','Masculino','Casado',1500,100,'19870403',10),
+(43,'58457453444','Guilherme','Souza','Caixa','Rua 06 de Julho','Centro', 'Centro','São Paulo','São Paulo','Masculino','Soletiro',1500,100,'19870412',10),
+(44,'58457453455','Eduarda','Santos','Caixa','Rua 17 de agosto','Centro', 'Centro','São Paulo','São Paulo','Feminino','Casado',1500,100,'19870405',10),
+(45,'58457453466','Gil','Alburquerque','açougueiro','Rua 26 de junho','Centro', 'Centro','São Paulo','São Paulo','Masculino','Casado',1500,100,'19870711',10),
+(46,'58457453477','Giovani','Santos','Padeiro','Rua 15 de Maio','Centro', 'Centro','São Paulo','São Paulo','Masculino','solteiro',3000,100,'19870205',10),
+(47,'68217357822','Barbará ','Almeida','Caixa','Rua Laranja','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','Casado',1700,200,'19860612',11),
+(48,'68217357833','Guiarone ','Paiva','estoquista','Rua Pera','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Masculino','solteiro',1700,200,'19870305',11),
+(49,'68217357844','Gilberto','Souza','repositor','Rua Maça','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Masculino','solteiro',1700,200,'19880410',11),
+(50,'68217357855','Gilmar','Costa','açogueiro','Rua Luidi Melao','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Masculino','Casado',1700,200,'19890608',11),
+(51,'68217357866','Carol ','Vilas Boas','Padeiro','Rua Uva','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','Casado',1700,200,'19870509',11),
+(52,'68217357877','Giovana','Vilas Boas','caixa','Rua Melancia','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','solteiro',1700,200,'19900312',11),
+(53,'68217357888','Carlos ','Reis','Empacotador','Rua Abacaxi','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Masculino','Casado',1700,200,'19880211',11);
+(54,'77217357822','Julia ','Almeida','Caixa','Rua 07','Centro', 'Centro','Barbacena','MG','Feminino','Casado',1700,200,'19860612',5),
+(55,'77217357833','Benicio','Paiva','estoquista','Rua 07','Centro', 'Centro','Barbacena','MG','Masculino','solteiro',1700,200,'19870305',5),
+(56,'77217357844','Ismael','Souza','repositor','Rua 08','Centro', 'Centro','Barbacena','MG','Masculino','solteiro',1700,200,'19880410',5),
+(57,'77217357855','Luberval','Costa','açogueiro','Rua 10','Centro', 'Centro','Barbacena','MG','Masculino','Casado',1700,200,'19890608',5),
+(58,'77217357866','Livia','Batista','Padeiro','Rua 6','Centro', 'Centro','Barbacena','MG','Feminino','Casado',1700,200,'19870509',5),
+(59,'77217357877','Lilian','Reis','caixa','Rua 09','Centro', 'Centro','Barbacena','MG','Feminino','solteiro',1700,200,'19900312',5),
+(60,'77217357888','Nicolas','Reis','Empacotador','Rua 11','Centro', 'Centro','Barbacena','MG','Masculino','Casado',1700,200,'19880211',5),
+ 
+(61,'77217357811','Eloá','Almeida','Caixa','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','MG','Feminino','Casado',1700,200,'19860612',2),
+(62,'77217357812','Israel','Paiva','estoquista','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonteo','MG','Masculino','solteiro',1700,200,'19870305',2),
+(63,'77217357813','Rafael','Souza','repositor','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','MG','Masculino','solteiro',1700,200,'19880410',2),
+(64,'77217357810','Gustavo','Costa','açogueiro','Rua cesar Alvin','Centro', 'Centro','Belo Horizonte','MG','Masculino','Casado',1700,200,'19890608',2),
+(65,'77217357814','Antonella','Vilas Boas','Padeiro','Rua cesar Alvin','Centro', 'Centro','Belo Horizonte','MG','Feminino','Casado',1700,200,'19870509',2),
+(66,'77217357815','Isadora','Freitas','caixa','Rua cesar Alvin','Centro', 'Centro','Belo Horizonte','MG','Feminino','solteiro',1700,200,'19900312',2),
+(67,'77217357816','Benjamin','Reis','Empacotador','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','MG','Masculino','Casado',1700,200,'19880211',2),
+ 
+(68,'77217357917','Maite','Almeida','Caixa','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Feminino','Casado',1700,200,'19860612',3),
+(69,'77217357818','Antony','Paiva','estoquista','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Masculino','solteiro',1700,200,'19870305',3),
+(70,'77217357819','Francisco','Santos','repositor','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Masculino','solteiro',1700,200,'19880410',3),
+(71,'77217357820','Breno','Costa','açogueiro','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Masculino','Casado',1700,200,'19890608',3),
+(72,'77217357821','Carol ','Vilas Boas','Padeiro','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Feminino','Casado',1700,200,'19870509',3),
+(73,'77217357823','Antonielle','Pereira','caixa','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Feminino','solteiro',1700,200,'19900312',3),
+(74,'77217357824','Silvaney','Reis','Empacotador','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','MG','Masculino','Casado',1700,200,'19880221',3),
+ 
+(75,'77217357825','Bruna','Batista','Caixa','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MG','Feminino','Casado',1700,200,'19860616',4),
+(76,'77217357826','Michel','Junior','estoquista','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MGo','Masculino','solteiro',1700,200,'19870314',4),
+(77,'77217357827','Crodoaldo','Neto','repositor','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MG','Masculino','solteiro',1700,200,'19880417',4),
+(78,'77217357828','Crodovil','costa','açogueiro','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MG','Masculino','Casado',1700,200,'19890628',4),
+(79,'77217357829','Elena','Santos','Padeiro','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MG','Feminino','Casado',1700,200,'19870516',4),
+(80,'77217357830','Brenda','Morais','caixa','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MG','Feminino','solteiro',1700,200,'19900314',4),
+(81,'77217357831','Renato','Brigadeiro','Empacotador','Avenida Ipiranga','Novo Horizonte', 'Centro','Itaúna','MG','Masculino','Casado',1700,200,'198900731',4),
+ 
+(82,'77217357832','Barbará ','Almeida','Caixa','Rua Paraná','Poço Rico', 'Centro','Juiz de Fora','MG','Feminino','Casado',1700,200,'19860623',1),
+(83,'77217357834','Guiarone ','Martins','estoquista','Rua Sergipe','Poço Rico', 'Centro','Juiz de Fora','MG','Masculino','casado',1700,200,'19870325',1),
+(84,'77217357835','Gilberto','Santos','repositor','Rua Alagoas','Poço Rico', 'Centro','Juiz de Fora','MG','Masculino','solteiro',1700,200,'19880416',5),
+(85,'77217357836','Gilmar','Costa','açogueiro','Rua Esprito Santo','Poço Rico', 'Centro','Juiz de Fora','MG','Masculino','soletiro',1700,200,'19890621',1),
+(86,'77717357837','Carol ','Vilas Boas','Padeiro','Rua Salvador','Poço Rico', 'Centro','Juiz de Fora','MG','Feminino','Casado',1700,200,'19870526',1),
+(87,'77217357838','Giovana','Nogueira','caixa','Rua Acre','Poço Rico', 'Centro','Juiz de Fora','MG','Feminino','solteiro',1700,200,'19900323',1),
+(88,'77217357839','Carlos ','Paiva','Empacotador','RuaAmazonas','Poço Rico', 'Centro','Juiz de Fora','MG','Masculino','solteiro',1700,200,'19880211',1);
+select * from cliente;
+
+INSERT INTO cliente
+VALUES
+(5,'08380859110', 'Katia','Lima','Rua Alcantara','Laranja','Zona Sul','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(6,'08380859611', 'Madalena','Costa','Rua Mercelo Almeida','Limão','Zona Sul','São Paulo','São Paulo','feminino','Casado',1500,70,'19950108','20171010'),
+(7,'08380859412', 'Ana','Maria','Rua Benedita','Limão','Zona Sul','São Paulo','São Paulo','feminino','solteiro',1500,20,'19840512','2017101205'),
+(8,'08380859513', 'Elizabety','Rodrigues','Rua capote','Lima','Zona Sul','São Paulo','São Paulo','Feminino','casada',1500,60,'19850517','20180305'),
+(9,'08380859414', 'Katia','Lima','Rua Alcantara','Laranja','Zona Sul','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(10,'08380859615', 'João','Costa','Rua Mercelo Almeida','Limão','Zona Sul','São Paulo','São Paulo','maculino','Casado',1500,100,'19950211','20191010'),
+(11,'08380859616', 'Moacir','Junior','Rua Roberval Peixoto','Limão','Zona Sul','São Paulo','São Paulo','maculino','solteiro',1300,50,'19940209','20180810'),
+(12,'08380859617', 'Jucelino','Camilo','Rua Maria De Fatima','Limão','Zona Sul','São Paulo','São Paulo','maculino','soletiro',1500,80,'19930512','20181005'),
+(13,'08380859618', 'Pedro','Rodrigues','Rua camilo','Limão','Zona Sul','São Paulo','São Paulo','maculino','solteiro',1500,80,'19830512','20171005'),
+(14,'08380859319', 'Jose','Malvinas','Rua capote','lima','Zona Sul','São Paulo','São Paulo','maculino','casada',1500,50,'19860812','20140416'),
+(15,'08380859220', 'Adalberto','Nobrega','Rua Cajamar','Lima','Zona Sul','São Paulo','São Paulo','maculino','solteiro',1500,80,'19930623','20151015'),
+(16,'08380859621', 'Caio','Salvatori','Rua Cesar Alvir','Lima','Zona Sul','São Paulo','São Paulo','maculino','solteiro',1500,40,'19940422','20171025'),
+
+(17,'08380859122', 'Kamila','costa','Rua Violeta','Jardins', 'Zona Norte','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(18,'08380859423', 'Mislene','lima','Rua Girasol','Jardins', 'Zona Norte','São Paulo','São Paulo','feminino','Casado',1500,70,'19950108','20171010'),
+(19,'08380859524', 'Fatima','Maria','Rua Margarida','Jardins', 'Zona Norte','São Paulo','São Paulo','feminino','solteiro',1500,20,'19840512','2017101205'),
+(20,'08380859625', 'Elisa','Rodrigues','Rua florisbela','Jardins', 'Zona Norte','São Paulo','São Paulo','Feminino','casada',1500,60,'19850517','20180305'),
+(21,'08380859726', 'Maria','Madalena','Rua cravo','Jardins', 'Zona Norte','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(22,'08380859827', 'Jose','Costa','Rua verde-limão','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','Casado',1500,100,'19950211','20191010'),
+(23,'08380859928', 'Messias','Junior','Rua Jasmin','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','solteiro',1300,50,'19940209','20180810'),
+(24,'08380859129', 'Mauricio','Freitas','Rua lirio','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','soletiro',1500,80,'19930512','20181005'),
+(25,'08380859230', 'Julio','Rodrigues','Rua iris','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','solteiro',1500,80,'19830512','20171005'),
+(26,'08380859431', 'Henrique','Malvinas','Rua copo de leite','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','casada',1500,50,'19860812','20140416'),
+(27,'08380859532', 'Elio','Nobrega','Rua rosa','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','solteiro',1500,80,'19930623','20151015'),
+(28,'08380859433', 'Elsio','Salvatori','Rua rosa','Jardins', 'Zona Norte','São Paulo','São Paulo','maculino','solteiro',1500,40,'19940422','20171025');
+
+(29,'08380859134', 'Katia','costa','Rua Erodis','Penha', 'Zona Leste','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(30,'08380859335', 'cristina','lima','Rua medusa','Penha', 'Zona Leste','São Paulo','São Paulo','feminino','Casado',1500,70,'19950108','20171010'),
+(31,'08380859536', 'Fabia','Maria','Rua Zeus','Penha', 'Zona Leste','São Paulo','São Paulo','feminino','solteiro',1500,20,'19840512','2017101205'),
+(32,'08380859637', 'Elis','Rodrigues','Rua olimpo','Penha', 'Zona Leste','São Paulo','São Paulo','Feminino','solteiro',1500,60,'19850517','20180305'),
+(33,'08380859738', 'Mariane','Madalena','Rua Ades','Penha', 'Zona Leste','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(34,'08380859839', 'Josue','Costa','Rua Atenas','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','Casado',1500,100,'19950211','20191010'),
+(35,'08380859940', 'Mauro','Junior','Rua Hercules','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','solteiro',1300,50,'19940209','20180810'),
+(36,'08380859141', 'Matheus','Freitas','Rua Afrodite','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','soletiro',1500,80,'19930512','20181005'),
+(37,'08380859242', 'Junior','Rodrigues','Rua Xena','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','solteiro',1500,80,'19830512','20171005'),
+(38,'08380859443', 'Helisius','Malvinas','Rua Zeus','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','casado',1500,50,'19860812','20140416'),
+(39,'08380859544', 'Elvis','Nobrega','Rua Erodis','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','casado',1500,80,'19930623','20151015'),
+(40,'08380859445', 'Bruno','Salvatori','Rua Poseidon','Penha', 'Zona Leste','São Paulo','São Paulo','maculino','solteiro',1500,40,'19940422','20171025');
+
+(41,'08380859146', 'Karoline','costa','Rua Dr. Lima','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(42,'08380859347', 'crislane','Lima','Rua Dr. Gustavo','Cafofo', 'Zona Oeste','São Paulo','São Paulo','feminino','Casado',1500,70,'19950108','20171010'),
+(43,'08380859548', 'Fabiula','Martins','Rua Dr. Mauricio','Cafofo', 'Zona Oeste','São Paulo','São Paulo','feminino','solteiro',1500,20,'19840512','2017101205'),
+(44,'08380859649', 'Marina','Rodrigues','Rua Dr.Pedro','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Feminino','solteiro',1500,60,'19850517','20180305'),
+(45,'08380859750', 'Olivia','Madalena','Rua Dr.Ferdinando','Cafofo', 'Zona Oeste','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(46,'08380859851', 'Jonas','Costa','Rua Dr. Pedro','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','Casado',1500,100,'19950211','20191010'),
+(47,'08380859952', 'Mateus','Junior','Rua Dr. Guilherme','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','solteiro',1300,50,'19940209','20180810'),
+(48,'08380859152', 'Matias','Freitas','Rua Dr. Fonseca','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','soletiro',1500,80,'19930512','20181005'),
+(49,'08380859254', 'Julio','Rodrigues','Rua Dr. Luiz','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','solteiro',1500,80,'19830512','20171005'),
+(50,'08380859455', 'Hercules','Malvinas','Rua Dr. Lima','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','casado',1500,50,'19860812','20140416'),
+(51,'08380859556', 'Eliventon','Nobrega','Rua Dr. Augusto','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','casado',1500,80,'19930623','20151015'),
+(52,'08380859457', 'Critian','Salvatori','Rua Dr. Duarte','Cafofo', 'Zona Oeste','São Paulo','São Paulo','maculino','solteiro',1500,40,'19940422','20171025');
+
+(53,'08380859158', 'Ketrin','costa','Rua 5 de Maio','Centro', 'Centro','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(54,'08380859359', 'Daniela','Lima','Rua 26 de abril','Centro', 'Centro','São Paulo','São Paulo','feminino','Casado',1500,70,'19950108','20171010'),
+(55,'08380859560', 'Felicia','Martins','Rua 1 de Maio','Centro', 'Centro','São Paulo','São Paulo','feminino','solteiro',1500,20,'19840512','2017101205'),
+(56,'08380859661', 'Magnolia','Rodrigues','Rua 7 setembro','Centro', 'Centro','São Paulo','São Paulo','Feminino','solteiro',1500,60,'19850517','20180305'),
+(57,'08380859762', 'Solange','Madalena','Rua 15 de novembro','Centro', 'Centro','São Paulo','São Paulo','Feminino','casada',1500, 25,'19950511','20180423'),
+(58,'08380859863', 'Oliver','Costa','Rua 6 de junho','Centro', 'Centro','São Paulo','São Paulo','maculino','Casado',1500,100,'19950211','20191010'),
+(59,'08380859964', 'Marvin','Junior','Rua 5 de Maio','Centro', 'Centro','São Paulo','São Paulo','maculino','solteiro',1300,50,'19940209','20180810'),
+(60,'08380859165', 'Matias','Freitas','Rua 25 de novembro','Centro', 'Centro','São Paulo','São Paulo','maculino','soletiro',1500,80,'19930512','20181005'),
+(61,'08380859266', 'Juliano','Rodrigues','Rua 7 Sertembro','Centro', 'Centro','São Paulo','São Paulo','maculino','solteiro',1500,80,'19830512','20171005'),
+(62,'08380859467', 'Herbes','Malvinas','Rua 5 de Maio','Centro', 'Centro','São Paulo','São Paulo','maculino','casado',1500,50,'19860812','20140416'),
+(63,'08380859568', 'Weliveltow','Nobrega','Rua 1 de Maio','Centro', 'Centro','São Paulo','São Paulo','maculino','casado',1500,80,'19930623','20151015'),
+(64,'08380859469', 'Izaias','Salvatori','Rua 26 de abril','Centro', 'Centro','São Paulo','São Paulo','maculino','solteiro',1500,40,'19940422','20171025');
+
+(65,'08380859170', 'Kelly','costa','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','casada',1500, 25,'19950511','20190423'),
+(66,'08380859371', 'Danyela','Lima','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','feminino','Casado',1500,70,'19950108','20191010'),
+(67,'08380859572', 'Juditi','Martins','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','feminino','solteiro',1500,20,'19840512','2019101205'),
+(68,'08380859673', 'Malia','Rodrigues','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','feminino','solteiro',1500,60,'19850517','20190305'),
+(69,'08380859774', 'Valquiria','Madalena','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','casada',1500, 25,'19950511','20190423'),
+(70,'08380859875', 'Otavio','Costa','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','masculino','Casado',1500,100,'19950211','20191010'),
+(80,'08380859976', 'Marcolino','Junior','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','solteiro',1300,50,'19940209','20190810'),
+(81,'08380859177', 'Izac','Freitas','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','soletiro',1500,80,'19930512','20191005'),
+(82,'08380859278', 'Guilherme','Rodrigues','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','solteiro',1500,80,'19830512','20191005'),
+(83,'08380859479', 'Helio','Malvinas','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','casado',1500,50,'19860812','20190416'),
+(84,'08380859580', 'Wesley','Nobrega','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','casado',1500,80,'19930623','20191015'),
+(85,'08380859481', 'Ivan','Salvatori','Rua Luidi Capri','Centro', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','solteiro',1500,40,'19940422','20191025'),
+
+(86,'08380859182', 'Kelly','costa','Rua Madalena','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','casada',1500, 25,'19950511','20190423'),
+(87,'08380859383', 'Danyela','Lima','Rua André Cavalcanti','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','Casado',1500,70,'19950108','20191010'),
+(88,'08380859584', 'Juditi','Martins','Rua André Cavalcanti','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','solteiro',1500,20,'19840512','2019101205'),
+(89,'08380859685', 'Malia','Rodrigues','Rua Conde de Lages','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','solteiro',1500,60,'19850517','20190305'),
+(90,'08380859786', 'Valquiria','Madalena','Rua Acopiara','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','Feminino','casada',1500, 25,'19950511','20190423'),
+(91,'08380859687', 'Otavio','Costa','Rua Lavradio','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','masculino','Casado',1500,100,'19950211','20191010'),
+(92,'08380859989', 'Marcolino','Junior','Rua Acopiara','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','solteiro',1300,50,'19940209','20190810'),
+(93,'08380859188', 'Izac','Freitas','Rua Acopiara','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','soletiro',1500,80,'19930512','20191005'),
+(94,'08380859290', 'Guilherme','Rodrigues','Rua Lavradio','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','solteiro',1500,80,'19830512','20191005'),
+(95,'08380859491', 'Helio','Malvinas','Rua Conde de Lages','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','casado',1500,50,'19860812','20190416'),
+(96,'08380859592', 'Wesley','Nobrega','Rua Riachuelo','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','casado',1500,80,'19930623','20191015'),
+(97,'08380859493', 'Ivan','Salvatori','Rua Riachuelo','Lapa', 'Centro','Rio De Janeiro','Rio De Janeiro','maculino','solteiro',1500,40,'19940422','20191025');
+
+
+(98,'01380859194', 'Kelly','costa','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','casada',1500, 25,'19950511','20180423'),
+(99,'01380859395', 'Danyela','Lima','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','Casado',1100,50,'19950108','20791010'),
+(100,'01380859596', 'Juditi','Martins','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','solteiro',1100,20,'19840512','2017101205'),
+(101,'01380859697', 'Malia','Rodrigues','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','solteiro',1100,80,'19850517','20160305'),
+(102,'01380859798', 'Valquiria','Madalena','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','casada',1100, 65,'19950511','20150423'),
+(103,'01380859699', 'Otavio','Costa','Rua Bady Geara', 'Ipiranga','centro','Juiz de Fora','Minas Gerais','masculino','Casado',1100,100,'19950211','20171010'),
+
+(104,'01380859901', 'Marcolino','Junior','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','Minas Gerais','maculino','casado',1300,50,'19940209','20170810'),
+(105,'01380859102', 'Izac','Freitas','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','Minas Gerais','maculino','soletiro',1200,70,'19930512','20181005'),
+(106,'01380859203', 'Guilherme','Rodrigues','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','Minas Gerais','maculino','solteiro',2500,80,'19830512','20161005'),
+(107,'01380859404', 'Helio','Malvinas','Rua Anchieta', 'Vera Cruz','Centro', 'Belo Horizonte','Minas Gerais','maculino','casado',1600,50,'19860812','20170416'),
+
+(108,'01380859505', 'Wesley','Nobrega','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','maculino','casado',1200,80,'19930623','20151015'),
+(109,'01380859406', 'Ivan','Salvatori','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','maculino','casadoo',1600,60,'19940422','20171025'),
+(110,'01380859407', 'Iran','Silva','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','maculino','solteiro',1900,40,'19940422','20161025'),
+
+(111,'01380859408', 'Isabel','Silva','Rua Nelson Parreira','Cidade Nova', 'Centro','Itaúna','Minas Gerais','Feminino','solteiro',1500,40,'19940422','20181025'),
+(112,'01380859409', 'Iran','Monte','Rua Nelson Parreira','Cidade Nova', 'Centro','Itaúna','Minas Gerais','maculino','casado',1700,40,'19940422','20161025'),
+(113,'01380859410', 'Jaulo','Raimundo','Rua Nelson Parreira','Cidade Nova', 'Centro','Itaúna','Minas Gerais','maculino','solteiro',1800,40,'19940422','20171025'),
+
+(114,'01380859411', 'Marcia','Paula','Rua Adriano Ferreira Martins','Jardim', 'Centro','Barbacena','Minas Gerais','Feminino','solteiro',1400,40,'19940422','20181025'),
+(115,'01380859412', 'Italo','Rodrigues','Rua Adriano Ferreira Martins','Jardim', 'Centro','Barbacena','Minas Gerais','maculino','casado',1300,40,'19940422','20161025'),
+(116,'01380859413', 'bruno','Gonzales','Rua Adriano Ferreira Martins','Jardim', 'Centro','Barbacena','Minas Gerais','maculino','solteiro',1200,40,'19940422','20171025');
+
+(117,'01380851100', 'Helenice','costa','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','casada',1680, 45,'19950511','20180423'),
+(118,'01380852200', 'Alice','Lima','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','solteiro',1430,50,'19950108','20791010'),
+(119,'01380853300', 'Laura','Martins','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','solteiro',1450,60,'19840512','2017101205'),
+(120,'01380854400', 'Samira','Rodrigues','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','solteiro',1300,80,'19850517','20160305'),
+(121,'01380855500', 'Sarah','Madalena','Rua Bady Geara','Ipiranga', 'Centro','Juiz de Fora','Minas Gerais','Feminino','casada',1140, 65,'19950511','20150423'),
+(122,'01380856600', 'Heitor','Costa','Rua Bady Geara', 'Ipiranga','Centro','Juiz de Fora','Minas Gerais','masculino','Casado',1400,50,'19950211','20171010'),
+
+(123,'01380857700', 'David','Junior','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','Minas Gerais','maculino','casado',1300,50,'19940209','20170810'),
+(124,'01380858800', 'Miguel','Freitas','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','Minas Gerais','maculino','soletiro',1200,70,'19930512','20181005'),
+(125,'01380859900', 'Arthur','Rodrigues','Rua Anchieta','Vera Cruz', 'Centro','Belo Horizonte','Minas Gerais','maculino','solteiro',2500,80,'19830512','20161005'),
+(126,'01380851200', 'Davi','Malvinas','Rua Anchieta', 'Vera Cruz','Centro', 'Belo Horizonte','Minas Gerais','maculino','casado',1600,50,'19860812','20170416'),
+
+(127,'01380851201', 'Gabriel','Nobrega','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','maculino','casado',1200,80,'19930623','20151015'),
+(128,'01380851203', 'Theo','Salvatori','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','maculino','solteiro',1600,60,'19940422','20171025'),
+(129,'01380851204', 'Gael','Silva','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','maculino','solteiro',1900,40,'19940422','20161025'),
+
+(130,'01380851205', 'Valentina','Silva','Rua Nelson Parreira','Cidade Nova', 'Centro','Itaúna','Minas Gerais','Feminino','solteiro',1500,80,'19940422','20181025'),
+(131,'01380851206', 'Bernardo','Monte','Rua Nelson Parreira','Cidade Nova', 'Centro','Itaúna','Minas Gerais','maculino','casado',1700,90,'19940422','20161025'),
+(132,'01380851207', 'Enzo','Raimundo','Rua Nelson Parreira','Cidade Nova', 'Centro','Itaúna','Minas Gerais','maculino','solteiro',1800,00,'19940422','20171025'),
+
+(133,'01380851208', 'Sophia','Felipo Souza','Rua Adriano Ferreira Martins','Jardim', 'Centro','Barbacena','Minas Gerais','Feminino','solteiro',1550,40,'19940422','20181025'),
+(134,'01380851209', 'Samuel','Rodrigues','Rua Adriano Ferreira Martins','Jardim', 'Centro','Barbacena','Minas Gerais','maculino','casado',1700,10,'19940422','20161025'),
+(135,'01480851210', 'Lorenzo','Gonzales','Rua Adriano Ferreira Martins','Jardim', 'Centro','Barbacena','Minas Gerais','maculino','solteiro',1200,77,'19940728','20171027'),
+
+(136,'01380851211', 'Lorena','Castilho','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','Feminino','casada',1200, 75,'19950511','20180423'),
+(137,'01380851212', 'Heloisa','Carpo','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','Feminino','casada',1300, 25,'19950511','20180423'),
+(138,'01380851213', 'Helenice','Rollings','Avenida Atílio Purri','Borba Gato', 'Centro','Sabará','Minas Gerais','Feminino','solteiro',1300, 25,'19950511','20180423'),
+
+(139,'01380851214', 'Manuela','Martins','Rua Anchieta', 'Vera Cruz','Centro', 'Belo Horizonte','Minas Gerais','Feminino','casada',1770, 45,'19950511','20180423'),
+(140,'01380851215', 'Cecilia','Amaral','Rua Anchieta', 'Vera Cruz','Centro', 'Belo Horizonte','Minas Gerais','Feminino','solteiro',15660, 55,'19950511','20180423');
+
+ 
+INSERT INTO produto
+VALUES
+(11,'Vinho Sul','Bebida com alcool','912305618410','Vinicula Rosa','Não-refrigerado','Garrafa',1.2,500,'20300123','20190405',13.99,100,10,17),
+(12,'Suco Uva','Bebida Sem alcool','912305618411','Vinicula Rosa','Não-refrigerado','Garrafa',1,100,'20300123','20190405',10,100,6,17),
+(13,'Vinho Vintage','Bebida com alcool','912305618412','São Bento','Não-refrigerado','Garrafa',1.2,200,'20300620','20190605',16.99,101,10,18),
+(14,'Suco Vintage','Bebida Sem alcool','912305618413','São Bento','Não-refrigerado','Garrafa',1.2,50,'20300326','20190708',11.99,100,6,18),
+
+(15,'Chocolate Branco','Chocolate Nestle','912305618414','Nestle','Não-refrigerado','Pacote',0.5,100,'20300209','20190405',4.99,102,20,6),
+(16,'Chocolate Amargo','Chocolate Nestle','912305618415','Nestle','Não-refrigerado','Pacote',0.5,120,'20300306','20190405',4.99,102,20,6),
+(17,'Cx Chocolate','Chocolate Nestle','912305618416','Nestle','Não-refrigerado','Caixa',0.9,80,'20300505','20190405',7.99,103,20,25),
+(18,'Chocolate De Limão','Chocolate Nestle','912305618417','Nestle','Não-refrigerado','Pacote',0.5,120,'20300606','20190401',4.99,102,20,25),
+
+(19,'Chocolate Branco Garoto','Chocolate Garoto','912305618418','Garoto','Não-refrigerado','Pacote',0.5,100,'20290405','20190405',5.99,102,20,26),
+(20,'Chocolate Meio Amargo','Chocolate Garoto','912305618419','Garoto','Não-refrigerado','Pacote',0.5,120,'20281016','20190405',5.99,102,20,26),
+(21,'Cx Chocolate Garoto','Chocolate Garoto','912305618421','Garoto','Não-refrigerado','Caixa',0.9,80,'20260515','20190405',9.99,103,20,26),
+(22,'Chocolate Trufado','Chocolate Garoto','912305618422','Garoto','Não-refrigerado','Pacote',0.5,120,'20240616','20190401',5.99,102,20,26),
+
+(23,'Xicara de cafe','Porcelana','912305618423','Casa Nova','Não-refrigerado','caixa',0.3,20,'20300123','20190405',3.50,104,9,7),
+(24,'Garrafa de Café','Duravel 12 horas','912305618424','Casa Nova','Não-refrigerado','Pacote',0.8,20,'20300123','20190405',16.79,104,9,7),
+(25,'Marmitex Inox','Inox','912305618425','Panela Boa','Não-refrigerado','Pacote',0.4,15,'20300123','20190405',6.89,105,9,8),
+(26,'Frigidera','p/ Fogão por indução','912305618426','Panela Boa','Não-refrigerado','Pacote',0.8,10,'20300123','20190405',15,105,9,8),
+(27,'Talheres','Inox','912305618427','Panela Boa','Não-refrigerado','Pacote',0.2,50,'20300123','20190405',3.99,105,9,8);
+
+(28,'Skol','Cerveja com alcool','912305618430','Cervejaria Petropolis','Não-refrigerado','Lata',0.35,1000,'20300123','20190405',3.99,106,9,11),
+(29,'Brahma','Cerveja com alcool','912305618431','Cervejaria Petropolis','Não-refrigerado','Lata',0.35,1000,'20300123','20190405',4.89,106,9,11),
+(30,'Itaipava','Cerveja  com alcool','912305618432','Cervejaria Petropolis','Não-refrigerado','Lata',0.35,1000,'20300123','20190405',5,106,9,11),
+(31,'Amstel','Cerveja com alcool','912305618433','Cervejaria Petropolis','Não-refrigerado','Lata',0.35,1000,'20300123','20190405',4.90,109,9,11),
+(32,'Heineken','Cerveja com alcool','912305618434','Cervejaria Petropolis','Não-refrigerado','Lata',0.35,1000,'20300123','20190405',5.49,109,9,11),
+(33,'Budwiser','Cerveja com alcool','912305618435','Cervejaria Petropolis','Não-refrigerado','Lata',0.35,1000,'20300123','20190405',6.05,110,9,11),
+
+(34,'Skol garrafa','Cerveja com alcool','912305618436','Cervejaria Petropolis','Não-refrigerado','Garrafa',0.6,600,'20300123','20190405',14.90,107,9,11),
+(35,'Brahma garrafa','Cerveja com alcool','912305618437','Cervejaria Petropolis','Não-refrigerado','Garrafa',0.6,600,'20300123','20190405',15.80,107,9,11),
+(36,'Heineken garrafa','Cerveja com alcool','912305618438','Beba Mais','Não-refrigerado','Garrafa',0.6,600,'20300123','20190405',13.90,108,11,11),
+(37,'Budwiser garrafa','Cerveja com alcool','912305618439','Beba Mais','Não-refrigerado','Garrafa',0.6,600,'20300123','20190405',14.79,108,11,11);
+
+(38,'Guarana 2l','refrigerante 2l','912305618440','Mantiqueira','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',7.99,112,13,10),
+(39,'Fanta 2l','refrigerante 2l','912305618441','Mantiqueira','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',7.89,112,13,10),
+(40,'Coca-cola 2l','refrigerante 2l','912305618442','Mantiqueira','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',9.99,113,13,10),
+(41,'Coca-cola 3,5l','refrigerante 3,5l','912305618443','Mantiqueira','Não-refrigerado','Garrafa',3.5,1000,'20300123','20190405',12.49,113,13,10),
+(42,'Fanta-Uva 2l','refrigerante 2l','912305618444','Mantiqueira','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',8.99,113,13,10),
+(43,'Sprit 2l','refrigerante 2l','912305618445','Mantiqueira','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',8.69,114,13,10),
+(44,'Guarana Mantiqueira 2l','refrigerante 2l','912305618446','Mantiqueira','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',7.79,114,13,10),
+(45,'Tubaina','refrigerante 2l','912305618447','Beba Mais','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',6.89,115,13,11),
+(46,'Guarana Aruba 2l','refrigerante 2l','912305618448','Beba Mais','Não-refrigerado','Garrafa',2,1000,'20300123','20190405',6.79,115,13,11);
+
+select * from produto;
+
+UPDATE produto SET embalagem_produto = 'Pacote' WHERE embalagem_produto = 'P';
+
+(47,'12 Ovos','1 Duzia','912305518467','Ovos da vida','Não-refrigerado','Caixa',1,500,'20300123','20190701',6.99,116,8,12),
+(48,'6 Ovos','1/2 duzia','912305518468','Ovos da vida','Não-refrigerado','Caixa',1,500,'20300123','20190605',3.99,116,8,12),
+
+(49,'Mamão','por kilo','912305518452','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190103',3.50,117,8,13),
+(50,'Laranja','por kilo','912305518453','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190202',4.99,117,8,13),
+(51,'Pera','por kilo','912305518454','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190501',7.79,117,8,13),
+(52,'Maça','por kilo','912305518455','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190124',12,118,8,13),
+(53,'Tomate','por kilo','912305518456','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190405',9.49,118,8,13),
+(54,'Cenoura','por kilo','912305518457','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190709',8.89,118,8,13),
+(55,'Cebola','por kiloe','912305518458','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190808',8.49,119,8,13),
+(56,'Abacaxi','por kilol','912305518459','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190903',6.22,119,8,13),
+(57,'Batata','por kilo','912305518460','Casa da Fruta','Não-refrigerado','Pacote',1,50,'20300123','20190703',5.99,119,8,13),
+(58,'Goiaba','por kilo','912305518461','Casa da Fruta','Não-refrigerado','Pacote',1,30,'20300123','20190404',9.99,118,8,13),
+
+(59,'abobora','por kilo','912305518462','Verde Feliz','Não-refrigerado','Pacote',1,40,'20300123','20190505',2.99,120,8,14),
+(60,'Alface','por unidade','912305518463','Verde Feliz','Não-refrigerado','Pacote',1,80,'20300123','20190608',2.29,121,8,14),
+(61,'Pimentão','por kilo','912355518464','Verde Feliz','Não-refrigerado','Pacote',1,50,'20300123','20190904',8.68,122,8,14),
+(62,'Melância','por kilo','912505518465','Verde Feliz','Não-refrigerado','Pacote',1,30,'20300123','20191223',4.99,123,8,14),
+(63,'Banana','por kilo','912305518466','Verde Feliz','Não-refrigerado','Pacote',1,70,'20300123','20191105',4.69,124,8,14);
+
+INSERT INTO fornecedor
+VALUES
+(35, '41884431000111','Supermercado Rede Nova','Rua Cesar Alvim','Casa Verde', 'Zona Sul','São Paulo','São Paulo');
+
+INSERT INTO produto
+VALUES
+(64,'Espeto Churrasco','aluminio e madeira','912305618333','Ferro e Brasa','Não-refrigerado','Pacote',0.45,25,'20300211','20190105',4.29,125,23,15),
+(65,'carvão Serra Sul','mineral 3kg','912305618331','Ferro e Brasa','Não-refrigerado','Pacote',3,50,'20300430','20190705',6.89,125,23,15),
+(66,'Carvão Fogo a mil','mineral 5 kg','912305618332','Ferro e Brasa','Não-refrigerado','Pacote',5,30,'2030430','20190805',12.49,125,23,15),
+
+(67,'Rosca Fofa','com trigo','912305618334','Café no Bule','Não-refrigerado','Pacote',1,20,'20271123','20190407',13.39,126,24,16),
+(68,'Pão Puman','integral','912305618335','Café no Bule','Não-refrigerado','Pacote',0.9,50,'20250522','20190203',6.79,126,24,16),
+(69,'Biscoito Zé','salgado','912305618336','Café no Bule','Não-refrigerado','Pacote',0.6,50,'20180321','20190102',3.59,127,24,16),
+(70,'Cafe Pilao','1kg em pó','912305618337','Café no Bule','Não-refrigerado','Pacote',1,300,'20300123','20190405',10.29,127,24,16),
+(71,'Nescafé','0.8 gr em vidro','912305618338','Café no Bule','Não-refrigerado','Pacote',0.9,50,'20300123','20190405',17.19,128,24,16),
+(72,'Chá de ervas','10 unidades','912305618339','Café no Bule','Não-refrigerado','Caixa',0.2,320,'20300123','20190405',8.39,128,24,16),
+
+(73,'Pão de Sal','por kg','112305618440','Próprio Supermercado','Não-refrigerado','Pacote',1,1000,'20200123','20190405',7.94,0,24,35),
+(74,'Pão de queijo','por unidade','112305618441','Próprio Supermercado','Não-refrigerado','Pacote',1,100,'20200123','20190405',20.98,0,24,35),
+(75,'Pão de milho','por kg','112305618442','Próprio Supermercado','Não-refrigerado','Pacote',1,100,'20200123','20190405',8.98,0,24,35),
+(76,'Cafe','xicara','112305618443','Próprio Supermercado','Não-refrigerado','Consumo Local',1,100,'20200123','20190405',4.97,0,24,35),
+(77,'Pão doce com creme','por kg','112305618448','Próprio Supermercado','Não-refrigerado','Pacote',1,300,'20200123','20190405',8.79,0,24,35),
+(78,'Sonho','por unidade','112305618445','Próprio Supermercado','Não-refrigerado','Pacote',1,20,'20200123','20190405',9.94,0,24,35),
+(79,'Bolo','por pedaço','112305618446','Próprio Supermercado','Não-refrigerado','Pacote',1,40,'20200123','20190405',3.55,0,24,35),
+(80,'Torta','por pedaço','112305618447','Próprio Supermercado','Não-refrigerado','Pacote',1,30,'20200123','20190405',5.56,0,24,35);
+(81,'Macarrão palito 0,5g','massa com ovos','812345678910','Galo','Não-refrigerado','Pacote',0.5,1000,'20270531','20170405',3.60,09,12,19),
+(82,'Macarrão Parafuso 0,8g','massa sem ovos','812345678911','Galo','Não-refrigerado','Pacote',0.8,1000,'20261024','20170605',4.80,09,12,19),
+(83,'Arroz Perfeito 2kg','Tipo 1','812345678913','Galo','Não-refrigerado','Pacote',2,1500,'20300515','20170605',14.99,10,17,19),
+(84,'Arroz Magnifico 5kg','Tipo 2','812345678914','Galo','Não-refrigerado','Pacote',5,1000,'20300421','20170205',27.99,10,17,19),
+(96,'Açucar Refinado União 2kg',' para bolos e doces','812345678925','Galo','Não-refrigerado','Pacote',2,2500,'20301013','20170605',9.99,11,17,19),
+(97,'Açucar cristal 5kg','para uso em geral','812345678926','Galo','Não-refrigerado','Garrafa',5,1000,'20270112','20190405',15.99,11,17,19),
+(85,'Oleo Soja','Produto trangênico','812345678915','Soja do Rei','Não-refrigerado','Garrafa',1,2000,'20290324','20171105',12.99,12,17,32),
+(86,'Oleo Girasol','Produto livre de trangenicos','812345678916','Soja do Rei','Não-refrigerado','Garrafa',1,1500,'20280115','20170605',15.99,9,17,32),
+(87,'Feijão Minha Terra 2kg','Tipo 1','812345678917','Soja do Rei','Não-refrigerado','Pacote',2,2000,'20291203','20170708',7.99,1,17,32),
+(95,'Azeite Oliva','Produto trangênico','812345678924','Soja do Rei','Não-refrigerado','Garrafa',1,400,'20290424','20170912',32.40,2,17,32),
+(88,'Feijão Carioca 1kg','Tipo 2','812345678918','Soja do Rei','Não-refrigerado','Pacote',1,1200,'20290512','20170606',11.69,3,17,32),
+(89,'Pipoca Estouro','Sabor Tradicional','812345678919','Amelia','Não-refrigerado','Pacote',0.7,700,'20290427','20170303',5.99,4,17,20),
+(90,'Fubá Allita 1kg','Produto trangênico','812345678920','Amelia','Não-refrigerado','Pacote',1,900,'20280720','20170802',4.99,4,21,20),
+(91,'Trigo Vovó 1kg','Com Fermento','812345678928','Amelia','Não-refrigerado','Pacote',1,800,'20280608','20180107',3.99,5,21,20),
+(92,'Farinha de Minho','Produto trangênico','812345678921','Amelia','Não-refrigerado','Pacote',1,800,'20280117','20180105',8.90,6,21,20),
+(93,'Farinha Temperada de Mandioca','Produto trangênico','812345678922','Amelia','Não-refrigerado','Pacote',1,400,'20280715','20180201',8.59,6,21,20),
+(94,'Sal do Mar','fino','812345678923','Amelia','Não-refrigerado','Pacote',1,1000,'20280527','20170530',1.16,7,17,20),
+(98,'Vinagre Castelo','sem alcool','812345678927','Amelia','Não-refrigerado','Garrafa',1,250,'20281103','20170815',6.80,8,17,20);
+(99,'Salsicha','mista','712345678910','Sadia','refrigerado','Pacote',1,50,'20270123','20170405',7.99,13,14,21),
+(100,'Linguiça Bouvina','com pimenta','712345678911','Sadia','refrigerado','Pacote',1,50,'20270123','20170405',14.99,13,14,21),
+(101,'Azeitona','Verde','712345678912','Sadia','refrigerado','Pacote',1,30,'20270123','20170405',4.99,14,14,21),
+(102,'Presunto','Defumado','712345678913','Sadia','refrigerado','Pacote',1,100,'20270123','20170505',11.99,14,14,21),
+(103,'Queijo Minas','com lactose','712345678914','Renata','refrigerado','Pacote',1,200,'20270123','20170405',27.99,15,14,34),
+(104,'Margarina','com sal','712345678916','Renata','refrigerado','Pacote',0.5,100,'20270123','20180405',6.39,15,14,34),
+(105,'Requeijão','com lactose','712345678915','Renata','refrigerado','Copo',0.4,100,'20270123','20180405',12.69,16,14,34),
+(106,'Danone','frutas vermelhas','712345678917','Renata','refrigerado','Garrafa',1,50,'20280123','201890405',15.99,16,14,34),
+(107,'leite','natural uht','712345678918','Palmeiras','refrigerado','Garrafa',1,50,'20280123','20180405',4.39,16,14,23),
+(108,'Salsicha',' bouvina','712345678919','Aurora','refrigerado','Pacote',1,50,'20280123','20180405',7.99,17,14,22),
+(109,'Linguiça Mista','temperos especiais','712345678928','Aurora','refrigerado','Pacote',1,50,'20280423','20170405',16.89,17,14,22),
+(110,'Presunto',' normal','712345678920','Aurora','refrigerado','Pacote',1,50,'20280123','20170405',10.49,18,14,22),
+(111,'Peito de Peru','defumado','712345678921','Aurora','refrigerado','Pacote',1,50,'20280123','20170405',14.69,18,14,22),
+(112,'Apresuntado','normal','712345678922','Aurora','refrigerado','Pacote',1,100,'20280123','20170405',9.99,19,14,22),
+(113,'Queijo Prado',' com lactose','712345678923','Aurora','refrigerado','Pacote',1,50,'20280123','20170405',16.19,19,14,22),
+(114,'Pìzza','portuguesa e calabresa','712345678924','pif paf','refrigerado','Pacote',0.7,100,'20270123','20170405',16.29,20,27,23),
+(115,'Lasanha','peito de frango','712345678925','pif paf','refrigerado','Pacote',1,100,'20280123','20170405',11.99,21,27,23),
+(116,'Torta','bolonhesa','712345678929','pif paf','refrigerado','Pacote',1,50,'20280123','20170405',12.79,22,27,23),
+(117,'Hanburguer','Bouvino','712345678926','pif paf','refrigerado','Pacote',0.2,1000,'20270123','20180405',1.99,23,27,23),
+(118,'Paio','misto','712345678927','pif paf','refrigerado','Pacote',1,50,'20270123','20180405',16.75,24,14,23);
+(119,'Maionese','de limão','612305618410','hellmann','Não-refrigerado','Garrafa',0.75,800,'20270123','20190105',8.99,15,28,33),
+(120,'Mostarda','comun','612305618411','hellmann','Não-refrigerado','Garrafa',0.75,700,'20270123','20190305',7.99,15,28,33),
+(121,'ketchup','Defumado','612305618412','hellmann','Não-refrigerado','Garrafa',0.75,600,'20280123','20190505',14.99,16,28,33),
+(122,'Rose','Comun','612305618413','Heinz','Não-refrigerado','Garrafa',0.75,700,'20300123','20260505',9.99,17,28,34),
+(123,'Barbecue','Especial pra churrasco','612305618414','Heinz','Não-refrigerado','Garrafa',0.75,650,'20260623','20190605',15.99,17,28,24);
+(124,'Pernil suino','carne suina','612305618415','JBS','refrigerado','Pacote',1,100,'20270123','20190105',21.99,18,15,24),
+(125,'Acem ','moido','612305618416','JBS','refrigerado','Pacote',1,100,'20270123','20190305',16.99,18,15,24),
+(126,'Costela suina','carne suina','612305618417','JBS','refrigerado','Pacote',1,100,'20280123','20190505',13.99,19,15,24),
+(127,'Peito de frango','carne de frango','612305618418','JBS','refrigerado','Pacote',1,200,'20300123','20260505',9.69,19,15,24),
+(128,'Alcatra','carne bouvina','612305618419','JBS','refrigerado','Pacote',1,150,'20260623','20190605',35.99,20,15,24),
+(129,'Maminha','carne bouvina','612305618420','JBS','refrigerado','Pacote',1,100,'20280123','20190505',29.99,21,15,24),
+(130,'File','carne bouvina','612305618421','JBS','refrigerado','Pacote',1,100,'20300123','20260505',45.99,22,15,24),
+(131,'Baccon','carne suina','612305618422','JBS','refrigerado','Pacote',1,150,'20260623','20190605',27.99,22,15,24);
+
+(132,'Carvao 5 kg','Natural','612305618423','Churascaria Bom Prato','não-refrigerado','Pacote',5,100,'20270123','20190105',9.99,25,23,29),
+(133,'carvao 3 kg','Natural','612305618424','Churascaria Bom Prato','não-refrigerado','Pacote',3,100,'20270123','20190305',6.99,25,23,29),
+(134,'Carvao 2 kg','Natural','612305618425','Carvão do Zé','não-refrigerado','Pacote',2,100,'20280123','20190505',5.99,26,23,30),
+(135,'Carvao 6 kg','Natural','612305618426','Carvão do Zé','não-refrigerado','Pacote',6,200,'20300123','20260505',11.69,26,23,30);
+
+(136,'Ração gato 1kg','Ração animal p/ felino','612305618427','Mundo Cão','não-refrigerado','Pacote',1,30,'20270123','20191103',12.59,27,22,27),
+(137,'Ração peixe 1kg','Ração animal p/ peixe','612305618428','Mundo Cão','não-refrigerado','Pacote',1,30,'20270123','20190729',11.34,27,22,27),
+
+(138,'Ração  dog 1kg','Ração animal p/ dog','612305618429','Animals','não-refrigerado','Pacote',1,30,'20280123','20190404',13.95,28,22,28),
+(139,'Ração cão 5 kg','Ração animalp/ dog','612305618430','Animals','não-refrigerado','Pacote',5,30,'20300123','20260215',35.35,28,22,28);
+(140,'Aveia','Natural','612305618431','Cereal mix','não-refrigerado','Pacote',0.9,100,'20280123','20190404',17.95,29,26,31),
+(141,'Cereais com grãos','sabor pcastanha','612305618433','cereal mix','não-refrigerado','Pacote',0.9,100,'20300123','20260215',15.35,30,26,31);
+
+select * from item;
+
+INSERT INTO item ( 
+  id_item,
+  quantidade_item,
+  valor_unitario_venda_item,
+  id_produto_item
+) SELECT DISTINCT
+  random()*800000,
+  round(random()*100), 
+  round (random()*70.29)+0.17,
+  round(random()*100)
+FROM generate_series(1,50);
+
+INSERT INTO fatura ( 
+    id_fatura,
+    numero_fiscal_fatura,
+    valor_total_fatura,
+    tributo_estadual_fatura,
+    tributo_federal_fatura,
+    forma_pg_fatura,
+    data_fatura,
+    id_cliente_fatura,
+    id_item_fatura,
+    id_supermercado_fatura,
+    id_empregado_fatura
+) SELECT
+  random()*1000000,
+  random()*700000,
+  round(random()*1000)+0.99, 
+  round (random()*70.33)+0.02,
+  round (random()*70.29)+0.03,
+  (ARRAY['Credito','Debito'])[round(random())+1],
+  now() + round(random()*1000) * '1 second'::interval,
+  random()*70,
+  1234,
+  round(random())+1,
+  round(random())+1
+FROM generate_series(1,100);
+
+UPDATE fatura SET numero_fiscal_fatura= numero_fiscal_fatura*(-1) + random()*(7000000) 
+WHERE numero_fiscal_fatura<0;
+UPDATE fatura SET id_fatura= id_fatura*304 WHERE id_fatura=2;
+
+select * From fatura;
+select * From fatura order by  (numero_fiscal_fatura);
+
+UPDATE fatura SET valor_total_fatura = tributo_estadual_fatura , tributo_estadual_fatura = 0.22
+WHERE valor_total_fatura <  tributo_estadual_fatura;
+
+select * from fatura;
+
+select data_fatura, id_fatura From fatura
+where data_fatura >  '20210730'
+ order by id_fatura;
+ 
+WHERE id_fatura>3200 and id_fatura<3600
+ order by data_fatura;
+ 
+UPDATE fatura SET data_fatura =  '20180915'
+WHERE id_fatura>89000000 and id_fatura<90000000;
+
+/*where numero_fiscal_fatura<0;
+where id_fatura<0;
+where  valor_total_fatura<0;*/
+INSERT INTO fatura ( 
+    id_fatura,
+    numero_fiscal_fatura,
+    valor_total_fatura,
+    tributo_estadual_fatura,
+    tributo_federal_fatura,
+    forma_pg_fatura,
+    data_fatura,
+    id_cliente_fatura,
+    id_item_fatura,
+    id_supermercado_fatura,
+    id_empregado_fatura
+) SELECT
+  round(CAST (random()*(900001) AS NUMERIC),3),
+  round(CAST (random() *(8000102) AS NUMERIC),1),
+  round(random()*1000)+0.55, 
+  round (random()*70.33)+0.02,
+  round (random()*70.29)+0.03,
+  (ARRAY['Dinheiro','cartao'])[round(random())+1],
+  now() + round(random()*1000) * '1 second'::interval,
+  random()+ 23,
+  round(random()+2),
+  round(random()+6),
+  round(random()+74)
+FROM generate_series(1,20);
+
+SELECT DISTINCT ano
+FROM dim_data
+ORDER BY ano
+
+INSERT INTO categoria (id_categoria,descricao)
+VALUES
+(1,'Limpeza'),
+(2,'Alimentícios'),
+(3,'Bebidas'),
+(4,'Refrigerados'),
+(5,'Lacticinios'),
+(6,'Utensílios'),
+(7,'Pets'),
+(8,'Hortifruti.');
+
+ALTER TABLE lojas RENAME  região to regiao;
+ALTER TABLE produtos RENAME  fabricação to fabricacao;
+
+INSERT INTO fornecedor (id_fornecedor, nome, endereco,bairro,regiao,cidade,estado)
+VALUES
+(1,'Vafe Piranguinho','R.Emilia','S.Vicente','Sul de Minas','Piranguinho','MG'),
+(2,'Laticinio da tia Zezé','R.Augusta','João donizzete','zona oeste','São Paulo','SP'),
+(3,'Pinho ltda','av.Bem Querer','Nazaré','zona sul','campinas','SP'),
+(4,'hortifruti vilas lobos','R.Lamin Costa','Fundao','Sul de Minas','Itajubá','MG'),
+(5,'Galo Eireli','R.joaquim dias','Pedra azul','Zona leste','São Paulo','SP'),
+(6,'Animals ltda','R.madalena','mata verde','Leste de MG','Cubatão','MG'),
+(7,'JBS ltda','R.cruzeiro','Distrito Industrial','vale paraiba','Taubaté','SP');
+
+
+
+
+CREATE TABLE cliente
+(
+id_cliente INTEGER not null
+, cpf_cliente VARCHAR(16) not null
+, primeiro_nome VARCHAR(30)not null
+, sobrenome VARCHAR(30)not null
+, endereco VARCHAR(100)not null
+, bairro VARCHAR(40)not null
+, região VARCHAR(60)not null
+, cidade VARCHAR(50)not null
+, estado VARCHAR(30)not null
+, sexo VARCHAR(10)not null
+, estado_civil VARCHAR(10)not null
+, renda double precision not null
+, credito double precision not null
+, data_nascimento date not null
+, data_primeira_compra date	not null
+,CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente)
+)
+;
+ALTER TABLE cliente RENAME  região to regiao;
+INSERT INTO cliente (id_cliente, cpf_cliente,primeiro_nome, sobrenome, endereco,
+					 bairro,regiao,cidade,estado, sexo, estado_civil,renda,
+					 credito,data_nascimento,data_primeira_compra)
+VALUES
+(1,'08250870662','Ivan','boas','r.Narizinho','São Geraldo','Sul de Minas','itajuba','MG','M','solteiro',1000.00,100.10,'23/11/1987','01/02/2020'),
+(2,'10240560402','João','Boretti','r.Almin','São Gonçalo','Sul de Minas','Itajubá','MG','M','solteiro',1000.00,500.10,'02/11/1999','03/06/2018'),
+(3,'51231132211','Maria','Costa','av. Dr. Mario','Lima','Vale Paraiba','Taubaté','SP','F','Casada',1200.00, 800.60,'05/06/1980','06/06/2015'),
+(4,'33123252865','Pedro','Costa','av. Dr. Mario','Lima','Vale Paraiba','Taubaté','SP','M','Casado',2000.00, 300.20,'25/02/1978','15/07/2016'),
+(5,'76116789043','Joana','Martyns','r. alvorada','constelçao','sul de minas','Pedralva','MG','F','Soleira',3000.00, 640.50,'08/03/1990','07/04/2017'),
+(6,'68326544132','Daniel','Reis','r. dr. willian','cidade jardin','suldesde de SP','Campinas','SP','M','solteiro',1500.00, 700.70,'05/09/1988','08/07/2020'),
+(7,'46352656377','Bruno','Gomes','r. nascente','Pedrão','zona norte','São José','SP','M','solteiro',2500.00, 250.90,'05/04/1993','01/03/2019'),
+(8,'35456553436','Joana','Paula','r. Augusta','Pitangueiras','zona Leste','São Paulo','SP','F','solteira',5500.00, 210.70,'04/02/1995','07/07/2019'),
+(9,'34343435454','Carol','cortes','r. Benedita','Geronimo','zona Sul','Rio de Janeiro','RJ','F','casada',4552.00, 689.70,'03/07/1989','09/09/2018'),
+(10,'6789340530','Leonardo','Costa','Av. Afonço','capituva','suldeste','Pouso Alegre','MG','M','solteiro',3600.00, 880.30,'09/07/1996','04/03/2020');
+
+
+INSERT INTO lojas (id_loja, nome_loja, endereco, bairro,regiao,cidade,estado,
+				   gerente,data_abertura)
+VALUES
+(1,'SuperMercado Pillar','r.Almin','São Gonçalo','Sul de Minas','Itajubá','MG','Elvis Henrique', '03/03/2017'),
+(2,'SuperMercado Rarpil','av. Dr. Mario','Lima','Vale Paraiba','Taubaté','SP','Paulo Cesar','03/07/2016'),
+(3,'SuperMercado RendeMais','av. Dr.Pedro','Lima','Vale Paraiba','campinas','SP','Gilmar vilas Lobos','07/05/2015');
+
+INSERT INTO produtos (id_produto,descricao,codigo_barras,marca,peso,validade,fabricacao,
+					  lote,id_cat_prod,id_for_prod,armazenamento,embalagem)
+VALUES
+(01,'Sabão em Pó',   '04345656454354','Ariel',1.0,'23/11/2018','04/10/2015',100,1,3,'Não Refrigerado','caixa'),
+(02,'Desinfetante',  '44565656567575','Pinho',1,'30/12/2021','05/12/2019',101,1,3,'Não Refrigerado','Litro'),
+(03,'Agua Sanitária','45454689989996','QBoa',1,'30/04/2021','06/07/2018',102,1,3,'Não Refrigerado','Litro'),
+(04,'Sabão em Pedra','76657676767664','QBoa',0.9,'07/09/2019','03/05/2017',103,1,3,'Não Refrigerado','Pacote'),
+(05,'Sabão em Po',   '88966577656651','OMO',1.5,'02/06/2021','02/04/2019',104,1,3,'Não Refrigerado','caixa'),
+
+(06,'Biscoito',  '65765764567687','Maizena',0.350,'23/09/2022','04/10/2015',110,2,1,'Não Refrigerado','pacote'),
+(07,'Café',      '66676754565654','Piranguinho',0.5,'23/11/2021','05/11/2016',111,2,1,'Não Refrigerado','pacote'),
+(08,'Bolacha',   '74535678890075','Maizena',0.400,'13/10/2021','08/05/2017',112,2,1,'Não Refrigerado','pacote'),
+(09,'Oleo',      '13234454687043','Liza',1,'06/01/2022','24/03/2018',113,2,5,'Não Refrigerado','litro'),
+(10,'Macarrão',  '90878766765632','Galo',1,'04/11/2021','22/03/2017',114,2,5,'Não Refrigerado','pacote'),
+(11,'Molho',     '88765456580990','Elefante',0.150,'07/11/2020','28/02/2018',115,2,5,'Não Refrigerado','pacote'),
+(12,'Trigo',     '56576878090643','Dona Benta',1,'25/05/2022','30/11/2019',116,2,5,'Não Refrigerado','pacote'),
+
+(13,'Leite',     '54565767687865','Itambé',1,'23/11/2022','04/10/2021',120,2,1,'Refrigerado','caixa'),
+(14,'Manteiga',  '09343345446764','Qualy',0.5,'03/04/2019','04/10/2018',121,2,1,'Refrigerado','pacote'),
+(15,'Iorgute',    '21212234545667','Danone',1,'05/11/2021','04/10/2020',122,2,1,'Refrigerado','pacote'),
+(16,'Queijo',    '51345676887865','carvalho',0.5,'01/11/2018','04/10/2017',123,2,1,'Refrigerado','pacote'),
+
+(17,'vinho',    '678776576768890','beloto',1,'01/11/2021','04/10/2017',130,3,7,'Não Refrigerado','litro'),
+(18,'cerveja',  '436576885653345','itaipava',1,'03/03/2022','08/09/2016',130,3,7,'Não Refrigerado','litro'),
+(19,'cerveja',  '675445433567788','skol',1,'01/10/2020','23/11/2015',130,3,7,'Não Refrigerado','litro'),
+(20,'cerveja',  '543657688565432','Devassa',1,'03/09/2019','08/09/2016',130,3,7,'Não Refrigerado','litro'),
+(21,'cerveja',  '785445476677837','antartica',1,'01/11/2021','23/11/2067',130,3,7,'Não Refrigerado','litro'),
+(22,'refrigerante coca',     '454546576654395','coca cola',1,'01/04/2018','06/05/2017',130,3,7,'Não Refrigerado','litro'),
+(23,'refrigente fanta',      '154546576654350','Mantiqueira',1,'01/02/2018','08/03/2017',130,3,7,'Não Refrigerado','litro'),
+(24,'refrigerante guarana',  '454546545354395','aruba',1,'01/04/2018','04/09/2017',130,3,7,'Não Refrigerado','litro'),
+(25,'guarana',  '454546576654395','aruba',1,'01/04/2018','04/05/2017',130,3,7,'Não Refrigerado','litro');
+
+CREATE TABLE public.itens
+(
+    id_item integer NOT NULL,
+    qtd_item integer NOT NULL,
+    valor_produto double precision NOT NULL,
+    valor_venda double precision NOT NULL,
+    id_prod_item integer NOT NULL,
+    CONSTRAINT pk_id_item PRIMARY KEY (id_item),
+    CONSTRAINT itens_id_prod_item_fkey FOREIGN KEY (id_prod_item)
+        REFERENCES public.produtos (id_produto) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.itens
+    OWNER to postgres;
+
+INSERT INTO itens(id_item, qtd_item, valor_produto,valor_venda,id_prod_item)
+VALUES
+(1,2,3.3,6.6,11),
+(2,1,5.2,5.2,19),
+(3,1,4.9,4.9,20),
+(4,4,5,20,21),
+(5,1,19.99,19.99,17),
+(6,1,7.99,7.99,22),
+(7,1,6.99,6.99,23),
+(8,1,5.99,5.99,24),
+(9,1,5.80,5.80,25),
+(10,1,9.99,9.99,07),
+
+(11,2,12,24,05),
+(12,2,4.5,9,03),
+(13,1,8.9,8.9,01),
+(14,3,1,3,04),
+(15,2,4.2,8.4,02),
+
+(16,1,8.99,9.99,06),
+(17,2,7,14,07),
+(18,1,6.99,6.99,09),
+(19,1,2.70,2.70,10),
+(20,1,4.99,4.99,12),
+
+(21,1,2,2,13),
+(22,1,3.5,3.5,14),
+(23,2,6,12,15),
+(24,1,12,12,16),
+(25,1,4.99,4.99,12);
+
+CREATE TABLE public.faturas
+(
+    id_fatura integer NOT NULL,
+    data_fatura date NOT NULL,
+    valor_fat double precision NOT NULL,
+    valor_icms double precision NOT NULL,
+    forma_pg character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    id_cliente_fat integer NOT NULL,
+    id_itens_fat integer NOT NULL,
+    id_lojas_fat integer NOT NULL,
+    id_empregado_fat integer NOT NULL,
+    CONSTRAINT pk_id_fatura PRIMARY KEY (id_fatura),
+    CONSTRAINT faturas_id_cliente_fat_fkey FOREIGN KEY (id_cliente_fat)
+        REFERENCES public.cliente (id_cliente) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT faturas_id_empregado_fat_fkey FOREIGN KEY (id_empregado_fat)
+        REFERENCES public.empregado (id_empregado) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT faturas_id_itens_fat_fkey FOREIGN KEY (id_itens_fat)
+        REFERENCES public.itens (id_item) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT faturas_id_lojas_fat_fkey FOREIGN KEY (id_lojas_fat)
+        REFERENCES public.lojas (id_loja) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.faturas
+    OWNER to postgres;
+
+INSERT INTO faturas (id_fatura, data_fatura, valor_fat, valor_icms,
+					forma_pg, id_cliente_fat,id_itens_fat,id_lojas_fat,id_empregado_fat)
+					
+VALUES
+(01,'01/02/2021',100.00,12.5,'dinheiro',1,1,1,1),
+(02,'01/03/2021',200.90,24.1,'cartão',2,1,2,1),
+(03,'15/03/2021',500.90,33.1,'cartão',2,2,2,1),
+(04,'30/05/2021',400.70,27.5,'cartão',2,3,2,1),
+(05,'01/03/2021',250.00,24,'dinheiro',1,2,1,1),
+(06,'05/03/2021',50.00,5,'dinheiro',1,3,1,1),
+(07,'05/05/2021',30.00,3,'dinheiro',1,5,1,1),
+(08,'01/02/2021',600.00,50,'dinheiro',3,4,3,1),
+(09,'01/04/2021',550.00,49,'dinheiro',3,1,3,1),
+(10,'10/04/2021',200.00,24.1,'cartao',3,3,3,1),
+
+(11,'01/02/2019',100.00,12.5,'dinheiro',1,4,1,1),
+(12,'01/03/2019',200.90,24.1,'cartão',2,3,2,1),
+(13,'15/03/2019',500.90,33.1,'cartão',2,5,2,1),
+(14,'30/05/2019',400.70,27.5,'cartão',2,6,2,1),
+(15,'01/03/2019',250.00,24,'dinheiro',1,7,1,1),
+(16,'05/03/2019',50.00,5,'dinheiro',1,8,1,1),
+(17,'05/05/2019',30.00,3,'dinheiro',1,9,1,1),
+(18,'01/02/2019',600.00,50,'dinheiro',3,10,3,1),
+(19,'01/04/2019',550.00,49,'dinheiro',3,11,3,1),
+(20,'10/04/2019',200.00,24.1,'cartao',3,12,3,1),
+
+(21,'01/12/2018',100.00,12.5,'cartão',2,4,2,1),
+(22,'01/04/2018',200.90,24.1,'cartão',2,3,2,1),
+(23,'15/07/2018',500.90,33.1,'cartão',3,5,3,1),
+(24,'30/05/2018',400.70,27.5,'cartão',4,6,3,1),
+(25,'01/06/2018',250.00,24,'dinheiro',5,7,3,1),
+(26,'05/03/2018',50.00,5,'dinheiro',10,8,3,1),
+(27,'05/05/2018',30.00,3,'dinheiro',10,9,3,1),
+(28,'01/12/2018',600.00,50,'dinheiro',9,10,3,1),
+(29,'01/01/2018',550.00,49,'dinheiro',9,11,3,1),
+(30,'10/11/2018',200.00,24.1,'cartao',8,12,3,1),
+
+(31,'01/09/2020',70.00,7,'cartão',8,17,3,1),
+(32,'01/02/2020',200.90,24.1,'cartão',8,18,3,1),
+(33,'15/08/2020',900.90,55.7,'cartão',8,20,3,1),
+(34,'30/08/2020',600.70,50,'cartão',9,15,3,1),
+(35,'01/07/2020',255.00,24,'dinheiro',9,10,3,1),
+(36,'05/05/2020',57.00,5,'dinheiro',10,23,3,1),
+(37,'05/04/2020',38.00,3,'dinheiro',10,20,3,1),
+(38,'01/11/2020',688.00,50,'dinheiro',9,22,3,1),
+(39,'01/11/2020',750.00,49,'dinheiro',9,24,3,1),
+(40,'10/10/2020',2650.00, 24.1,'cartao',8,19,3,1),
+
+(41,'15/09/2020',70.00,7,'cartão',7,17,2,1),
+(42,'14/07/2020',200.90,24.1,'cartão',8,18,3,1),
+(43,'25/07/2020',900.90,55.7,'cartão',7,20,3,1),
+(44,'05/04/2020',600.70,50,'cartão',4,15,1,1),
+(45,'01/07/2020',255.00,24,'dinheiro',5,10,3,1),
+(46,'06/05/2020',57.00,5,'dinheiro',6,23,2,1),
+(47,'08/04/2020',38.00,3,'dinheiro',7,20,3,1),
+(48,'15/01/2020',688.00,50,'dinheiro',3,22,1,1),
+(49,'11/01/2020',750.00,49,'dinheiro',4,24,1,1),
+(50,'04/10/2020',2650.00, 24.1,'cartao',5,19,3,1),
+
+(51,'15/09/2020',70.00,7,'cartão',6,09,2,1),
+(52,'14/07/2020',200.90,24.1,'cartão',6,13,2,1),
+(53,'25/07/2020',900.90,55.7,'cartão',6,17,2,1),
+(54,'05/04/2020',600.70,50,'cartão',8,13,3,1),
+(55,'01/07/2020',255.00,24,'dinheiro',4,20,2,1),
+(56,'06/05/2019',57.00,5,'dinheiro',4,19,2,1),
+(57,'08/04/2020',38.00,3,'dinheiro',4,14,3,1),
+(58,'15/01/2021',688.00,50,'dinheiro',5,13,1,1),
+(59,'11/01/2021',750.00,49,'dinheiro',5,11,1,1),
+(60,'04/10/2020',2650.00, 24.1,'cartao',5,10,3,1);
+
+CREATE TABLE public.empregado
+(
+    id_empregado integer NOT NULL,
+    cpf_empregado character varying(16) COLLATE pg_catalog."default" NOT NULL,
+    primeiro_nome character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    sobrenome character varying(30) COLLATE pg_catalog."default" NOT NULL,
+	funcao character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    endereco character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    bairro character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    regiao character varying(60) COLLATE pg_catalog."default" NOT NULL,
+    cidade character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    estado character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    sexo character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    estado_civil character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    salario double precision NOT NULL,
+	comissao double precision NOT NULL,
+    data_nascimento date NOT NULL,
+	id_loja_empregado integer NOT NULL,
+    CONSTRAINT pk_id_empregado PRIMARY KEY (id_empregado),
+    CONSTRAINT empregado_id_loja_empregado_fkey FOREIGN KEY (id_loja_empregado)
+        REFERENCES public.lojas (id_loja) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.cliente
+    OWNER to postgres;
+
+INSERT INTO empregado (id_empregado, cpf_empregado, primeiro_nome, sobrenome,
+					   funcao, endereco,bairro,regiao,cidade,estado,sexo, 
+					   estado_civil,salario,comissao,data_nascimento,
+					   id_loja_empregado)
+					
+VALUES
+(01,'03459328943','Gustavo','Pontes','vendedor','r. dr Luiz fontes','varginha','Sul de minas','itajuba','mg','M','solteiro',120.00,100.0,'10/03/2000',2);

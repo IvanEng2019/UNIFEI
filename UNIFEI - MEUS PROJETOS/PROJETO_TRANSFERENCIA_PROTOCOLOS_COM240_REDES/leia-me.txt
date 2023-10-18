@@ -1,0 +1,71 @@
+===================================================================================================
+ROJETO DE COM240 - REDES DE COMPUTADORES 
+IMPLEMENTAÇÃO DE PROTOCOLOS DE SEGURANÇA PARA TRANSFERÊNCIA DE ARQUIVOS COM UTILIZAÇÃO DO SOCKETS
+====================================================================================================
+
+*************************************************************************************
+*                                  Trabalho 2 - UDP                                 *
+*************************************************************************************
+
+------------------------------------ Aluno ------------------------------------
+- 2018009073 Ivan Leoni Vilas Boas
+-------------------------------------------------------------------------------------
+
+---------------------------- Estrutura dos arquivos ---------------------------------
+- ce.c    : cliente responsável pelo envio do arquivo
+- cr.c    : cliente responsável pelo recebimento do arquivo
+- serv.c  : servidor com repositório da localização do arquivo
+-------------------------------------------------------------------------------------
+
+----------------------------------- Considerações -----------------------------------
+- O código foi desenvolvido utilizando da bliblioteca "winsock2".
+- Portanto sua compatibilidade se limita ao sistema operacional Windows.
+- 
+- Todos os programas executáveis devem estar na mesma máquina.
+- 
+- O sistema tem uma ordem de execução, para seu correto funcionamento.
+- Essa ordem pode ser vista na seção "Instruções para execução".
+- 
+- Os executáveis podem solicitar a concessão acesso, em qualquer
+- momento de sua execução.
+- 
+- Os arquivos a serem transferidos, devem estar dentro da pasta "envia".
+-------------------------------------------------------------------------------------
+
+------------------------------ Instruções para compilação ---------------------------
+- 1º Instalar o compilador de C, MinGW. Seu download pode ser efetuado nesse link:
+-   https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
+-
+- 2º Acesse, pelo terminal de comando, a pasta que contêm os três códigos,
+-   no diretório raiz (Trabalho Redes/) e execute os comandos a seguir:
+-   gcc servidor/serv.c -o servidor/serv -l ws2_32
+-   gcc envia/ce.c -o envia/ce -l ws2_32
+-   gcc recebe/cr.c -o recebe/cr -l ws2_32
+-
+- Os três arquivos executáveis foram gerados, dentro de suas respectivas pastas.
+-------------------------------------------------------------------------------------
+
+------------------------------ Instruções para execução -----------------------------
+- 1º Execute os três arquivos gerados: ce.exe, cr.exe e serv.exe
+- 
+- 2º Inicialmente, o servidor não tem o repositório.
+-   Para gerar esse repositório, no executável do "servidor", escolha a opção 1.
+-   Após isso, o repositório irá ser criado e adicionará a informação, apontando
+-   para o arquivo "musica.mp3", alocado previamente para simplificar o teste.
+- 
+- Observação: Caso escolha a opção 2 (inserir no repositório manualmente),
+-   adicione os arquivos na pasta "envia".
+-   Também é necessário colocar na porta "1033" e IP "127.0.0.1".
+- 
+- 3º No executável do "recebe", digite o nome do arquivo com a extensão.
+-   Seguindo o nosso teste, digite: musica.mp3
+-
+- 4º Confira o "servidor" escutando, e observe a transferência do
+-   cliente "envia" para o cliente "recebe".
+- 
+- Observação: O tempo de espera varia dependendo do tamanho do arquivo.
+-
+- Observação: O servidor processa uma série de 5 pedidos e, na sequência,
+-   pergunta se o usuário deseja continuar transferindo ou não.
+-   Isso permite que ele volte ao "Menu de Opções" do "servidor". 
+-------------------------------------------------------------------------------------
