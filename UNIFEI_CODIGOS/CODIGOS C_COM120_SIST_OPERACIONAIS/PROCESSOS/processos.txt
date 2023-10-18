@@ -1,0 +1,129 @@
+Criação de processos em Unix
+A criação de processos em UNIX é 
+feita através das chamadas de sistema fork e execve. 
+Estes exercícios têm por objetivos mostrar exemplos do 
+uso dessas chamadas e estimular o aluno a compreender sua dinâmica.
+
+Exercício 1
+Dado o programa fork.c a seguir:
+
+fork.c
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+ 
+int main ()
+{
+   int retval ;
+ 
+   printf ("Ola, sou o processo %5d\n", getpid()) ;
+ 
+   retval = fork () ;
+ 
+   printf ("[retval: %5d] sou %5d, filho de %5d\n",
+           retval, getpid(), getppid()) ;
+ 
+   if ( retval < 0 )
+   {
+      perror ("Erro") ;
+      exit (1) ;
+   }
+   else
+      if ( retval > 0 )
+         wait (0) ;
+      else
+         sleep (5) ;
+ 
+   printf ("Tchau de %5d!\n", getpid()) ;
+ 
+   exit (0) ;
+}
+Analise seu código e o comente detalhadamente.
+Desenhe o diagrama de tempo de sua execução.
+Exercício 2
+Dado o programa fork-execve.c a seguir:
+
+fork-execve.c
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+ 
+int main (int argc, char *argv[], char *envp[])
+{
+   int retval ;
+ 
+   printf ("Ola, sou o processo %5d\n", getpid()) ;
+ 
+   retval = fork () ;
+ 
+   printf ("[retval: %5d] sou %5d, filho de %5d\n",
+           retval, getpid(), getppid()) ;
+ 
+   if ( retval < 0 )
+   {
+      perror ("Erro: ") ;
+      exit (1) ;
+   }
+   else 
+      if ( retval > 0 )
+         wait (0) ;
+      else
+      {
+         execve ("/bin/date", argv, envp) ;
+         perror ("Erro") ;
+      }
+ 
+   printf ("Tchau de %5d!\n", getpid()) ;
+ 
+   exit (0) ;
+}
+Analise seu código e o comente detalhadamente.
+Desenhe o diagrama de tempo de sua execução.
+O que ocorre se o programa a ser executado por execve não existir? Desenhe o diagrama de tempo que retrata essa situação.
+Exercício 3
+Dado o programa fork-print.c a seguir:
+
+fork-print.c
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+ 
+int main ()
+{
+   int retval, x ;
+ 
+   x = 0 ;
+ 
+   retval = fork () ;
+ 
+   printf ("No processo %5d x vale %d\n", getpid(), x) ;
+ 
+   if ( retval < 0 )
+   {
+      perror ("Erro") ;
+      exit (1) ;
+   }
+   else
+      if ( retval > 0 )
+      {
+         x = 0 ;
+         wait (0) ;
+      }
+      else
+      {
+         x++ ;
+         sleep (5) ;
+      }
+ 
+   printf ("No processo %5d x vale %d\n", getpid(), x) ;
+ 
+   exit (0) ;
+}
+Analise seu código e o comente detalhadamente.
+Desenhe o diagrama de tempo de sua execução, indicando a evolução do valor da variável x.
