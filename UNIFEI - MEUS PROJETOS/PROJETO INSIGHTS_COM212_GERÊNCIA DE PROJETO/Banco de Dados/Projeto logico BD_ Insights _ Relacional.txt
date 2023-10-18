@@ -1,0 +1,51 @@
+CREATE TABLE Client (
+    id_client BIGINT NOT NULL PRIMARY KEY,
+    name_client VARCHAR(150) NOT NULL,
+    cpf BIGINT NOT NULL unique,
+    email VARCHAR(50) NOT NULL,
+    celular VARCHAR(15) NOT NULL,
+    rua VARCHAR(100) NOT NULL,
+    bairro VARCHAR(60) NOT NULL,
+    complemento VARCHAR(150),
+    cidade VARCHAR(60) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    obs VARCHAR(50),
+    user_client VARCHAR(50) unique NOT NULL,
+    password_client VARCHAR(12) unique NOT NULL
+);
+
+create table Advisor(
+    id_advisor BIGINT NOT NULL PRIMARY KEY,
+    name_advisor VARCHAR(150) NOT NULL,
+    cpf BIGINT  unique NOT NULL,
+    email VARCHAR(50) NOT NULL,
+	celular VARCHAR(15) NOT NULL,
+    rua VARCHAR(100) NOT NULL,
+    bairro VARCHAR(60) NOT NULL,
+    complemento VARCHAR(60),
+    cidade VARCHAR(60) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    birth date NOT NULL,    
+    salary money NOT NULL,
+    work_code BIGINT NOT NULL unique,
+    cvm_code BIGINT NOT NULL unique,
+    user_advisor VARCHAR(50) unique NOT NULL,
+    password_advisor VARCHAR(12) unique NOT NULL
+);
+    
+create table Portfolio(
+    id_portfolio BIGINT NOT NULL PRIMARY KEY,
+    id_client BIGINT NOT NULL,
+    id_advisor BIGINT NOT NULL,
+	FOREIGN KEY (id_client) REFERENCES Client (id_client),
+	FOREIGN KEY (id_advisor) REFERENCES Advisor (id_advisor)
+);
+
+create table Product(
+    name_product BIGINT NOT NULL PRIMARY KEY,
+    id_portfolio BIGINT NOT NULL,
+    proportion numeric NOT NULL,
+	FOREIGN KEY (id_portfolio) REFERENCES Portfolio (id_portfolio)
+);
