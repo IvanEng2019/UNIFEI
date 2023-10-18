@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><CDADescriptor>
+  <DataSources>
+    <Connection id="mod" type="sql.jdbc">
+      <Driver>postgresql</Driver>
+      <Pass>docker</Pass>
+      <Url>jdbc:postgresql://pg_test:5432/postgres</Url>
+      <User>docker</User>
+    </Connection>
+    <Connection id="qtd" type="sql.jdbc">
+      <Driver>postgresql</Driver>
+      <Pass>docker</Pass>
+      <Url>jdbc:postgresql://pg_test:5432/postgres</Url>
+      <User>docker</User>
+    </Connection>
+    <Connection id="fat" type="sql.jdbc">
+      <Driver>postgresql</Driver>
+      <Pass>docker</Pass>
+      <Url>jdbc:postgresql://pg_test:5432/postgres</Url>
+      <User>docker</User>
+    </Connection>
+    <Connection id="vendedores" type="sql.jdbc">
+      <Driver>postgresql</Driver>
+      <Pass>docker</Pass>
+      <Url>jdbc:postgresql://pg_test:5432/postgres</Url>
+      <User>docker</User>
+    </Connection>
+  </DataSources>
+  <DataAccess access="public" connection="mod" id="mod" type="sql">
+    <Name>mod</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[select i.modelo, sum(f.quantidade) as fat from fato_pedidos f
+join dim_instrumento i on f.instrumento_sk = i.instrumento_sk
+group by i.modelo]]></Query>
+  </DataAccess>
+  <DataAccess access="public" connection="qtd" id="qtd" type="sql">
+    <Name>qtd</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[select i.marca, sum(f.quantidade) as fat from fato_pedidos f
+join dim_instrumento i on f.instrumento_sk = i.instrumento_sk
+group by i.marca]]></Query>
+  </DataAccess>
+  <DataAccess access="public" connection="fat" id="fat" type="sql">
+    <Name>fat</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[select i.categoria, sum(f.quantidade * f.preco_unitario) as fat from fato_pedidos f
+join dim_instrumento i on f.instrumento_sk = i.instrumento_sk
+group by i.categoria]]></Query>
+  </DataAccess>
+  <DataAccess access="public" connection="vendedores" id="vendedores" type="sql">
+    <Name>vendedores</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[select p.nome, sum(f.quantidade * f.preco_unitario) as fat from fato_pedidos f
+join dim_pessoa p on f.vendedor_sk = p.pessoa_sk
+group by p.nome
+order by fat desc]]></Query>
+  </DataAccess>
+</CDADescriptor>

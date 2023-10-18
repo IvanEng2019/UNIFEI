@@ -1,0 +1,62 @@
+<Schema name="New Schema1">
+  <Cube name="InstrumentosMusicais" visible="true" cache="true" enabled="true">
+    <Table name="fato_pedidos" schema="public" alias="">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="cliente_sk" name="Cliente">
+      <Hierarchy visible="true" hasAll="true" primaryKey="pessoa_sk">
+        <Table name="dim_pessoa" schema="public" alias="">
+        </Table>
+        <Level name="Nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="data_sk" name="Data">
+      <Hierarchy visible="true" hasAll="true" primaryKey="data_sk">
+        <Table name="dim_data" schema="public" alias="">
+        </Table>
+        <Level name="Ano" visible="true" column="ano" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="M&#234;s" visible="true" column="m&#234;s" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Dia" visible="true" column="dia" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Data" visible="true" column="data" type="Date" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="instrumento_sk" name="Instrumento">
+      <Hierarchy visible="true" hasAll="true" primaryKey="instrumento_sk">
+        <Table name="dim_instrumento" schema="public" alias="">
+        </Table>
+        <Level name="Categoria" visible="true" column="categoria" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Subcategoria" visible="true" column="subcategoria" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Marca" visible="true" column="marca" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Modelo" visible="true" column="modelo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="vendedor_sk" name="Vendedor">
+      <Hierarchy visible="true" hasAll="true" primaryKey="pessoa_sk">
+        <Table name="dim_pessoa" schema="public" alias="">
+        </Table>
+        <Level name="Nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="Pedido">
+      <Hierarchy visible="true" hasAll="true" primaryKey="pedido_id_oltp">
+        <Level name="Pedido" visible="true" column="pedido_id_oltp" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Quantidade" column="quantidade" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Pre&#231;o Unit&#225;rio" column="preco_unitario" datatype="Numeric" formatString="#.###,00" aggregator="avg" visible="true">
+    </Measure>
+    <CalculatedMember name="Total" formatString="#.###,00" formula="[measures] [quantidade] * [measures] [preco_unitario]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+</Schema>
