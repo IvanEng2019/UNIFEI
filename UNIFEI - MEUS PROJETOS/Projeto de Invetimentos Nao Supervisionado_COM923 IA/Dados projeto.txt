@@ -1,0 +1,15 @@
+PROJETO DE INVENTIMENTOS:
+
+APRENDIZADO NÃO-SUPERVISIONADO.
+
+Disciplina COM923-Tópicos espciais em inteligencia artificial
+
+Descrição:
+Realizar a classificação dos variados tipos investimentos 
+Utilizando os algoritmos OPTICS e principlamente o Agglomerative e o kmeans 
+
+Ojetivo: Realizar a classificação dos ativos para definir um perfil dos investimentos (e nao dos investidores)
+para assim possibilitar a diversificação da carteira dos investidores (independente do perfil do investidor)
+com os mais diversos tipos de invetimentos, mas com base na sua classificação (caracteriticas).
+
+Equipe: Adriel, Ivan e Lucas
