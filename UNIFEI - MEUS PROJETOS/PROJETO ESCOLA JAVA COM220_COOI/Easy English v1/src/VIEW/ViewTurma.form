@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="jbgpSemestre">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="jbgpCurso">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jtbpTurmaView" min="-2" pref="800" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jtbpTurmaView" min="-2" pref="600" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="jtbpTurmaView">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[800, 600]"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jpnlVisualizar">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="VISUALIZAR">
+                <Property name="tabTitle" type="java.lang.String" value="VISUALIZAR"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jlblStatusVisual" min="-2" max="-2" attributes="0"/>
+                          <Component id="jpnlContainerTurmaView" max="32767" attributes="0"/>
+                          <Component id="jlblTodasTurmas" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="386" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="399" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jpnlContainerTurmaView" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="jlblTodasTurmas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="168" max="-2" attributes="0"/>
+                      <EmptySpace pref="61" max="32767" attributes="0"/>
+                      <Component id="jlblStatusVisual" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jpnlContainerTurmaView">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jbtnAnterior" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jbtnProx" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jlblAtualView" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jlblAtual" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jlblTotalView" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jlblTotal" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jlblCodVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblSemestreVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblAnoVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblMaxVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblHorarioVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblCursoVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblPeriodoVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblResponsavelVisual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlblQuantidadeAtual" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jlblQuantidade" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jlblRespons" max="32767" attributes="0"/>
+                                          <Component id="jlblPeriod" pref="139" max="32767" attributes="0"/>
+                                          <Component id="jlblCurs" max="32767" attributes="0"/>
+                                          <Component id="jlblHorarioView" max="32767" attributes="0"/>
+                                          <Component id="jlblMax" max="32767" attributes="0"/>
+                                          <Component id="jlblSemestre" max="32767" attributes="0"/>
+                                          <Component id="jlblCod" max="32767" attributes="0"/>
+                                          <Component id="jlblAno" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jbtnAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbtnProx" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblAtualView" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblAtual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblTotalView" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblCodVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblCod" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblSemestreVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblAnoVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblAno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblQuantidadeAtual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblMaxVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblMax" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblHorarioVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblHorarioView" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblCursoVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblCurs" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblPeriodoVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblPeriod" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblResponsavelVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblRespons" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jlblCodVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CODIGO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblSemestreVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="SEMESTRE"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblAnoVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ANO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblMaxVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CAPACIDADE"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblHorarioVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="HORARIO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblCursoVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CURSO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblPeriodoVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="PERIODO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblResponsavelVisual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="RESPONSAVEL"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblCod">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblSemestre">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblAno">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblMax">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblHorarioView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblCurs">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblPeriod">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblRespons">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jbtnAnterior">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ANT"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnAnteriorActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="jbtnProx">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="PROX"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnProxActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblAtualView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ATUAL"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblAtual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblTotalView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="TOTAL"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblTotal">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblQuantidadeAtual">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="QUANTIDADE"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblQuantidade">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CARREGAR..."/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jlblStatusVisual">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="UTILZE ESSA TELA PARA VISUALIZAR TODAS AS TURMAS NO SISTEMA"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="jlstTodasTurmas">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jlstTodasTurmasValueChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jlstTodasTurmas.setSelectedIndex(0);"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList(dlmTurmaView)"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="carregaTurmas();"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jlblTodasTurmas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="TODAS AS TURMAS"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jpnlContainerAdicionar">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="CADASTRAR">
+                <Property name="tabTitle" type="java.lang.String" value="CADASTRAR"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jpnlContainerDadosTurma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="353" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jpnlContainerDadosTurma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="226" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jpnlContainerDadosTurma">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jlblCodigoView" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jlblCodigo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jlblSemestreView" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlblAnoView" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlbMax" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlblCurso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jlblDiaView" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jcbbDia" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jcbbMatVesNot" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jrdbPrimeiro" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jrdbSegundo" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="jlblHorario" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jcbx1" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jcbx2" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jcbx3" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jcbx4" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="jrdbKids" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jrdbRegular" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jlblPeriodoView" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jcbbPeriodo" max="32767" attributes="0"/>
+                                                      <Component id="jcbx5" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                              <Component id="jtxtMax" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                              <Component id="jtxtAno" min="-2" pref="87" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jlblProfResp" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="jcbbProfResponsavel" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jlblStatus" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jbtnDescartar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jbtnSalvar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jbtnCadastrar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblCodigoView" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblSemestreView" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jrdbSegundo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jrdbPrimeiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblAnoView" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtAno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlbMax" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtMax" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblDiaView" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbbDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbbMatVesNot" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblHorario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbx1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbx2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbx3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbx4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbx5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jrdbKids" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jrdbRegular" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbbPeriodo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblPeriodoView" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlblProfResp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbbProfResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jbtnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbtnDescartar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jlblCodigoView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CODIGO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblSemestreView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="SEMESTRE"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblAnoView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ANO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlbMax">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CAPACIDADE MAXIMA"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblDiaView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="DIA"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblCodigo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CODIGO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jrdbSegundo">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="jbgpSemestre"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="SEGUNDO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jrdbPrimeiro">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="jbgpSemestre"/>
+                    </Property>
+                    <Property name="selected" type="boolean" value="true"/>
+                    <Property name="text" type="java.lang.String" value="PRIMEIRO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jtxtAno">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ANO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jtxtMax">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CAPACIDADE MAX"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jcbbDia">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="6">
+                        <StringItem index="0" value="Segunda"/>
+                        <StringItem index="1" value="Ter&#xe7;a"/>
+                        <StringItem index="2" value="Quarta"/>
+                        <StringItem index="3" value="Quinta"/>
+                        <StringItem index="4" value="Sexta"/>
+                        <StringItem index="5" value="Sabado"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jcbbMatVesNot">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="3">
+                        <StringItem index="0" value="Matutino"/>
+                        <StringItem index="1" value="Vespetino"/>
+                        <StringItem index="2" value="Noturno"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcbx1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcbx2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcbx3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="3"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcbx4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="4"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcbx5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="5"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jbtnCadastrar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnCadastrarActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblCurso">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CURSO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblProfResp">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="RESPONSAVEL"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jcbbProfResponsavel">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jrdbKids">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="jbgpCurso"/>
+                    </Property>
+                    <Property name="selected" type="boolean" value="true"/>
+                    <Property name="text" type="java.lang.String" value="Kids"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jrdbKidsStateChanged"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jrdbRegular">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="jbgpCurso"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Regular"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jcbbPeriodo">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="6">
+                        <StringItem index="0" value="1"/>
+                        <StringItem index="1" value="2"/>
+                        <StringItem index="2" value="3"/>
+                        <StringItem index="3" value="4"/>
+                        <StringItem index="4" value="5"/>
+                        <StringItem index="5" value="6"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblPeriodoView">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="PERIODO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblHorario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="HORARIO"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jlblStatus">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Preencha todos os dados."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jbtnSalvar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="SALVAR"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSalvarActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="jbtnDescartar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="DESCARTAR"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnDescartarActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

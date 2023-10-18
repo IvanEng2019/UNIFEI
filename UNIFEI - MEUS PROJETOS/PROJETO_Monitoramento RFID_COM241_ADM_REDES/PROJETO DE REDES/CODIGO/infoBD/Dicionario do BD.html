@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://localhost/phpmyadmin/db_datadict.php?db=redes&goto=db_structure.php -->
+<html lang="pt" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  
+  <link rel="icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" type="text/css" href="./Dicionario do BD_files/print.css">
+    <title>Vista de impressão - phpMyAdmin 5.0.3</title>
+    <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery.min.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery-migrate.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/whitelist.php"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/sprintf.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/ajax.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/keyhandler.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/bootstrap.bundle.min.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery-ui.min.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/js.cookie.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery.mousewheel.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery.event.drag-2.2.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery.validate.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery-ui-timepicker-addon.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery.ba-hashchange-1.3.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/jquery.debounce-1.0.5.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/menu_resizer.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/cross_framing_protection.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/rte.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/tracekit.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/error_report.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/messages.php"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/config.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/doclinks.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/functions.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/navigation.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/indexes.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/common.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/page_settings.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/drag_drop_import.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/shortcuts_handler.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/codemirror.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/sql.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/runmode.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/show-hint.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/sql-hint.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/lint.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/sql-lint.js.baixados"></script>
+  <script data-cfasync="false" type="text/javascript" src="./Dicionario do BD_files/console.js.baixados"></script>
+
+<script data-cfasync="false" type="text/javascript">
+// <![CDATA[
+CommonParams.setAll({common_query:"",opendb_url:"db_structure.php",lang:"pt",server:"1",table:"",db:"redes",token:"3763227e2728766d286b6064324f2e3f",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Procurar",pma_text_left_default_tab:"Estrutura",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"P",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:false,rootPath:"/phpmyadmin/",arg_separator:"&",PMA_VERSION:"5.0.3",auth_type:"config",user:"root"});
+ConsoleEnterExecutes=false
+
+AJAX.scriptHandler
+  .add('vendor/jquery/jquery.min.js', 0)
+  .add('vendor/jquery/jquery-migrate.js', 0)
+  .add('whitelist.php', 1)
+  .add('vendor/sprintf.js', 1)
+  .add('ajax.js', 0)
+  .add('keyhandler.js', 1)
+  .add('vendor/bootstrap/bootstrap.bundle.min.js', 1)
+  .add('vendor/jquery/jquery-ui.min.js', 0)
+  .add('vendor/js.cookie.js', 1)
+  .add('vendor/jquery/jquery.mousewheel.js', 0)
+  .add('vendor/jquery/jquery.event.drag-2.2.js', 0)
+  .add('vendor/jquery/jquery.validate.js', 0)
+  .add('vendor/jquery/jquery-ui-timepicker-addon.js', 0)
+  .add('vendor/jquery/jquery.ba-hashchange-1.3.js', 0)
+  .add('vendor/jquery/jquery.debounce-1.0.5.js', 0)
+  .add('menu_resizer.js', 1)
+  .add('cross_framing_protection.js', 0)
+  .add('rte.js', 1)
+  .add('vendor/tracekit.js', 1)
+  .add('error_report.js', 1)
+  .add('messages.php', 0)
+  .add('config.js', 1)
+  .add('doclinks.js', 1)
+  .add('functions.js', 1)
+  .add('navigation.js', 1)
+  .add('indexes.js', 1)
+  .add('common.js', 1)
+  .add('page_settings.js', 1)
+  .add('drag_drop_import.js', 1)
+  .add('shortcuts_handler.js', 1)
+  .add('vendor/codemirror/lib/codemirror.js', 0)
+  .add('vendor/codemirror/mode/sql/sql.js', 0)
+  .add('vendor/codemirror/addon/runmode/runmode.js', 0)
+  .add('vendor/codemirror/addon/hint/show-hint.js', 0)
+  .add('vendor/codemirror/addon/hint/sql-hint.js', 0)
+  .add('vendor/codemirror/addon/lint/lint.js', 0)
+  .add('codemirror/addon/lint/sql-lint.js', 0)
+  .add('console.js', 1)
+;
+$(function() {
+        AJAX.fireOnload('whitelist.php');
+      AJAX.fireOnload('vendor/sprintf.js');
+        AJAX.fireOnload('keyhandler.js');
+      AJAX.fireOnload('vendor/bootstrap/bootstrap.bundle.min.js');
+        AJAX.fireOnload('vendor/js.cookie.js');
+                  AJAX.fireOnload('menu_resizer.js');
+        AJAX.fireOnload('rte.js');
+      AJAX.fireOnload('vendor/tracekit.js');
+      AJAX.fireOnload('error_report.js');
+        AJAX.fireOnload('config.js');
+      AJAX.fireOnload('doclinks.js');
+      AJAX.fireOnload('functions.js');
+      AJAX.fireOnload('navigation.js');
+      AJAX.fireOnload('indexes.js');
+      AJAX.fireOnload('common.js');
+      AJAX.fireOnload('page_settings.js');
+      AJAX.fireOnload('drag_drop_import.js');
+      AJAX.fireOnload('shortcuts_handler.js');
+                    AJAX.fireOnload('console.js');
+  });
+// ]]>
+</script>
+
+  <noscript><style>html{display:block}</style></noscript>
+</head>
+<body>
+  
+  
+  
+
+  
+      <noscript>
+      <div class="error"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_error"> O Javascript tem de estar activo a partir deste ponto!</div>
+    </noscript>
+  
+  
+  
+
+  <div id="page_content" wfd-id="2">
+    
+
+  
+<h1>redes</h1>
+
+<div wfd-id="3">
+      <div wfd-id="10">
+      <h2>epis</h2>
+      
+      <table class="print">
+        <tbody><tr>
+          <th>Coluna</th>
+          <th>Tipo</th>
+          <th>Nulo</th>
+          <th>Predefinido</th>
+                      <th>Ligações para</th>
+                    <th>Comentários</th>
+                      <th>Tipo de mídia (MIME)</th>
+                  </tr>
+                  <tr>
+            <td class="nowrap">
+              id
+                              <em>(Primária)</em>
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              func_id
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td>funcionario -&gt; id</td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              nome
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              fornecedor
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              especificacao
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              uso
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              certificado
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              modelo
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              tag
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(30)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+              </tbody></table>
+
+      <h3>Índices</h3><div class="no_indexes_defined hide" wfd-id="12"><div class="notice"><img src="./Dicionario do BD_files/dot.gif" title="" alt="" class="icon ic_s_notice"> Nenhum indíce definido!</div></div><div class="responsivetable jsresponsive" wfd-id="11"><table id="table_index"><thead><tr><th>Nome da chave</th><th>Tipo</th><th>Único</th><th>Pacote</th><th>Coluna</th><th>Quantidade</th><th>Agrupamento (Collation)</th><th>Nulo</th><th>Comentário</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Sim</td><td rowspan="1">Não</td><td>id</td><td>0</td><td>A</td><td>Não</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">func_id</td><td rowspan="1">BTREE</td><td rowspan="1">Não</td><td rowspan="1">Não</td><td>func_id</td><td>0</td><td>A</td><td>Não</td><td rowspan="1"></td></tr></tbody></table></div>
+    </div>
+      <div wfd-id="7">
+      <h2>funcionario</h2>
+      
+      <table class="print">
+        <tbody><tr>
+          <th>Coluna</th>
+          <th>Tipo</th>
+          <th>Nulo</th>
+          <th>Predefinido</th>
+                      <th>Ligações para</th>
+                    <th>Comentários</th>
+                      <th>Tipo de mídia (MIME)</th>
+                  </tr>
+                  <tr>
+            <td class="nowrap">
+              id
+                              <em>(Primária)</em>
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              nome
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(50)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              cpf
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              genero
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(50)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              nasc
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              date
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              endereco
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(50)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              telefone
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Sim</td>
+            <td class="nowrap">
+                              <em>NULL</em>
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              email
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              varchar(50)
+            </td>
+            <td>Sim</td>
+            <td class="nowrap">
+                              <em>NULL</em>
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+              </tbody></table>
+
+      <h3>Índices</h3><div class="no_indexes_defined hide" wfd-id="9"><div class="notice"><img src="./Dicionario do BD_files/dot.gif" title="" alt="" class="icon ic_s_notice"> Nenhum indíce definido!</div></div><div class="responsivetable jsresponsive" wfd-id="8"><table id="table_index"><thead><tr><th>Nome da chave</th><th>Tipo</th><th>Único</th><th>Pacote</th><th>Coluna</th><th>Quantidade</th><th>Agrupamento (Collation)</th><th>Nulo</th><th>Comentário</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Sim</td><td rowspan="1">Não</td><td>id</td><td>0</td><td>A</td><td>Não</td><td rowspan="1"></td></tr></tbody></table></div>
+    </div>
+      <div wfd-id="4">
+      <h2>registro</h2>
+      
+      <table class="print">
+        <tbody><tr>
+          <th>Coluna</th>
+          <th>Tipo</th>
+          <th>Nulo</th>
+          <th>Predefinido</th>
+                      <th>Ligações para</th>
+                    <th>Comentários</th>
+                      <th>Tipo de mídia (MIME)</th>
+                  </tr>
+                  <tr>
+            <td class="nowrap">
+              id
+                              <em>(Primária)</em>
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              epi_id
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              int(11)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td>epis -&gt; id</td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              event
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              tinyint(4)
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+                  <tr>
+            <td class="nowrap">
+              time
+                          </td>
+            <td lang="en" dir="ltr" class="nowrap">
+              datetime
+            </td>
+            <td>Não</td>
+            <td class="nowrap">
+                              
+                          </td>
+                          <td></td>
+                        <td></td>
+                          <td></td>
+                      </tr>
+              </tbody></table>
+
+      <h3>Índices</h3><div class="no_indexes_defined hide" wfd-id="6"><div class="notice"><img src="./Dicionario do BD_files/dot.gif" title="" alt="" class="icon ic_s_notice"> Nenhum indíce definido!</div></div><div class="responsivetable jsresponsive" wfd-id="5"><table id="table_index"><thead><tr><th>Nome da chave</th><th>Tipo</th><th>Único</th><th>Pacote</th><th>Coluna</th><th>Quantidade</th><th>Agrupamento (Collation)</th><th>Nulo</th><th>Comentário</th></tr></thead><tbody class="row_span"><tr class="noclick"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Sim</td><td rowspan="1">Não</td><td>id</td><td>0</td><td>A</td><td>Não</td><td rowspan="1"></td></tr></tbody><tbody class="row_span"><tr class="noclick"><td rowspan="1">epi_id</td><td rowspan="1">BTREE</td><td rowspan="1">Não</td><td rowspan="1">Não</td><td>epi_id</td><td>0</td><td>A</td><td>Não</td><td rowspan="1"></td></tr></tbody></table></div>
+    </div>
+  </div>
+
+<p class="print_ignore">
+  <input type="button" class="btn btn-secondary button" id="print" value="Imprimir" wfd-id="13">
+</p>
+  </div>
+  <div id="selflink" class="print_ignore" wfd-id="1"><a href="http://localhost/phpmyadmin/db_datadict.php?db=redes&amp;table=&amp;server=1&amp;target=" title="Abrir nova janela do phpMyAdmin" target="_blank" rel="noopener noreferrer"><img src="./Dicionario do BD_files/dot.gif" title="Abrir nova janela do phpMyAdmin" alt="Abrir nova janela do phpMyAdmin" class="icon ic_window-new"></a></div>
+
+  <div class="clearfloat" id="pma_errors" wfd-id="0">
+    
+  </div>
+
+  
+<script data-cfasync="false" type="text/javascript">
+// <![CDATA[
+var debugSQLInfo = 'null';
+
+// ]]>
+</script>
+
+
+  
+  
+  
+
+</body></html>

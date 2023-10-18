@@ -1,0 +1,30 @@
+
+<a href="/"><img src="../img/voltar.png"></a>
+<div class ="titulo">
+    <h2>Captando RFDI do colaborador (entrada/saida)</h2>
+</div>
+<div class="form_e_tit">
+    <div id = "dados">
+        <h3> Simulando Dados da captação RFDI</h3>
+    </div>
+    <div class = "formulario">
+        <form id="registra_epi" action="/controle" method="POST" class="form-registro">
+            <label for="epi_id" class="form">Id do Epi</label>       
+            <!--<input type="text" name="epi_id" class="form-control"  required autofocus><br/><br/> 
+            -->
+            <select name="epi_id" class="form-control"> 
+            {{#idEpi}}
+                <option value = "{{this}}"> {{this}} </option>   
+            {{/idEpi}}  
+            </select>
+            <label for="evento" class="form">Evento</label>
+            <select name="evento" class="form-control"> 
+                <option class="form" value="1">Entrada</option>
+                <option class="form" value="2">Saida</option>
+            </select><br><br>  
+            <label for="tempo" class="form">Tempo</label><br>        
+            <input type="datetime-local" name="tempo"  class="form-control" required autofocus><br/><br/>            
+            <button class="btn_form" id="bt1" onclick="cronometro(evento,tempo)" type="submit">Registrar passagem</button>
+        </form>             
+    </div>
+</div>   

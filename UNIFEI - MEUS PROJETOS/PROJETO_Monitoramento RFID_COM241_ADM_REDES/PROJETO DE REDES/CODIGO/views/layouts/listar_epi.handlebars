@@ -1,0 +1,36 @@
+<a href="/"><img src="../img/voltar.png"></a>
+<div class ="titulo">
+    <h2>Lista de EPI's</h2>
+</div>
+<div class="area_tab">
+    <table id="tabela" class="table"><br>
+        <tr>
+            <th>ID EPI</th>
+            <th>ID COLABORADOR</th>
+            <th>EPI</th>
+            <th>FORNECEDOR</th>
+            <th>ESPECIFICAÇÃO</th>
+            <th>USO</th>
+            <th>CERTIFICAÇÃO</th>
+            <th>MODELO</th>
+            <th>TAG RFDI</th>
+            <th>EDITAR</th>
+            <th>EXCLUIR</th>  
+        </tr>
+        {{#tabEpi}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{func_id}}</td>
+                <td>{{nome}}</td>
+                <td>{{fornecedor}}</td>
+                <td>{{especificacao}}</td>
+                <td>{{uso}}</td>
+                <td>{{certificado}}</td>
+                <td>{{modelo}}</td>
+                <td>{{tag}}</td>
+                <td><a href='atualizar_epi/{{id}}'><img id='edit' src="../img/edit.png"></a></td>
+                <td><a href='deletar_epi/{{id}}' class="deletar"><img id='del' src="../img/del.png"></a></td>
+            </tr>
+        {{/tabEpi}}
+    </table>
+</div>        

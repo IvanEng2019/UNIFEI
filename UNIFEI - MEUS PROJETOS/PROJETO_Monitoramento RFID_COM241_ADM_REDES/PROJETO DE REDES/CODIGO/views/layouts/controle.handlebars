@@ -1,0 +1,28 @@
+
+<a href="/"><img src="../img/voltar.png"></a>
+<div class="titulo">            
+    <h1> Controle via RFDI</h1>
+</div>
+<div class="area_tab">
+    <table id="tabelaControle" class="table"><br>
+        <tr>
+            <th>ID Registro</th>
+            <th>EVENTO</th>            
+            <th>HORÁRIO</th>
+            <th>ID EPI</th>
+            <th>TAG</th>   
+            <th>NOME COLABORADOR</th> 
+        </tr>
+        {{#tabReg}}
+        <tr id ="linha">            
+            <td>{{id}}</td>
+            <td>{{event}}</td>
+            <td>{{time}}</td>
+            <td>{{epi_id}}</td>
+            <td>{{tag}}</td>
+            <td>{{nome}}</td> 
+        </tr>
+        {{/tabReg}}
+    </table>
+</div>
+    

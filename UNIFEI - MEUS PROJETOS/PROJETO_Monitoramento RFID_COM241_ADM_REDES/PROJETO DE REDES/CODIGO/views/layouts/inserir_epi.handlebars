@@ -1,0 +1,38 @@
+
+<a href="/"><img src="../img/voltar.png"></a>
+<div class ="titulo">
+    <h2>Inserindo EPI's</h2>
+</div>
+<div class="form_e_tit">
+    <div id = "dados">
+        <h3>Entre com os dados do EPI</h3>
+    </div>
+    <div class = "formulario">
+        <form id="registra_epi" action="/inserir_epi" method="POST" class="form-registro">
+            <label for="name" class="form">Nome</label><br>
+            <input type="text" name="nome" class="form-control" placeholder="nome do EPI" required autofocus><br/><br/>
+            <label for="fornecedor" class="form">Fornecedor</label>    <br>        
+            <input type="text" name="fornecedor" class="form-control" placeholder="nome do fornecedor" required autofocus><br/><br/>
+            <label for="especificacao" class="form">Especificação Técnica</label> <br>           
+            <input type="text" name="especificacao" class="form-control" placeholder="caracteristicas técnicas" required autofocus><br/><br/>
+            <label for="uso" class="form">Uso</label><br>    
+            <input type="text" name="uso" class="form-control" placeholder="utilização" required autofocus><br/><br/>
+            <label for="certificado" class="form">Certificado de Aprovação</label><br>       
+            <input type="text" name="certificado" class="form-control" placeholder="Numero certificado" required autofocus><br/><br/>
+            <label for="modelo" class="form">Modelo/Referência</label><br>                             
+            <input type="text" name="modelo" class="form-control" placeholder="modelo" required autofocus><br/><br/>  
+            <label for="rfdi" class="form">TAG RFDI Vinculada</label><br>           
+            <input type="text" name="rfdi" class="form-control" placeholder="TAG RFDI do EPI" required autofocus><br/><br/>
+            <label for="idFucionario" class="form">ID do Funcionário</label>           
+          <!--   <input type="text" name="idFuncionario" class="form-control" placeholder="ID do Colaborador" required autofocus><br/><br/>
+          -->
+            <select name="idFuncionario" class="form-control"> 
+                {{#idFun}}
+                <option> {{this}} </option>
+                {{/idFun}}
+            </select>
+            <button class="btn_form" type="submit">Registrar</button>
+        </form>              
+    </div>
+</div>        
+

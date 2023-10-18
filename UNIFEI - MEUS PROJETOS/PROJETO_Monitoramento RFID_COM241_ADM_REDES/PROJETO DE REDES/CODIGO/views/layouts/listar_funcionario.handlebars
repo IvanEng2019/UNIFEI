@@ -1,0 +1,35 @@
+
+<a href="/"><img src="../img/voltar.png"></a>
+<div class ="titulo">
+    <h2>Lista de Colaboradores</h2>
+</div>
+<div class="area_tab">
+    <table id="tabela" class="table"><br>
+        <tr>  
+            <th>ID</th>                
+            <th>COLABORADOR</th>
+            <th>CPF</th>
+            <th>GENERO</th>
+            <th>NASCIMENTO</th>              
+            <th>ENDEREÇO</th>
+            <th>TELEFONE</th>
+            <th>EMAIL</th>
+            <th>EDITAR</th>
+            <th>EXCLUIR</th>  
+        </tr>
+        {{#tabFun}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{nome}}</td>
+                <td>{{cpf}}</td>
+                <td>{{genero}}</td>
+                <td>{{nasc}}</td>
+                <td>{{endereco}}</td>
+                <td>{{telefone}}</td>
+                <td>{{email}}</td>
+                <td><a href='atualizar_funcionario/{{id}}'><img id='edit' src="../img/edit.png"></a></td>
+                <td><a href='deletar_funcionario/{{id}}'class="deletar"><img id='del' src="../img/del.png"></a></td>
+            </tr>
+        {{/tabFun}}
+    </table>
+</div>        

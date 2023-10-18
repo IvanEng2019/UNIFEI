@@ -1,0 +1,71 @@
+*********************************************************************************************************************************
+
+Informações inciciais importantes:
+
+- Código em C de criptografia e descriptografia para execução em windows:
+- A criptografia simetrica utiliza uma chave de 8 digitos numericos.
+
+*********************************************************************************************************************************
+
+Conteudo disponibilizado:
+
+- Criptografia.c
+- Descriptografia.c
+- e.txt
+- Leia-me.txt
+
+*********************************************************************************************************************************
+
+Para Criptografar no terminal do Windows:  
+                            
+- Vá ate o diretório que contem o arquivo Criptografia.c 
+- Para compilar: gcc Criptografia.c -o cifragem          
+- Para executar: cifragem
+ 
+Exemplo das entradas:
+
+- e.txt (Arquivo .txt exemplo fornecido)
+- c.txt (Criação de um novo arquivo .txt de saida)
+- 12345678 (Senha qualquer contendo 8 digitos)
+
+***********************************************************************************************************************************************
+
+Para Descriptografar no terminal do Windows:
+
+- Vá ate o diretório que contem o arquivo Descriptografia.c 
+- Para compilar: gcc Descriptografia.c -o decifragem          
+- Para executar: decifragem
+
+Exemplo das entradas:
+
+- c.txt (Utilizar o nome do arquivo .txt que foi criado na Criptografia como arquivo de saida)
+- d.txt (Criação de um novo arquivo .txt de saida para a descriptografia)
+- 12345678 (Utilizar a mesma senha de 8 digitos para criptrografia, se a senha privada não for a mesma a descriptografia não será realizada)
+
+*************************************************************************************************************************************************
+
+Mais informações: 
+
+- Trabalho 1: Funções Hash e Autenticação de Mensagens 
+- Mestre e Professor: Bruno Guazzelli Batista 
+- Disciplina SIN414 - Auditoria e segurança
+- UNIFEI - 04/06/2022
+
+- Consiste em 2 algoritmos em C:
+
+    - Um algoritmo para Criptografia com chave simetrica de 8 digitos e hash de tamanho fixo 9 para uma mensagem de ate 100 caracteres:
+       (mas pode ser facilmente adptavel para aumentar ou diminuir os tamanhos)
+       - Realiza o resumo de uma MSG, em seguida o criptografa e por fim o adiciona juntamente com a MSG original em um novo arquivo 
+    
+    - E um algoritmo para Descriptografia com chave simetrica de 8 digitos e hash de tamanho fixo 9 para uma mensagem de ate 100 caracteres:
+       (mas pode ser facilmente adptavel para aumentar ou diminuir os tamanhos)
+       - Realiza separacao da MSG e do resumo depois faz um novo resumo da MSG que foi separada e descriptografa o resumo recebido
+         em seguida compara os resumos (o resumo da MSG e o resumo descriptografado) 
+         se iguais forem verificou a garantia de autenticidade pela hash e a confidencialidade pela chave privada, por fim,
+         é criado um novo arquivo .txt somente com a MSG original recebida.
+
+********************************************************************************************************************************************************
+
+Duvidas: ivanleoni30@unifei.edu.br
+
+********************************************************************************************************************************************************

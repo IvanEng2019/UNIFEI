@@ -1,0 +1,12 @@
+SIMULA SERVIDOR: VITE
+
+No terminal:
+npm create vite@latest -> (Y) -> NOME PROJETO -> VANILLA ->JAVASCRIPT
+CD "NOME PROJETO"
+NPM INSTALL
+NPM RUN DEV -> para acessar/vsualizar:   http://localhost:5173/
+
+front/css:
+https://tailwindcss.com/docs/background-color
+
+icones: https://fontawesome.com/search?p=3&o=r&m=free e https://cdnjs.com/libraries/font-awesome

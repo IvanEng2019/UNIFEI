@@ -1,0 +1,31 @@
+
+<a href="/"><img src="../img/voltar.png"></a>
+<div class ="titulo">
+    <h2>Atualizando EPI's</h2>
+</div>
+<div class="form_e_tit">
+    <div id = "dados">
+        <h3>Entre com os dados do EPI para Atualizar</h3>
+    </div>
+    <div class = "formulario">
+        <form id="registra_epi" action="/atualizar_epi" method="POST" class="form-registro">
+            <label for="name" class="form">Nome</label><br>
+            <input type="text" name="nome" value="{{nome}}" class="form-control" required autofocus><br/><br/>
+            <label for="fornecedor" class="form">Fornecedor</label>    <br>        
+            <input type="text" name="fornecedor" value="{{fornecedor}}" class="form-control" required autofocus><br/><br/>
+            <label for="especificacao" class="form">Especificação Técnica</label> <br>           
+            <input type="text" name="especificacao" value="{{especificacao}}" class="form-control" required autofocus><br/><br/>
+            <label for="uso" class="form">Uso</label><br>    
+            <input type="text" name="uso" value="{{uso}}" class="form-control"  required autofocus><br/><br/>
+            <label for="certificado" class="form">Certificado de Aprovação</label><br>       
+            <input type="text" name="certificado" value="{{certificado}}" class="form-control"  required autofocus><br/><br/>
+            <label for="modelo" class="form">Modelo/Referência</label><br>                             
+            <input type="text" name="modelo" value="{{modelo}}" class="form-control"  required autofocus><br/><br/>  
+            <label for="tag" class="form">TAG RFDI Vinculada</label><br>           
+            <input type="text" name="tag" value="{{tag}}" class="form-control"  required autofocus><br/><br/>         
+            <input type="hidden" name="func_id" value="{{func_id}}" class="form-control">   
+            <input type="hidden" name="id" value="{{id}}" class="form-control">      
+            <button class="btn_form" type="submit">Atualizar</button>
+        </form>              
+    </div>
+</div>   

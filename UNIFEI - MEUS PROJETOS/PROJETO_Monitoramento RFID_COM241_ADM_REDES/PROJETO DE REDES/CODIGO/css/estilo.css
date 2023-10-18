@@ -1,0 +1,223 @@
+body{
+        font-size: 15px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;    
+        font-weight: bold;
+        background-color:rgb(129, 185, 129);
+}
+
+h1,h2,h3,h4,h5{      
+    color: rgb(1, 19, 8);
+    text-align: center;
+}
+
+img {
+    margin: 16px;
+    float:left;
+    width:42px;
+    height:42px;  
+}
+
+#del, #edit{
+    float: none;
+}
+
+#unifei{
+    float:right;
+}
+
+.Todos_menus{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.menu { 
+    position: relative;
+    display: inline-block;
+    background-color:rgb(3, 110, 3);
+}
+
+.sub_menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(17, 240, 84);
+    min-width: 200px;
+    z-index: 1;
+}
+
+.btn {
+    background-color:rgb(41, 167, 41);
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 15px;
+    border-collapse: separate;
+    border: 0.2px solid white;
+}
+
+.sub_menu a  {
+    color: white;
+    border: 0.2px solid white;
+    background-color:rgb(3, 110, 3);
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 12px;
+    
+}
+
+.sub_menu a:hover  {
+    background-color: rgb(5, 48, 1);
+}
+
+.menu:hover .sub_menu {
+    display: block;
+    background-color:rgb(5, 48, 1);
+}
+
+.menu:hover .btn {
+    background-color: rgb(5, 48, 1);
+}
+
+.center{
+    margin: 250px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 35px;
+    text-decoration-color: yellowgreen;
+    width: 1150px;
+    height: 60px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.titulo{
+    margin: 0 auto;
+    background-color: rgb(38, 92, 38);  
+    padding: 2px 2px 2px 2px; 
+    border: 0.2px solid white;
+}   
+
+.painel_entrando_funcionario, .painel_buscando_funcionario,.painel_buscando_epi{                   
+    padding: 10px 20px 20px 30px;
+    background-color: rgba(216, 216, 253, 0.87);  
+}
+ 
+.area_tab{ 
+    margin: 5px;               
+    text-align: left;         
+}
+
+.table{
+    margin: 0 auto;
+    border-collapse:collapse;
+    padding: 2px 2px 50px 20px;   
+    text-align:center;
+    border:2px solid rgb(2, 99, 58);  
+}
+
+th{
+    background-color: rgb(5, 48, 1);        
+    padding: 12px;
+    width: 600px;
+    color: white;
+    border-spacing: 25px;     
+}
+
+td{
+    width: 10%;
+}
+
+.table tr:nth-child(even) {
+    background: rgb(80, 216, 121);
+}
+
+.table tr:nth-child(odd) {
+    background: rgb(74, 206, 74);
+}
+
+.table-action thead {
+    display: none;
+}
+
+.table-action tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .table-action td {
+    border: 0;
+}
+
+.table-action td:not(:first-child) {
+    display: block;
+}
+
+
+.formulario input{  
+    padding-left: 5px;
+    height: 20px;
+    width: 300px;
+    line-height: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    text-align: left;
+    margin: 5px;
+}
+
+.formulario label{  
+    padding-left: 10px;
+}
+
+.form_e_tit {
+    margin: 10px auto;
+    font-size: 12px;
+    background-color:rgb(77, 179, 77);
+    border: 0.2px solid white;
+    height: inherit;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+
+.btn_form {
+    background-color:rgb(2, 104, 2);
+    border: 0.2px solid white;
+    color: white;
+    padding: 14px;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 12px;
+    margin: 10px;
+    float: right;
+}
+
+.dados, .descricao .equipe{                
+    margin: 0 auto;
+    padding: 20px 2px 2px 2px;
+    text-align: center;
+}
+
+.dados_equipe{
+    margin: 16px auto;
+    padding: 2px 2px 2px 2px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr{
+    width:100%;
+    size:0.2px;
+    color:write; 
+}

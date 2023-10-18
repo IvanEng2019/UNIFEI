@@ -1,0 +1,36 @@
+CREATE TABLE funcionario (
+	id int NOT NULL AUTO_INCREMENT,
+	nome varchar(50) NOT NULL,
+	cpf int NOT NULL,
+	genero varchar(50) NOT NULL,
+	nasc DATE NOT NULL,
+	endereco varchar(50) NOT NULL,
+	telefone int,
+	email varchar(50),
+	PRIMARY KEY (id)
+);
+
+
+CREATE TABLE epis (
+id int NOT NULL AUTO_INCREMENT,
+func_id int NOT NULL,
+nome varchar(30) NOT NULL,
+fornecedor varchar(30) NOT NULL,
+especificacao varchar(30) NOT NULL,
+uso varchar(30) NOT NULL,
+certificado varchar(30) NOT NULL,
+modelo varchar(30) NOT NULL,
+tag varchar(30) NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY(func_id) REFERENCES funcionario(id)
+);
+
+
+CREATE TABLE registro (
+    id int NOT NULL AUTO_INCREMENT,
+    epi_id int NOT NULL,
+	event TINYINT NOT NULL,
+    time DATETIME NOT NULL,
+	PRIMARY KEY (id),
+    FOREIGN KEY (epi_id) REFERENCES epis(id)
+);

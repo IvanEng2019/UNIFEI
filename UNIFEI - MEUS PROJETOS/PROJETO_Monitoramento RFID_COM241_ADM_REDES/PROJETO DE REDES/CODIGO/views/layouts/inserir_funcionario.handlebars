@@ -1,0 +1,28 @@
+<a href="/"><img src="../img/voltar.png"></a>
+<div class ="titulo">
+    <h2>Inserindo Colaborador</h2>
+</div>
+<div class="form_e_tit">
+    <div id = "dados">
+        <h3>Entre com os dados do Colaborador</h3>
+    </div>
+    <div class = "formulario">
+        <form id="registra_funcionario" action="/inserir_funcionario" method="POST" class="form-registro">
+            <label for="name" class="form">Nome</label><br>
+            <input type="text" name="nome" id="nome"class="form-control" placeholder="Nome completo" required autofocus><br/><br/>
+            <label for="genero" class="form">Genero</label><br>
+            <input type="text" name="genero"  id="genero"class="form-control" placeholder="Genero" required autofocus><br/><br/>
+            <label for="data" class="form">Data de nascimento</label><br>
+            <input type="date" name="data" id="data"  class="form-control" placeholder="Data de Nascimento" required autofocus><br/><br/>
+            <label for="number" class="form">CPF</label><br>
+            <input type="text" name="cpf" name="cpf"class="form-control" placeholder="N° cpf" required autofocus><br/><br/>
+            <label for="endereco" class="form">Endereço</label><br>
+            <input type="text" name="endereco" id="endereco"class="form-control" placeholder="Rua,nº" required autofocus><br/><br/>
+            <label for="number" class="form">Telefone</label><br>
+            <input type="text" name="telefone" id="telefone"class="form-control" placeholder="35 99999 9999" required autofocus><br/><br/>
+            <label for="Email" class="form">Email</label><br>
+            <input type="text" name="email" id="email"class="form-control" placeholder="email@.com" required autofocus><br/><br/>
+            <button class="btn_form" type="submit">Registrar</button>
+        </form>
+    </div>
+</div>
