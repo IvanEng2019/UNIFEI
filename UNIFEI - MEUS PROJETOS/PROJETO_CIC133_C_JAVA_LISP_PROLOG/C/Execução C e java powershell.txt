@@ -1,0 +1,39 @@
+Powershell
+em c:
+
+cd C:\Paradigmas\C
+
+1-gcc -o MDC mdc.c
+.\mdc.exe
+
+ex1: 16,20 = 4
+ex2: 150,120 = 30
+ex3: 7,7 = 7
+ex4: 12,32 = 4
+ex5: 0,4 = 4
+
+2-gcc -o MMC mmc.c
+.\mmc.exe
+ex1: 8,6 = 24
+ex2: 8,8 = 8
+ex3: 16,12 = 48
+ex4: 12,18 = 36
+ex5: 0, 5 = 0
+
+3-gcc -o Rainha8x8 rainha8.c
+.\Rainha8x8
+
+em java
+
+1-cd C:\Paradigmas\JAVA\mdc
+javac mdc.java
+java mdc
+
+2-cd ..\mmc
+javac mmc.java
+java mmc
+
+3- cd ..\rainha8
+(
+java rainha8
+

@@ -1,0 +1,5 @@
+(defun mmc (&rest args)
+	   (reduce (lambda (m n)
+		     (cond ((or (= m 0) (= n 0)) 0)
+			   (t (abs (/ (* m n) (gcd m n))))))
+		   args :initial-value 1))

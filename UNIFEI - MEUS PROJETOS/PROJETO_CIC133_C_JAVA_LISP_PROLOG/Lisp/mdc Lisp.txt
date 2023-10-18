@@ -1,0 +1,4 @@
+(defun mdc (a b)
+(if (= b 0)
+a
+(mdc b (mod a b))))
