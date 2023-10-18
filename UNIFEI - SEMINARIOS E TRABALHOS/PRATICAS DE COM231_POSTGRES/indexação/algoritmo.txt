@@ -1,0 +1,18 @@
+Passo para calcular numero de blocos do indice:
+1-o indice a ser calculado é de arquivo sequencial ou heap? 
+1.1-Se o arquivo é sequencial só o indice primário é esparço, qualquer outro caso o indice é denso, independente de ser arquivo sequencial ou heap.
+
+2-Se esparço ( duas contas a mais que o denso sera feita 2.1 e 2.2)
+2.1-Calcular a quantidade de registros que cabem em em bloco = tamanho do bloco de registro/tamanho do registro
+2.2-Calcular a quantidade de blocos dos registros=quantidade de registros/quantidade de registros que cabem em em bloco
+2.3-Calcular o tamanho que o indice primario ocupa = tamanho do indice + ponteiro do bloco
+2.4-Calcular a quantidade de indices que cabem no bloco=tamanho do bloco de registro/tamanho que o indice primario ocupa
+2.4.1- Indice esparço diz que haverá 1 entrada de indice para cada bloco, então, quantidade de indice primario = quantidade de blocos de registros (2.2)
+2.5- Calcular o numero de blocos do indice primário(regra de 3)
+
+3-Se denso: Se o indice for primário, mas de arquivo heap se enquadra aqui!!!
+3.1-Calcular o tamanho que o indice denso (secundario ou primario se heap) ocupa = tamanho do indice + ponteiro do registro (não usar tamanho do ponteiro de bloco).
+3.2-Calcular a quantidade de indices densos que cabem no bloco= tamanho do bloco de registro/tamanho que o indice ocupa
+3.2.1-Indice denso diz que haverá 1 entrada de indice para cada registo, então, quantidade de indice denso = quantidade de registros
+3.3- Calcular o numero de blocos do indice denso (regra de 3)
+
