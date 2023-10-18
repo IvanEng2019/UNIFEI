@@ -1,0 +1,47 @@
+
+<html>
+  <head>
+    <title>Primeiro app Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>     
+        <div id="app">
+          <h1>{{ titulo }}</h1>
+          <form>
+                <label for='nome'>Nome</label><br><input type="text" v-model="nome"><br><br>
+                <label for='profissao'>Profissão</label><br>
+                <input type ="checkbox" value = "Estudante" v-model="profissao">Estudante</imput>
+                <input type ="checkbox" value = "Professor" v-model="profissao">Professor</imput>
+                <input type ="checkbox" value = "Diretor" v-model="profissao">Diretor</imput>
+                <input type ="checkbox" value = "Outro" v-model="profissao">outro</imput>
+                <br><br><label for=''>Idade</label><br><input type="text" v-model="idade"><br><br>
+                <label for=''>Email</label><br><input type='text' v-model="email">  <br><br>               
+                <label for='gostou'>Gostou de aprender Vue</label>
+                <select v-model="gostouVue">
+                  <option value="">Escolha</option>
+                  <option value="Sim">SIM</option>
+                  <option value="Nao">Não</option>
+                </select>
+                <br><br><hr>
+                Nome:{{nome}} <br>Profissão:{{profissao}} <br> Idade:{{idade}}<br>
+                Email:{{email}} <br> Gostou de aprender Vue:{{gostouVue}} <br>
+          </form> 
+        </div>
+        <script>
+                new Vue({
+                    el: '#app',
+                    data: {
+                      titulo: "Aprendendo v-model no Vue: Data Bind bidirecional",
+                      nome:'seu nome',
+                      profissao:["Estudante"],
+                      idade:'18',
+                      email:'email@unifei.edu.br',
+                      gostouVue:''                
+                    }
+                })
+        </script>
+  </body>
+</html>
+
+
+

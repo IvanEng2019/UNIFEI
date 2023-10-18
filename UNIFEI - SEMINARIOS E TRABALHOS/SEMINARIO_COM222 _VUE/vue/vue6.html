@@ -1,0 +1,46 @@
+<html>
+    <head>
+      <title> Desvendando Vue.js</title>
+      <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>     
+          <div id="app">
+              <h1>{{titulo}}</h1>
+                <p>Mensagem original: "{{ message }}"</p>
+                <p>Mensagem ao contrário: "{{ reversedMessage }}"</p>
+                <button v-on:click="mudar()">Alterar frase</button>
+              </div>
+          </div>
+          <script>
+            new Vue({
+                      el: '#app',
+                      data: {
+                          titulo:"Frase ao contrario",
+                          message:"Methods X Computed",
+                          aux:0
+                      },
+                      //sempre que a variavel menssage é alterada a computer é executada
+                      computed: {
+                            // uma função "getter" computada (computed getter)
+                            reversedMessage: function () { 
+                                return this.message.split('').reverse().join('')
+                            }    
+                      },
+                      //Somente quando o click e dado a função é acionada
+                      methods:{
+                          mudar(){
+                              if(this.aux==0){
+                                this.message = "Propriedade Methods",//executa computed
+                                this.aux=1
+                              }
+                              else{
+                                this.message= "Propriedade Computed",//executa computed
+                                this.aux=0
+                              }
+                          }
+                      }
+            });
+          </script>
+    </body>
+  </html>
+   

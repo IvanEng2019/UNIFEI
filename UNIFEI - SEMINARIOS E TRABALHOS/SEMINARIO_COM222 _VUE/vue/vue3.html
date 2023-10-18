@@ -1,0 +1,32 @@
+<html>
+    <head>
+      <title> Desvendando Vue.js</title>
+      <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>     
+          <div id="app">
+            <h1>{{titulo}}</h1>
+            <menu-bar v-for="item in linguagens" v-bind:linguagem="item"></menu-bar>
+          </div>
+          <template id="linguas">
+              <ul>
+                  <li>{{linguagem}}</li>
+              </ul>
+          </template>
+          <script>
+            Vue.component('menu-bar',{
+              props: ['linguagem'],
+              template:"#linguas"
+            });
+            new Vue({
+                      el: '#app',
+                      data: {
+                          titulo: "Aprendendo  componetes Reutilizáveis",
+                          linguagens:["java","c++","PHP"]
+                      },
+            });
+          </script>
+    </body>
+  </html>
+   
+  

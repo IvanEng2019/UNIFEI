@@ -1,0 +1,38 @@
+<html>
+    <head>
+      <title> Desvendando Vue.js</title>
+      <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>     
+          <div id="app">
+            <h1>{{titulo | minusculo | concatena}}</h1>
+            <menu-bar v-for="item in linguagens" v-bind:linguagem="item | maiuscula()"></menu-bar>
+          </div>
+          <script>
+            Vue.component('menu-bar',{
+              props: ['linguagem'],
+              template:"<ul><li>{{linguagem}}</li></ul>"
+            });
+            new Vue({
+                      el: '#app',
+                      data: {
+                          titulo: "FILTROS",
+                          linguagens:["java","c++","php","python"]
+                      },
+                      filters:{
+                          maiuscula(str){
+                              return str.toUpperCase();
+                          },
+                          minusculo(str){
+                            return str.toLowerCase();
+                          },
+                          concatena(str){
+                            return str.concat(" ", " podem ser usados em CADEIA");
+                          },
+                      },
+            });
+          </script>
+    </body>
+  </html>
+   
+  

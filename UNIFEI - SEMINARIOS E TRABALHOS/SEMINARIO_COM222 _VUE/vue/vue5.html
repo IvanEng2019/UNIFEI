@@ -1,0 +1,35 @@
+<html>
+    <head>
+      <title> Desvendando Vue.js</title>
+      <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>     
+          <div id="app">
+            <h1>{{titulo}} -- {{toUpperCase}}</h1>
+            <label for='nome'>Nome</label><br>
+            <input type="text" v-model="nome"><br><br>           
+            <label for='sobrenome'>Sobre Nome</label><br>
+            <input type="text" v-model="sobreNome"><br><br><hr>
+            <p>Nome Completo: {{nomeCompleto}}</p>
+          </div>
+          <script>
+            new Vue({
+                      el: '#app',
+                      data: {
+                          titulo: "Computed",
+                          nome: "",
+                          sobreNome: ""                      },
+                      //sempre que a dependencia é alterada a computer é executada
+                      computed:{
+                          toUpperCase(){
+                              return this.titulo.toUpperCase();
+                            },
+                          nomeCompleto(){                               
+                               return  this.nome + ' ' + this.sobreNome;                            
+                          },
+                      },                     
+            });
+          </script>
+    </body>
+  </html>
+   
