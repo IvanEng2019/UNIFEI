@@ -1,0 +1,254 @@
+abstract
+As mais variadas tecnologias digitais permitem a  coleta, produção e circulação dos dados em grande escala, porém os dados por si só nao apresentam valor agregado e como consequência dos desafios impostos  pela produção de dados em larga escala foi repensado a forma de como analisar, coletar e transformar os dados em informações de modo a subsidiar as melhores decisões estratégicas das empresas.  É preciso, então, agregar valor aos dados e permitir novas formas de uso dos dados. Os dados filtrados e analizados poderão apresentar como resultados novos dados ou infomações que serão utilizadas nas tomadas de decisões empresariais e ate mesmo reutilizado em outras aplicações. Para responder às demandas existentes de exploração, análise e compreensão dos dados e  como resultado da transformações na ciência e dos  negócios surgiu a área de estudo interdisciplinar e intensivamente computacional denominada ciência de dados (data science).
+
+
+0-introdução
+
+ Antes a preocupação inicial da Ciência da Informação era, entre outros aspectos, em como coletar, organizar, armazenar e recuperar as informações, e atualmente a  preocupação aparente é de como transformar esses dados em visualização de modo a oferecer uma nova interpretação e significado de dimensão social, informacional e comunicacional. Com a ascensão da grande quantidade massiva de dados gerada diariamente pela pessoas e comporações em sistemas privados, redes sociais e plataformas digitais  o avanço tecnologico esforçou-se para encontrar soluções para o amarzenamento, coleta  e tratamento dos dados  e como meio de solucionar  o  big data surgiu como uma inovação tecnologica satisfatoria, uma vez que possibilitou o amarzenamento de grande volume massivo e uma variedade de dados tanto estruturados,  quanto não-estruturados. Segundo  a The Software Alliance,  maior defensora do setor global de software perante governos e no mercado internaciona, já em 2015  estimava-se que 90% dos líderes empresariais consideravam os dados como recursos essenciais e como um diferenciador fundamental para o mundo dos negócios e aliado a isso  90% dos dados existentes foram criados apenas nos dois anos anos anteriores e a cada dois anos a taxa de produção dos dados seriam dobradas e  grande parte dos dados seriam geradas por um sensor conectado a uma máquina. O que nos leva a inferir que em 2020 temos 4,5 vezes mais dados que tinhamos no ano de 2015. Além disso, foi cocluido no mesmo ano que apenas  máximo 20% dos dados eram estruturados e podiam assim serem analisados por ferramentas tradicionais. Enquanto os 80% eram massivamente  dados não estruturados, como  por exemplo video, imagem e áudio  e não haviam ferramentas existentes capazes de analiza-los. 
+  Neste contesto de dados massivos sendo gerados diariamente surgiu a ciencia de dados , que segundo  ( Data_Science_do_Zero.pdf) a  ciência  orientada a dados faz uso de uma robustas ciberinfraestruturas de comunicação e informação, incluindo as tecnologias de grids, e também de padrões que possibilitam a interoperabilidade e a interligação dos dados . Sendo , assim, toda a ciberinfraestrutura garante o  ciclo de vida das grandes coleçoes de dados heterogeneos  que estao diposniveis nos repositorios digitais  e na web e os padroes são reponsaveis por atribuir sentido  e extrair insights dos dados quando aplicados aos diferentes contextos e dominios. Assim, aciberinfraestruturas aliada aos padroes podem resolver os  problemas práticos e reais existentes e os que ainda estão por surgir. 
+  O emprego do Data sciense é  muitas vezes impeceptiveis aos usuarios comuns e atualmente esta cada vez mais presentes no nosos cotidiano sendo utililizado nas mais variadas possiveis situações, como por exemplo,  nos smartphones que fazem o registro da localização,  nos aplicativos que coletam dados de saude como hábitos de movimentos, batidas do coração, dieta e padrões do sono, tambem presente nos aplicativos de comerciais  que coletam os hábitos de seus clientes, nos websites que  rastreiam todos os cliques dos usuários. Na própria internet que possui  bases de dados específicos de domínio como musicas, filmes, resultados de esportes e nas estatísticas do governo. E tambem se faz presentes na internete das coisas onde os carros inteligentes que coletam hábitos de direção e as casas inteligentes coletam hábitos de moradia. 
+Com a grande capacidade de resolver problemas e trazer um alto retorno as empresas e aos setores da economia, e ainda de interferir no consumo e por consequencia no modo de vida das pessoas a data sciese é hoje sem duvida um universo a ser explorado e muito a ser utilizado. A seguir sera discutido um pouco mais sobre Data science, onde primeiramente  sera definido o que é data science, depois sera apresentado uma breve evolução historica, a posteriore sera apresentado os desafios enfrentados , e logo apos será discutido as perspectivas, e depois será apresentado alguns exemplos da aplicabilidade e por fim finalizado com a conclusao.
+
+1 - O que é Data Science?  ----------------- ESTUDOS_SOBRE_VISUALIZACAO_DE_DADOS_CIEN.pdf
+
+   Para poder de solucionar questões complexas e que envolvem uma vasta quantidade de dados surgiu a  ciência de dados, ou Data Science, a técnica computacional capaz de coletar dados de diversas fontes em  diferentes velocidades para processar e analisar grandes quantidades de dados afim de encontrar informações relevantes sobre a base coletada e assim poder encontar e resolver problemas . Segundo (BELL et al., 2009).   data science tem como objetivo extrair conhecimento, padrões, tendências e insights a partir de conjuntos de dados de vários formatos, estruturados ou não-estruturados através dos  processos científicos e computacionais. Como a  informação é o resultado do processamento dos dados. Estes  só terão valor para os negócios se quando coletados puderem ser tratados e analisados por meio de algoritmos de  previsão e solução,  assim para que haja valor nas tomada de decisões e gerem de forma preditiva soluçoes ou criem insights o data scinse devera ser capaz de  atraves do processo computacional descobrir padrões. 
+  Padrão é uma forma com uma configuração específica e facilmente reconhecível, que se caracteriza por uma regularidade, acumulação de elementos e repetição de partes. Para Drew Conway [2010], em sua definição de Data Science, inclui para além da matemática as tecnologias e os hacking skills (capacidade de decifração) que caracterizam a descoberta de micro-padrões. Leo Breiman em 2001 [Breiman 2001] já havia referido as duas culturas na modelação de dados. A cultura dos micro-padrões corresponde à procura de pequenas percentagem de dados com utilidade ou interesse, tendo como métricas o suporte e a confiança das regras associativas, tem origem no machine learning e nos hacking skills. A cultura dos macro-padrões utiliza a totalidade dos dados, tem origem na matemática e na estatística e conta com projetos vinte vezes menores que os anteriores. 
+  Provost e Fawcett (2013)  complementam que o objetivo final da Ciência de Dados é aprimorar através da análise automatizada de dados a tomada de decisão a fim de entender os fenômenos. Essa ciência pode ser utilizada por qualquer setor que gere dados e que dependa de análises para um melhor entendimento de fenômenos, desde a compreensão de eventos passados até a previsão de tendências para o futuro. Porém é importante lembrar que a predição não garante o futuro, é apenas uma ferramenta para melhorar o processo de decisão. Ou seja, o planejamento não é certeza, pois não está imune a falhas.  A computação tem evoluído cada vez mais em prol de uma abordagem mais cognitiva em vez de programática, o que permite que os softwares sejam inteligentes o bastante para aprenderem sozinhos, o que envolve, também, tecnologias como o Machine Learning e Deep Learning. Neste contexto podemos inferir que Data Science, é o atual termo para a ciência que analisa dados, combinando a estatística com machine learning/data mining e tecnologias de base de dados, para responder ao desafio que o Big Data apresenta. 
+
+  A Ciência de Dados (Data Science) tem sido estudada e considerada como uma área com característica interdisciplinar por parte dos pesquisadores da temática (STREIB, MOUTARI, DHEMER, 2016) ou multidisciplinar (TIERNEY, 2016) em sua origem.  Data Science é descrita como a ciência responsável pela análise e utilização de dados que incorpora técnicas e teorias de diversas áreas, como lógica, matemática, estatística, programação, computaçao, data mining (mineração de dados), aprendizado de máquina, engenharia, economia, negócios. Utiliza-se de métodos tecnologicos que alem da aquisição dos dados  incluem gestão, armazenamento, segurança, análise e visualização de dados.Alberto Boschetti, Luca Massaron (2016, p. 8) A Ciência de Dados é um domínio de conhecimento relativamente novo, embora seus componentes principais tenham sido estudados e pesquisados por muitos anos pela comunidade de Ciência da Computação. Seus componentes incluem álgebra linear, modelagem estatística, visualização, linguística corporal, analise de gráficos, aprendizado de máquina, inteligência de negócios, armazenamento e recuperação de dados. segundo Gray (2009)  Ciência de dados se formou a partir da convergência de muitos campos de estudo tradicionais como: análise causal; estatística; métodos de visualização de dados, entre outras. Para se alcançar um resultado final satisfatório com a Ciência de Dados é de fundamental importância a união de três competências básicas, que são: conhecimento computacional (Computer Science ou Hacking Skills), conhecimento exato (Math, Statistics and knowledge) e conhecimento de especialista (Subject Matter Expertise).  Conforme comprementam : “[...] nesses aspectos fundamentais de análise de dados em larga-escala, há também um grande potencial tecnológico na pesquisa aplicada em ciência de dados com impacto em diferentes áreas do conhecimento e de setores de atuação” (PORTO; ZIVIANI, 2014, p.2). Os analistas são conhecidos como data scientists e é desejável que tenham qualificações na área de tecnologia da informação (TI) para capturar eficientemente e em tempo hábil os dados; conhecimentos matemáticos e estatísticos para definir os modelos e algoritmos a serem utilizados e entender suas implicações e resultados; e, por fim, conhecimento do negócio para poder traduzir os resultados em informações que auxiliem o tomador de decisão. As tarefas típicas de profissionais de ciência de dados são: Recolher grandes quantidades de dados não tratadas para transformar em dados úteis,  Resolver problemas relacionados com negócio ou contextos bem definidos, com recurso a técnicas orientadas a dados, trabalhar com uma variedade de linguagens de programação, dominar conceitos estatísticos, incluindo distribuições e testes estatísticos, dominar e acompanhar o estado de arte de técnicas analíticas como aprendizagem automática, deep learning e análise de texto, comunicar com equipas técnicas e de gestão, descobrir critérios e ordem em padrões de dados, bem como identificar tendências que podem contribuir para a eficácia do negócio ou do contexto em estudo.
+
+Segundo VANDERPLAS (2016, p. 11) Data Science é “o conjunto de habilidades interdisciplinares que estão se tornando cada vez mais importantes em muitas aplicações em toda a indústria e academia. Nesta perspectiva, Conway (2010) criou o Diagrama de Venn para especificar as habilidades que concerne à área (Figura 1) abarcando outras disciplinas. No diagrama criado por Conway, a Ciência de Dados aparece no centro, em lugar de destaque, indicando a ascensão da área e a correlação com outras capacidades como habilidades hacker, conhecimento de matemática e estatística e expertise substantiva, além de aprendizagem de máquinas. O autor entende que apenas focar na Ciência de Dados não é o suficiente para a compreensão da área em sua totalidade, mas integrar com outras áreas do saber.  
+
+ Figura 1: Diagrama de Venn desenvolvido por Conway  
+
+   No Diagrama de Venn, aspectos como conhecimentos em estatística e matemática e habilidades de hacking e aprendizagem de máquinas aparecem em aspectos cruzados para operacionalizar e gerenciar grandes quantidades de dados em contexto de Ciência de Dados. Embora essa área seja essencialmente multidisciplinar, a estatística e a matemática são a base da ciência de dados, pois são através destas que são construídos algoritimos que são os modelos de análise de dados para predição futura. O Diagrama mostra que é imprescindível habilidades e conhecimentos profundos nessas duas áreas do conhecimento. Não se pode esquecer de incorporar alguns aspectos para uma gerência adequada como possuir um infra-estrutura de dados massiva que garantem o ciclo de vida e análise de dados e ter habilidades de gerenciamento de dados e ainda possuir disciplinas comportamentais. Conforme ( Data_Science_do_Zero.pdf)  a ciberinfraestrutura tenta abarcar as tecnologias que operacionalizam os grandes volumes de dados, grandes bancos de dados com memória expandida e computação em nuvem. Neste sentido, o ciclo de vida dos dados inclui todas as etapas de análise de dados, incluindo a preparação de dados e integração, construção de modelos, avaliação, implementação,  monitorização e a compreensão bem como habilidades de gerenciamento que incluem a tradicional modelagem de dados e conhecimento de banco de dados relacional (ZHU; SONG, 2016) que possibilitam por sua vez transformar as visualizações de dados dentro da Ciência da Informação.
+ 
+
+1.1 - Processo do Data Sciense
+--------------------------------------------
+Pode se dizer que data sciense se constitui em :  Visualização dos dados,  aprendizagem automática,  Deep learning,  reconhecimento de padrões, preparação de dados, análise de texto.
+ A  visualização de dados comprende a apresentação de dados de forma gráfica de modo a ser mais facilmente entendida, com a massiva quantidade de dados aumentando a cada dia, um grande desafio vem surgindo para aqueles responsáveis por analisar, sumarizar e apresentar os dados, fazendo que , assim, a informação gerada, possa ser facilmente compreendida. O emprego das técnicas de visualização de dados (Dataviz) nesse campo é uma estratégia emergente e de inovação que tem sido explorado em distintas áreas do conhecimento e recebido cada vez mais atenção em estudos e pesquisas na atualidade (CAIRO, 2012; MANOVICH, 2011; DUR, 2014; JL VALERO, 2014).  As investigações em visualização de dados ampliaram seu alcance com as tecnologias digitais da sociedade em rede e da cibercultura (LEMOS, 2002) que possibilitaram que os dados  armazenados em redes digitais, somados aos demais elementos combinatórios (gráficos, mapas, dados científicos, números) serem transmutados para o ambiente Web e atribuido um maior enriquecimento às estruturas gráficas. Existem diversas ferramentas possuem funcionalidades avançadas para visualização de dados: Tableau, QlikView, Microsoft Excel, Microsoft Power BI, Microstrategy, Weka, NetworkX, Gephi, bibliotecas Java Script (D3.js, Chart.js, Dygraphs), além de visualizações alto nível que podem ser feitas em Python ou R.
+ A aprendizagem automática: um ramo da inteligência artificial baseado em algoritmos matemáticos e na automação. O aprendizado de máquina (em inglês, machine learning) é um método de análise de dados que automatiza a construção de modelos analíticos. É um ramo da inteligência artificial baseado na ideia de que sistemas podem aprender com dados, identificar padrões e tomar decisões com o mínimo de intervenção humana. Os principais algoritmos de ML estão nas categorias de “aprendizado supervisionado”, no qual os dados estão previamente rotulados (por exemplo, os rótulos “cancelou” e “não cancelou” para os clientes do exemplo anterior) e “aprendizado não-supervisionado”, cuja principal aplicação é a segmentação (ou clusterização), na qual os dados são agrupados conforme características similares e não precisam estar previamente rotulados.
+ Deep learning: uma área da investigação em aprendizagem automática que usa os dados para modelar abstrações complexas, Deep Learning é a técnica de aprendizado de máquina a partir de Redes Neurais Artificiais. Se refere a uma sub-área do aprendizado de máquina(machine learning) que apresenta um conjunto de arquiteturas específicas para as redes neurais, que só foi possível graças ao aumento da capacidade de processamento e do volume de dados disponíveis para o treinamento destas redes.
+reconhecimento de padrões: tecnologia que reconhece padrões em dado, 
+ preparação de dados: o processo de conversão dos dados em bruto num formato que possa ser mais facilmente tratado ou consumido. Na etapa de Coleta de Dados trabalhamos para obter e armazenar os dados a partir de diversas fontes.Estes podem estar em planilhas do Excel, páginas da Web, Bancos de dados relacionais ou não. Muitas vezes a etapa de coleta de dados é uma das mais trabalhosas etapas de um projeto. Durante a etapa de Limpeza e Transformação é quando organizamos o que foi coletado. Nesta etapa temos as seguintes tarefas: Remoção de dados desnecessários; Tratamento de valores faltantes e inconsistências; Criação e remoção de atributos. Esta também é uma etapa trabalhosa e que exige habilidades para lidar com dados e ferramentas.
+
+análise de texto: o processo de examinar dados não estruturados de forma a extrair aspetos relevantes sobre o negócio ou o contexto em estudo
+Analisar e Explorar os dados tem o foco em tirar insights, analisar padrões, identificar valores anômalos e gerar hipóteses com os dados..O objetivo é descobrir o que os dados tem a nos dizer. Conhecimentos valiosos sobre o negócio e muitas oportunidades podem ser identificadas nessa etapa. E por isso é fundamental uma boa análise exploratória dos dados.
+Na etapa de Modelagem é quando já temos o problema definido e precisamos criar modelos para a tarefa desejada em questão. Modelos podem ser baseados em Machine Learning ou Estatísticos.modelos regressão.No último caso podemos usar modelos baseados em Machine Learning ou modelos.
+----------------------------------
+Geralmente o processo de data science é composto por definição dos problemas, preparação, exploração, conclusão e comunicação. 
+O processo de Data Science  inicia com a coleta dos dados por meio do correto questionamento do problema/objetivo. Segue com a exploração dos dados que abrange a análise dos dados, com a visualização e aplicação de técnicas e algoritmos, em seguida sao concluidos os resultados e finalizados  com a comunicação .  Entretanto, ao longo do processo, surgirá a necessidade de novos dados, alguns serão descartados e alguns erros de análise aparecerão. É por isso que os analistas  necessitam ter  capacidade de perceber rotas alternativas, oportunidades de mercado e direções a partir de informações distintas e um amplo conhecimento em diversos campos e ciências, pois devem fazer as perguntas certas, capturar os dados certos e ter a correta percepção de como proceder ao longo do processo para, ao final, dados se transformarem em inteligência.
+
+ANÁLISE DE DADOS
+Em todo o procedimento de Ciência de Dados, a análise corresponde a um dos componentes mais importantes. É nela que o material humano age de forma mais intensa
+e relevante, pelo intermédio do analista de dados. O analista de dados é o indivíduo que trabalha com dados brutos, fazendo perguntas a
+respeito de um determinado tema. Ele não necessariamente depende da Tecnologia da
+Informação para validar seu trabalho, porém sabe-se que os recursos computacionais
+potencializam imensuravelmente o processo de pesquisa. Os computadores analisam os
+dados e buscam critérios que se juntam com os objetivos estabelecidos pelos humanos
+(WEIS, 1999, p. 32).
+Como o fluxo da Análise de Dados é constituído de diversas etapas, sua explicação neste
+trabalho foi subdividida entre seus 5 principais tópicos que são: questionamento,
+preparação, exploração, conclusão e comunicação.
+6.1 QUESTIONAMENTO
+O passo inicial na análise de dados é questionar sobre o problema a ser solucionado e
+definir qual parte dos dados serão mais importantes. Ao questionar, o cenário se
+encontrará desenhado em torno de uma entre duas hipóteses. Ou se inicia o
+questionamento tendo os dados disponíveis; ou questiona-se primeiro para depois iniciar
+a coleta dos dados. Em ambos os casos uma boa pergunta ajudará a se concentrar nos
+aspectos mais relevantes e a direcionar a análise para insights significativos. (LEE;
+Udacity, 2017)
+6.2 PREPARAÇÃO
+Na preparação os dados são obtidos de forma que possibilite trabalhar em três etapas:
+reunir, avaliar e limpar. Primeiramente reúnem-se os dados relevantes para responder as
+perguntas do questionamento. Em seguida avaliam-se os dados para encontrar qualquer
+problema em relação a qualidade ou estrutura dos mesmos. Por fim os dados são limpos,
+removendo ou substituindo aqueles que estiverem fora do padrão, na garantia de que o
+conjunto final seja da mais alta qualidade e bem estruturado possível. (LEE; Udacity,
+2017)
+34
+6.3 EXPLORAÇÃO
+A análise exploratória dos dados, também identificada pela sigla EDA (Exploratory Data
+Analytics) se baseia em encontrar padrões nos dados e extrair intuições sobre o assunto
+em que se está trabalhando. Após explorar pode-se realizar a engenharia de recursos em
+que se removem outlier (dados que se diferenciam drasticamente), criando assim
+melhores recursos com os dados. (LEE; Udacity, 2017)
+6.4 CONCLUSÃO
+Tirar conclusões é o passo final antes de comunicar os resultados finais obtidos, nele
+pode-se até conseguir identificar previsões de eventos. Por conta de seu caráter preditivo
+a conclusão é realizada com a implementação de Machine Learning, estatística
+inferenciais ou estatísticas descritivas. Esse processo é o que faz da computação algo tão
+importante dentro da Ciência de Dados uma vez que a máquina consegue tirar
+conclusões analisando padrões de forma infinitamente mais rápida que o ser humano.
+(LEE; Udacity, 2017)
+6.5 COMUNICAÇÃO
+Por fim a comunicação, onde será justificado e transmitido o significado dos insights
+encontrados. Se o resultado final da análise for a construção de um sistema, aqui será
+compartilhado os resultados por meio de Dashboards e gráficos. Os resultados podem ser
+comunicados de formas variadas: via relatórios, slides, e-mails ou mesmo Dashboards.
+(LEE; Udacity, 2017) 
+
+6.6 AMOSTRA DE ANÁLISE DE DADOS
+No mundo real existem vários exemplos onde as análises dos dados são realizadas de
+forma satisfatória, retornando resultados de grande valia para empresas ou ajudando os
+usuários de um determinado serviço.
+A empresa de transmissão de filmes Netflix faz uso da Análise de Dados com Ciência de
+Dados para recomendar filmes a seus usuários de acordo com seus gostos pessoais.
+A empresa de tecnologia Facebook costuma fazer a divulgação de artigos de cunho
+científico baseados em coleta de dados em sua plataforma, como por exemplo o artigo
+relacionado a ideologia política dos posts publicados pelas pessoas em seus perfis
+(BAKSHY; MESSING; ADAMIE, 2017). Até mesmo nos esportes, muitas equipes -
+independente da modalidade esportiva - fazem o uso de Data Science para melhorar o
+desempenho de seus atletas. Um fato real observado na esporte parte da história
+transformada em filme de um estatístico americano que fez uso da Análise de Dados para
+conduzir uma equipe acostumada a derrotas a seguir um caminho de vitórias. (BENNET,
+2011).
+
+5 MACHINE LEARNING
+O que automatiza a coleta de informações e maximiza a velocidade em que estas são
+fornecidas é o Machine Learning (ML). Seu papel é o de ensinar o computador a concluir
+suas tarefas sozinho, na medida em que se obtém uma grande sequência de dados para
+manipulação. O algoritmo implementado com Aprendizagem de Máquina ajuda na
+extração de ideias, por maximizar o processo da análise dos dados brutos. O objetivo da
+ML é o de ensinar a máquina (ou software) a realizar tarefas, fornecendo-lhe alguns
+exemplos (RICHERT; COELHO, 2013, p. 7-9).
+Como bem definido pela citação de Mike Roberts no livro Introducing Data Science: “O
+aprendizado de máquina é o processo pelo qual um computador pode trabalhar com mais
+precisão à medida que recolhe e aprende com os dados fornecidos” (CIELEN;
+MEYSMAN; MOHAMED, 2016, p. 58). Em Data Science esse recurso pode deixar
+explícito informações que passariam desapercebidas pelo olhar humano ao executar a
+análise dos dados.
+5.1 CONCLUSÃO DE MACHINE LEARNING
+Conclui-se que o uso da Aprendizagem de Máquina é o elemento principal que difere um
+processo de Análise de Dados simples para uma Análise de dados em Data Science. A
+análise dos dados não necessariamente necessita de um computador para ser executada
+com sucesso, entretanto se o objetivo for automatizar processos pelo uso de ML o
+elemento máquina é indispensável.
+
+
+2 - Evolução histórica.
+Por toda a história da humanidade, os marcos da nossa civilização foram caracterizados pelos progressos em nossa capacidade de observar e coletar dados. Nossos ancestrais distantes desenvolveram ferramentas e métodos práticos para medir distância, peso, volume, temperatura, tempo e localização.
+O termo criado na década de 2010, Data Science, corresponde aquilo que nos anos de 1970 se apelidava de Decision Support Systems, DSS, nos anos 80 aos Executive Information Systems, EIS, nos anos 90 aos Online Analytical Processing, OLAP, e nos anos de 2000 ao Business Intelligence, BI [10].
+Alguns fatores culminaram na existência da ciência de dados. O principal deles é o aumento de dados não estruturados disponíveis, a partir da digitalização da informação. Esse grande volume de dados não estruturados também é conhecido como Big Data.
+O segundo fator importante foi o avanço na capacidade de processamento em nuvem, por meio de processamento horizontal com clusters. Sem esse aumento de capacidade de processamento a ciência de dados certamente não existiria. Isso ocorre porque o processamento vertical tradicional é caro e ineficiente para grandes quantidades de dados.
+Esse problema foi resolvido, principalmente, a partir da especialização de capacidade computacional disponibilizada por fornecedores de computação em nuvem, como Amazon (AWS), Google (GCP) e Microsoft (Azure). Com a possibilidade de locação de hardware sob demanda e a sua redistribuição para atingimento de máxima eficiência, muitos projetos passaram a ser viabilizados com a computação em nuvem.
+O objetivo do business intelligence é converter dados brutos em insights de negócio para que líderes empresariais possam tomar decisões. O profissional de BI, o analista de negócios, utiliza ferramentas para criar produtos de apoio à gestão, como dashboards e relatórios.
+Já a ciência de dados emprega o método científico para a exploração dos dados, formação de hipóteses e testes de hipóteses, por meio de simulação e modelagem estatística. Dentro da ciência de dados ainda se utiliza o machine learning como ferramenta para automatizar a transformação de dado em informação.
+A principal diferença entre os dois é que o business intelligence trata de dados do passado enquanto o data science vai tratar do futuro, a partir da análise preditiva. Às vezes, o profissional do BI até pode fazer algumas previsões acerca do futuro, mas elas são baseadas em extrapolações do passado, ou seja, não utilizam base científica.Business Intelligence x Data Science diferem no que diz respeito a utilização dos dados. Apesar de BI poder utilizar métodos para previsão de futuro, esses métodos são gerados para fazer inferências simples a partir de dados históricos ou atuais. Desta forma, BI extrapola o passado e o presente para inferir previsões sobre o futuro. Apresenta-se dados passados para informações relevantes para ajudar no monitoramento das operações de negócio e para auxiliar os gestores na tomada de decisões de curto a médio prazo.
+Em contraste, os praticantes da ciência centrada em dados para os negócios procuram fazer novas descobertas usando métodos matemáticos ou estatísticos avançados para analisar e gerar previsões de grandes quantidades de dados empresariais. Esses insights preditivos são geralmente relevantes para o futuro a longo prazo do negócio. Os cientistas de dados centrados nos negócios tentam descobrir novos paradigmas e novas maneiras de olhar para os dados para fornecer uma nova perspectiva sobre a organização, as suas operações e suas relações com clientes, fornecedores e concorrentes. Portanto, os cientistas de dados centrados nos negócios devem conhecer do negócio e seu meio ambiente. Eles devem ter conhecimento do negócio para determinar se uma descoberta é relevante para uma linha de negócios ou para a organização como um todo.
+No passado, a maior parte dos dados era não processada, ou seja, não era transformada em informação. Hoje, com a capacidade de processamento em nuvem, as empresas estão buscando transformar dados em informações para interpretá-las e gerar insights importantes para seus negócios.Insight é a solução ou a conclusão acerca de algo. Se eu tenho um problema eu posso concluir algo sobre esse problema, que seria o insight. Sob o ponto de vista dos negócios, todo processo de decisão deveria ser baseada em dados, por isso a importância dos insights.
+A utilização do Big Data e da Data Science em processos de inteligência atribui-lhe uma mais valia, pois permite ganhos de eficiência relacionados a custo, inovação e produtividade. Isto porque, para execução dos seus processos, designam analistas com amplo conhecimento e experiência em diversos campos, além de contar com avançadas tecnologias, sistemas e estruturas que permitem a captura e manipulação das informações necessárias a sua demanda, transformando-as em inteligência — informação útil ao processo de tomada de decisão.
+ Considera o estudo da origem da informação, o que representa e como pode ser transformada numa fonte valiosa para a criação de negócio e de estratégias para o contexto em análise • A exploração de quantidades massivas de dados estruturados e não estruturados para identificar padrões que podem ajudar uma organização no controle de custos, aumento de eficiência, reconhecimento e descoberta de novos mercados e oportunidades e aumento de vantagem competitiva • Transformação de dados disponíveis em informação, com recurso a técnicas de análise de dados, experiência, mas também inteligência e criatividade • É a extração de conhecimento a partir de grandes conjuntos de dados, com recurso a métodos científicos
+
+Processos ● KDD - Knowledge Discovery in Databases (Fayyad, Piatetsky-Shapiro, 1996) ● SEMMA (SAS, 2000) ○ Sample, Explore, Modify, Model, Assess ● CRISP/DM (Chapman et al., 2000) ○ CRoss-Industry Standard Process for Data Mining - BigDataeDataScience-AdmirvelMundoNovo(1).pdf
+  .Data science não pode pode ser entendida como uma ferramenta, mas sim como um conjunto de métodos, assim como big data e o business intelligence.
+
+3 - Desafios
+Essa realidade e a importância dela acelera a ascensão do Data Science e, consequentemente, a necessidade de profissionais especializados, conhecidos como cientistas de dados.
+Um cientista de dados é o profissional responsável por implementar as práticas do Data Science em um negócio. Nesse sentido, ele é quem transformará o que é coletado em informações ou até mesmo produtos relevantes para uma companhia.
+Também é preciso que o cientista de dados faça a seleção de modelos de simulação e estatística e, ainda, entregue aquilo que será o produto dos dados. Além disso, é fundamental que o profissional tenha o conhecimento necessário sobre o ramo do negócio em questão, dada a necessidade de coletar dados relevantes para o setor, estando, por fim, apto a desenvolver soluções inovadoras para a companhia e para seu público.
+Para os programadores e investigadores em novos algoritmos um dos grandes desafios é trazido pelo Big Data. É urgente a redução de complexidade temporal de quase todos os algoritmos, desde o cálculo da variância em estatística até ao mais complexo problema de sequence mining.(4%20Data%20Science%202014.pdf)
+
+Os dados massivos são mais do que a sua quantidade (como extrair valor, em tempo útil, de um grande volume de dados)
+O maior crescimento é o de dados não estruturados (dentro e fora da empresa)
+
+Existe um consenso de que o grande desafio do uso de big data nos próximos anos será a questão da privacidade. O risco de uma grande quantidade de dados confidenciais ser roubado e divulgado será cada vez mais real. A solução para o problema será a conscientização dos cientistas sobre a importância da privacidade e o desenvolvimento de protocolos de segurança cada vez mais rígidos. Por exemplo, é cada vez mais comum a análise de dados exclusivamente dentro de um terminal de acesso restrito. Novas técnicas para garantir o sigilo dos dados, possivelmente utilizando técnicas de criptografia, serão cada vez mais incorporadas em pesquisas científicas. Entretanto, a realidade é que certamente aparecerão escândalos de vazamento de dados sigilosos, seja por descuido de alguns cientistas ou por invasões propositais. Além de fazer de tudo para que isso jamais aconteça, é papel do cientista também informar a população sobre os imensos ganhos de tempo, dinheiro e vidas que a análise de big data traz para a sociedade. Esses escândalos, apesar de certamente prejudiciais para as vítimas, não podem ser utilizados para a restrição de pesquisas com big data. A análise de big data encontra-se em um ponto de aceleração, que se tornou possível pela confluência de dois fatores: a pressão pela divulgação de resultados de pesquisas públicas e o desenvolvimento computacional necessário para as análises estatísticas. O potencial da análise de big data está apenas começando a virar uma realidade na área da saúde, e epidemiologistas estão na posição ideal para liderarem essa nova área. Apesar de existirem algumas limitações metodológicas e problemas de privacidade, a era do big data traz imensas oportunidades para o avanço do conhecimento em saúde.
+
+Para analisar estes grandes volumes de dados, novas ferramentas tecnológicas e novas competências se fazem necessárias. Existe a demanda por um novo perfil profissional – um cientista de dados – que deve ser treinado nas habilidades necessárias para fazer descobertas a partir de um grande conjunto de dados (DAVENPORT e PATIL, 2012).  Provost e Fawcett (2013) abordam também o contexto tecnológico marcado por grandes quantidades de dados disponíveis, tornando impossível sua análise de forma manual e algumas vezes excedendo a capacidade de bases de dados computacionais mais usuais. Ao mesmo tempo, computadores vem se tornando mais poderosos, a conexão em rede vai se tornando ubíqua, e os algoritmos vem sendo aprimorados de forma a possibilitar a conexão de bases de dados e análises mais profundas do que se poderia imaginar. Os autores indicam que a convergência destes movimentos levou a uma ampliação da aplicação da chamada Data Science a vários setores econômicos.
+
+3.1.2 Business Intelligence, Data Mining, Data Science e Data Analytics
+Muitas dúvidas surgem em torno do termo Data Science em relação a outros termos que
+embora pareçam sinônimos, possuem formas de atuações totalmente diversas. As
+dúvidas mais comuns surgem a partir das expressões: Business Intelligence, Data Mining,
+Data Science e Data Analytics. Por conta disso é também muito importante saber
+algumas diferenças entre estas áreas, para que não haja dúvidas posteriores em relação
+aos devidos termos.
+Business Intelligence (BI): analisa fatos que já tenha ocorrido em um determinado
+momento se fundamentando em dados exatos que já existam, não se importando tanto 
+27
+quanto em Data Science em realizar predições em prazos longínquos. Em BI o trabalho é
+organizado em cima do que está acontecendo no momento (médio e curto prazo) o que
+faz com que tenha de tomar decisões mais pontuais. Um exemplo seria o diagnóstico de
+vendas dentro de um determinado mês em uma e-commerce; onde todo o trabalho seria
+feito sobre dados existentes e com um foco menor de previsão quando se compara a
+Ciência de Dados.
+Data Mining: Data Mining ou Mineração de Dados explora os dados em busca de padrões
+utilizando técnicas analíticas guiadas por uma máquina. Nela os resultados são validados
+a partir de novos subconjuntos de dados chegando em objetivo final quando gerado um
+prognóstico pré-estabelecido. Pode-se dizer que faz o uso da computação quase que em
+sua totalidade, na construção de seus processos de trabalho.
+Data Science: Assim como Data Mining, é preditiva, porém trabalha com os dados
+utilizando-os como informações e conhecimento de especialistas. A diferença principal se
+dá pelo fato de que esta tecnologia atua com o adjunto de técnicas científicas mais
+variadas, tais como: Estatística, Machine Learning, Data Analytics, Data Mining entre
+outras...
+Data Analytics: Também conhecida como Análises de Dados é o processo pelo qual
+procura-se inspecionar, limpar, transformar e modelar dados. “É geralmente vista como
+um componente da Ciência de Dados. Usada para entender como são os dados de uma
+organização a Ciência de Dados usa Analytics para resolver problemas (OLAVSRUD,
+2018). Devido sua grande importância neste projeto este assunto terá um tópico
+específico.
+
+4 - Perspectivas
+
+O data science, por meio de suas predições, nos informa com antecedência se devemos sair de casa com um guarda-chuva, qual o melhor caminho para chegar ao trabalho e de qual filme temos maior possibilidade de gostar baseado em nossas preferências anteriores. À medida que deixam de ser um recurso escasso, passando a ser cada vez mais abundantes, os dados tornam-se uma fonte essencial de benefícios sociais e econômicos.
+Com o custo de armazenamento e processamento de dados em queda e com o aumento do número de sensores que capturam cada vez mais informações, a quantidade de dados disponíveis será cada vez maior, assim como as possibilidade de uso desses dados. Vivemos cercados por oportunidades geradas pelos dados, que podem nos dar respostas a alguns dos maiores desafios do mundo, como a maior eficiência dos recursos de saúde ou a reestruturação dos sistemas de transporte.Cabe aos profissionais desse novo campo da ciência criar modelos para potencializar a produtividade de todas as áreas. Não existe restrição em nenhuma área para o trabalho dos cientistas de dados, o que é uma grande oportunidade para tornar o esforço humano cada vez mais eficiente.
+areas afetadas e melhoradas: https://data.bsa.org/wp-content/uploads/2015/10/BSADataStudy_br.pdf
+Uso da ciência de dados para geração automatizada de conteúdo (incluindo agregação e classificação de conteúdo); para correção automatizada de ensaios de estudantes; ciência de dados usada em tribunal para fortalecer o nível de evidência - ou falta de - contra um réu; para detecção de plágio; para otimizar o tráfego automóvel e calcular rotas ideais; para identificar, selecionar e manter funcionários ideais; para auditorias automatizadas do IRS enviadas aos contribuintes para evitar litígios dispendiosos e perda de tempo; para planejamento urbano; para  agricultura de precisão
+
+
+5 - Exemplos de projetos/empresas/grupos de pesquisa.
+A nivel empresarial , implementar Data Science é converter dados em ações a favor da evolução do negócio
+Os dados são a nova chave de poder para o mercado nessa era de integração e inovação. São, inclusive, a base para 5 grandes setores da tecnologia da informação moderna:
+Big Data;
+Data Science;
+Machine Learning;
+Deep Learning;
+Internet das Coisas (IoT, no inglês).
+Combinadas, essas tecnologias podem abrir portas e novas perspectivas que jamais foram vistas na história.
+As gigantes da internet como Amazon, Google, Netflix, IBM, Facebook e muitas outras já utilizam e investem fortemente nessas tecnologias. A seguir, confira como o Data Science, Big Data e outros podem ser utilizados no mercado para facilitar o nosso cotidiano:
+Data Science é um conceito novo e que muitos talvez ainda não saibam como definir, já que pode ser aplicado em diversas áreas. Desde setores como o de varejo, esportes, educação e entretenimento até setores como o de biotecnologia, astronomia, telecomunicações e física.
+A ciência de dados possui diversas aplicações práticas. Algumas delas são a recomendação de produtos no varejo online, o reconhecimento de voz (deep learning), o tratamento de doenças a partir de correlações de dados e o reconhecimento facial.
+Aliás, um ERP pode ser um ótimo exemplo para isso. Esse tipo de software normalmente registra apenas as compras e outras transações que foram feitas pelos clientes na sua empresa. Entretanto, ele não é capaz de registrar as transações que foram feitas com os seus concorrentes diretos ou indiretos.Assim sendo, é possível formular e detalhar hipóteses de forma muito mais confiável e descobrir novos padrões de mercado, considerando o modelo de realidade dinâmico em que vivemos hoje, no qual as estatísticas, informações e tecnologias são atualizadas constantemente.
+Por tudo isso, é fundamental que, antes de realizar outros investimentos na empresa, Data Science seja implantado. Isso servirá para, além de conhecer os melhores caminhos e áreas de investimento, seguir o planejamento da companhia da forma mais eficaz possível.
+As plataformas online como Youtube, Snapchat,  Netflix,  Instagram e Facebook  geram grandes quantidade de dados. Empresas denominadas de Data-Driven Companies, Empresas Orientadas a Dados e que utilizam  Data Science para tomar decisões. Hoje, as Tecnologias De Transporte, Por Exemplo, EstãO Sofrendo Uma DisrupçãO Causadas Pelas Novas AplicaçõEs Baseadas Em Grandes Volumes De Dados, Como O Uber E O Waze.Com Ferramentas AvançAdas De AnáLise De Dados, Os Profissionais De Data Science Conseguem Realizar PrevisõEs Que Resolvem Grandes Problemas E Melhoram a Nossa Vida Cotidiana
+Hoje, diversos fabricantes de tecnologia estão investindo pesado em tecnologias de deep learning para reconhecimento de voz. Cortana (Microsoft), Siri (Apple) e Alexa (Amazon) são alguns exemplos de tecnologias conversacionais, que permitem que o usuário interaja com uma inteligência artificial por meio de comandos de voz. Essa tecnologia revela de forma bastante compreensiva como funciona a transformação entre dados não estruturados (voz) em informações úteis (comandos computacionais).
+aplicações:https://www.vooo.pro/insights/13-applicacoes-praticas-de-data-science-hoje/
+ Digamos que um cientista de dados seja alguém que extrai conhecimento de dados desorganizados. O mundo de hoje está cheio de pessoas tentando transformar dados em conhecimento. Por exemplo, o site de namoro OkCupid pede que seus membros respondam milhares de perguntas a fim de encontrar as combinações mais adequadas para eles. Mas também analisa tais resultados para descobrir perguntas aparentemente inócuas as quais você poderia perguntar para alguém e descobrir qual a possibilidade de essa pessoa dormir com você no primeiro encontro (http://bit.ly/1EQU0hI). O Facebook pede que você adicione sua cidade natal e sua localização atual, supostamente para facilitar que seus amigos o encontrem e se conectem com você. Porém, ele também analisa essas localizações para identificar padrões de migração global (http://on.fb. me/1EQTq3A) e onde vivem os fã-clubes dos times de futebol (http://on.fb.me/1EQTvnO). Como uma grande empresa, a Target rastreia suas encomendas e interações, tanto online como na loja física. Ela usa os dados em um modelo preditivo (http://nyti.ms/1EQTznL) para saber quais clientes estão grávidas a fim de melhorar sua oferta de artigos relacionados a bebês. Em 2012, a campanha do Obama empregou muitos cientistas de dados que mineraram os dados e experimentaram uma forma de identificar os eleitores que precisavam de uma atenção extra, otimizar programas e recursos para a captação de fundos de doadores específicos e focando esforços para votos onde provavelmente eles teriam sido úteis. Normalmente, é de comum acordo pensar que esses esforços tiveram um papel importante na reeleição do presidente, o que significa que é seguro apostar que as campanhas políticas do futuro se tornarão cada vez mais dependentes de dados, resultando em uma corrida armamentista sem fim de data science e coleta de dados.
+
+Bell (2009) descreve três atividades básicas da computação intensiva em dados: captura, curadoria e análise de dados. Os dados são coletados em escalas e formatos variados, podendo envolver resultados de experimentos e de observações individuais, laboratórios únicos, grupos de laboratórios parceiros, redes de laboratórios internacionais em larga escala bem como conjuntos de dados pessoais de indivíduos e pesquisadores. O autor destaca que, mesmo que um enorme potencial tenha sido identificado, a ciência intensiva em dados tem se desenvolvido ainda de forma lenta, talvez pela falta de entendimento da comunidade científica em relação a este tema e também pelo desconhecimento de ferramentas práticas para criar, gerenciar e utilizar estas bases de dados. Ramaswamy (2016) considera que o Data Science pode levar a descobertas transformadoras, com a integração entre campos científicos distintos. No caso da agropecuária, o autor aponta a importância de uma abordagem sistêmica envolvendo o setor produtivo, considerando a adoção de vários tipos de TIC como: o uso de sensores para a captura de dados e informações; técnicas de integração de dados; robôs e drones, entre outros. O autor aponta que  a pesquisa agropecuária deve utilizar os dados gerados por este novo modelo, chamado Smart Farm, para entender fatores que afetam a produtividade e a geração de perdas no âmbito das cadeias produtivas. Algumas aplicações no campo de estudo da agropecuária, elencadas pelo autor, incluem: genômica, fenômica e agricultura/pecuária de precisão, a serem discutidos na seção de resultados. (PesquisaBambiniSober)
+
+
+6 - Conclusão.
+   Data Science é mais um termo usado para descrever o processo de transformação de dados em conhecimento. É diferente de e ao mesmo tempo expande campos já conhecidos como estatística, analytics, mineração de dados, descoberta de conhecimento em bases de dados, com ênfase no desenvolvimento de soluções que integram os processos da transformação de dados heterogêneos, em diferentes escalas, incompletos e possivelmente mal-estruturados em conhecimento.  
+ 
+ Área de grande potencial – Quer em dimensão de negócio, quer em empregabilidade • Existe um enorme leque de aplicação – onde quer que exista a possibilidade de obter dados em grande quantidade ou de grande complexidade, em formato digital • A enfase deve ser na ciência e não nos dados – implicando o uso das diferentes técnicas de um modo ordenado • Os profissionais de ciência de dados são especialistas de análise de dados que possuem competências técnicas para resolver problemas complexos e a curiosidade de explorar quais os problemas que devem ser resolvidos – existe uma dimensão de criatividade aplicada que é componente essencial do trabalho em ciência de dados
+
+
+bibliograias
+2%20Boletim_51.11-14.pdf
+https://www.datageeks.com.br/o-que-e-data-science/
+http://www.cienciaedados.com/business-intelligence-x-data-science/
+https://data.bsa.org/wp-content/uploads/2015/10/BSADataStudy_br.pdf
+https://www.capgemini.com/wp-content/uploads/2017/07/The_Deciding_Factor__Big_Data___Decision_Making.pdf
+https://br.christiano.dev/tmp/jornada-data-science.pdf
+https://www.vooo.pro/insights/13-applicacoes-praticas-de-data-science-hoje/
+https://blog.atlantico.com.br/data-science-entenda-a-importancia-dos-dados-para-sua-empresa/
+4%20Data%20Science%202014.pdf
+1026-Texto%20do%20artigo-4598-1-10-20170530.pdf
+VER%20-%20DATA%20SCIENCE/2014%20InforAberta%20LCv.pdf -> desenho macro e micro/algoritimos
+BigDataeDataScience-AdmirvelMundoNovo.pdf
+Data_Science_do_Zero.pdf
+ESTUDOS_SOBRE_VISUALIZACAO_DE_DADOS_CIEN.pdf
+https://books.google.com.br/books?id=eMCODwAAQBAJ&pg=PA21&lpg=PA21&dq=protocolos+utilizados+no+data+science&source=bl&ots=nZwy0GAYk9&sig=ACfU3U2QtHzC9APmQj6HudCGEwPyjNzdSQ&hl=pt-BR&sa=X&ved=2ahUKEwjZ5r_lv9zpAhX7IbkGHafkD8gQ6AEwAXoECAsQAQ#v=onepage&q=protocolos%20utilizados%20no%20data%20science&f=false
+PesquisaBambiniSober
+usar definição deste livro on line:https://books.google.com.br/books?id=eMCODwAAQBAJ&pg=PA21&lpg=PA21&dq=protocolos+utilizados+no+data+science&source=bl&ots=nZwy0GAYk9&sig=ACfU3U2QtHzC9APmQj6HudCGEwPyjNzdSQ&hl=pt-BR&sa=X&ved=2ahUKEwjZ5r_lv9zpAhX7IbkGHafkD8gQ6AEwAXoECAsQAQ#v=onepage&q=protocolos%20utilizados%20no%20data%20science&f=false
+
+ Data Science envolve disciplinas diversas como estatística, computação, conhecimentos de negócio e matemática e se refere a processos, métodos científicos e técnicas com o intuito de extrair informações relevantes para o negócio a partir do enorme volume de dados do Big Data ( é toda essa imensidão de informações existentes tratadas ou não )
+
+Pode ser definida como um conjunto de técnicas/metodos utilizadas no processamento e análise de dados, com intuito de fornecer informações para decisões inteligentes. Para tanto, mescla-se diversas áreas do conhecimento, desde conceitos simples de estatística até complexos algoritmos. 
+
+Para Porto e Ziviani (2014, p. 2), dentro da conjuntura de grandes volumes de dados, há três linhas de pesquisa que podem ser exploradas com vistas à consolidação da área de Ciência de dados, a saber: 1) Gerência de Dados; 2) Análise de Dados e 3) Análise de Redes Complexas.
+
+ E aqui vemos um equívoco: o de introduzir pesquisas tradicionais quando a emergência da área requer pesquisas inovadoras para o tratamento dos dados, gerenciamento, armazenamento, etc. Áreas emergentes exigem que os procedimentos metodológicos sejam reconfigurados, adaptados e até mesmo criar novas infraestruturas que sejam exploradas as potencialidades do novo fenômeno. Deste modo, há um reposicionamento das pesquisas científicas trazido pelo Data Science e de como gerenciar os dados em ambiente digital, estabelecendo pesquisas transversais e explorando novas zonas de interlocução dos resultados e práticas de pesquisa.
