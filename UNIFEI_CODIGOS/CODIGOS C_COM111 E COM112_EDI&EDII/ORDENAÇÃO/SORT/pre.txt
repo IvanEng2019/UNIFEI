@@ -1,0 +1,69 @@
+main.c
+
+	main()
+		- chama menu()				
+		- chama relatorio()
+		
+		- gera dados
+			- solicita numero de dados
+			- usa random para gerar dados
+			- usa com112_file.c
+				
+				- escreve dados na com112_entrada.txt
+					- com112_entrada.txt
+				
+				- cria arquivo saida
+					- com112_saida.txt
+					FORMATO:
+						qtd
+						n1 n2 n3 n4 ... n_qtd
+				
+				- cria arquivo relatorio
+					- com112_relatorio.txt
+						FORMATO:
+							Número de elementos ordenados: xxx 
+							Método XXXXXX Sort Tempo de execução: xxx. 
+							Número de comparações: xxx. 
+							Número de movimentações: xxx.
+	
+	
+	
+	menu()
+		- usuario seleciona metodo de ordenacao
+			1. Bubble Sort 
+			2. Selection Sort 
+			3. Insertion Sort
+	
+	
+	
+	
+	relatorio()
+		- imprime relatorio na tela
+			- dados: 1. Tempo de execução. 
+					 2. Número de comparações entre elementos do vetor. 
+					 3. Número de movimentações entre elementos do vetor.
+					 
+
+
+
+
+
+com112_sort.c
+	
+	- executa as funções de ordenação
+	
+	bubble()
+	selection()
+	insertion()
+	
+	
+	
+
+com112_file.c
+
+	- faz a manipulacao dos arquivos .txt
+	
+	cria_arquivo()
+	escreve_dado()
+	le_dado()
+	

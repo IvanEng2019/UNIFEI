@@ -1,0 +1,61 @@
+int Troca_El2_Dupla(Lista *li, int p1, int p2){
+     if( li==NULL || (*li)== NULL ) return 0;
+     if(p1>p2){
+        int pos1=p1;
+        p1=p2;
+        p2=pos1;
+    }
+     Elemento *aux1,*aux2,*aux3,*no2, *no1;
+     no1=(*li);
+     int t=1;
+     while(no1!=NULL && t<p1){
+            no1=no1->prox;
+            t++;
+    }
+    if(no1==NULL) return 0;// não tem a posição p1 dada na lista
+    no2=(*li)->prox;
+    t=2;
+    while(no2!=NULL && t<p2){   
+            no2=no2->prox;
+            t++;
+    }
+    if(no2==NULL) return 0;// não tem a posição p2 dada na lista
+    if(p1==1){//se a primeira posição for 1 ( 1 elemento)
+         aux1=no2->ant;
+         aux2=no2->prox;
+         no2->ant=no1->ant;
+         if (no2->prox!=NULL){
+                  no1->ant=aux1;
+                  no2>prox=no1->prox;
+
+         }
+         else{
+	no1->ant=no2;
+             no2>prox=no1;
+          }
+         (*li)=no2;
+          If(no1->prox!=NULL)
+              no1->prox->ant=no2;
+    }
+    else{//se a 1ª posição for diferente do 1º no
+        aux1=no2->prox;
+        aux2=no1->ant;
+        aux3=no1->prox;
+
+        (no1->ant)->prox= no2;
+        no2->ant=aux;
+        no1->prox=no2->prox;
+
+        if(no1->prox==no2){//se for nos consecutivos
+            no2->prox=no1;
+	no1->ant=no2;
+        }
+       else{
+            no2->prox=aux3;
+            no1->ant=aux3;
+       }
+      if(no1->prox!=NULL)
+              no1->prox->ant=no1;
+return 1;
+}
+

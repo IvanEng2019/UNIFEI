@@ -1,0 +1,29 @@
+
+Metodo Bubble Sort
+		Tempo de execução: 0.457633
+		Número de comparações: 99990000
+		Número de movimentações: 0
+
+
+Metodo Selection Sort
+		Tempo de execução: 0.219346
+		Número de comparações: 49995000
+		Número de movimentações: 9999
+
+
+Metodo Insertion Sort
+		Tempo de execução: 0.000110
+		Número de comparações: 9999
+		Número de movimentações: 0
+
+
+Metodo Merge Sort
+		Tempo de execução: 0.053929
+		Número de comparações: 69008
+		Número de movimentações: 133616
+
+
+Metodo Quick Sort
+		Tempo de execução: 0.238139
+		Número de comparações: 50004999
+		Número de movimentações: 9999
