@@ -1,0 +1,11 @@
+{
+  "resultBuilder": "prices_from_returns",
+  "args": {
+    "name": "IPCA",
+    "id": "433"
+  },
+  "requestType": "get",
+  "urlBuilder": "series_url",
+  "destination": "E:\\data-science\\raw-data\\bcb\\series\\ipca.csv",
+  "format": "csv"
+}

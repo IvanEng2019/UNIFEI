@@ -1,0 +1,9 @@
+{
+  "historical-quotes": {
+    "url": "https://bvmf.bmfbovespa.com.br/InstDados/SerHist/COTAHIST_A",
+    "reference": "https://www.b3.com.br/data/files/C8/F3/08/B4/297BE410F816C9E492D828A8/SeriesHistoricas_Layout.pdf",
+    "path": "historical-quotes",
+    "process": "historical_quotes",
+    "map_path": "historical_quotes_path_map"
+  }
+}

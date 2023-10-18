@@ -1,0 +1,77 @@
+{
+  "traded-companies-info": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetInitialCompanies",
+    "path": "traded-companies-info",
+    "process": "traded_companies_info",
+    "map_path": "default_path_map",
+    "payload": {
+      "language": "pt-br",
+      "pageNumber": 1,
+      "pageSize": 2000
+    }
+  },
+  "single-traded-company-info": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetDetail",
+    "path": "traded-companies-info",
+    "process": "single_traded_companies",
+    "map_path": "default_path_map",
+    "payload": {
+      "codeCVM": "0000",
+      "language": "pt-br"
+    }
+  },
+  "traded-company-dividends": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedCashDividends",
+    "path": "traded-companies-dividends",
+    "process": "traded_companies_dividends",
+    "map_path": "default_path_map",
+    "payload": {}
+  },
+  "single-traded-company-dividends": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedCashDividends",
+    "path": "traded-companies-dividends",
+    "process": "single_traded_companies",
+    "map_path": "default_path_map",
+    "payload": {
+      "language": "pt-br",
+      "pageNumber": 1,
+      "pageSize": 100,
+      "tradingName": "BRADESCO"
+    }
+  },
+  "option-adjusted-prices": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/dividendsAdjustmentProxy/DividendsAdjustmentCall/GetListDetail",
+    "path": "option-adjusted-prices",
+    "process": "general",
+    "map_path": "default_path_map",
+    "payload": {
+      "identifier": "",
+      "language": "pt-br",
+      "pageNumber": 1,
+      "pageSize": 500
+    }
+  },
+  "bdr-companies-info": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetCompaniesBDR",
+    "path": "bdr-companies-info",
+    "process": "traded_companies_info",
+    "map_path": "default_path_map",
+    "payload": {
+      "language": "pt-br",
+      "pageNumber": 1,
+      "pageSize": 200,
+      "codeCategoryBVMF": 6
+    }
+  },
+  "real-estate-info": {
+    "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedFundsSIG",
+    "path": "real-estate-info",
+    "process": "general",
+    "map_path": "default_path_map",
+    "payload": {
+      "typeFund": 7,
+      "pageNumber": 1,
+      "pageSize": 200
+    }
+  }
+}

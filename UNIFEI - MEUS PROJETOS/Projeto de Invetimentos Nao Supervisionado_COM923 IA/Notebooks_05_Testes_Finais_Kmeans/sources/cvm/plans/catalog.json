@@ -1,0 +1,44 @@
+{
+  "funds-info": {
+    "url": "http://dados.cvm.gov.br/dados/FI/CAD/DADOS/cad_fi.csv",
+    "path": "funds-info",
+    "process": "simple",
+    "map_path": "simple_path_map"
+  },
+  "funds-report-full": {
+    "url": "http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/HIST/",
+    "path": "funds-report",
+    "process": "full",
+    "map_path": "simple_path_map"
+  },
+  "funds-report-year": {
+    "url": "http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/inf_diario_fi_",
+    "path": "funds-report",
+    "process": "yearly",
+    "map_path": "simple_path_map"
+  },
+  "traded-companies-info": {
+    "url": "http://dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv",
+    "path": "traded-companies-info",
+    "process": "simple",
+    "map_path": "simple_path_map"
+  },
+  "traded-companies-quarterly-results": {
+    "url": "http://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/",
+    "path": "traded-companies-quarterly-results",
+    "process": "full",
+    "map_path": "quarterly_results_path_map"
+  },
+  "traded-companies-quarterly-results-year": {
+    "url": "http://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS/itr_cia_aberta_",
+    "path": "traded-companies-quarterly-results",
+    "process": "yearly",
+    "map_path": "quarterly_results_path_map"
+  },
+  "funds-lamina": {
+    "url": "https://dados.cvm.gov.br/dados/FI/DOC/LAMINA/DADOS/",
+    "path": "funds-lamina",
+    "process": "full",
+    "map_path": "simple_path_map"
+  }
+}
